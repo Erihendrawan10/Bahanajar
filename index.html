@@ -1,3 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buku Ajar Si Kecil — Usia 4-5 Tahun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBF3;
+    --ink:#3A3226;
+    --ink-soft:#6B6255;
+    --card:#FFFFFF;
+    --line:#EDE6D6;
+
+    --numerik:#3C7CD9;
+    --numerik-bg:#EAF2FE;
+    --spasial:#8A5CF6;
+    --spasial-bg:#F1ECFE;
+    --logika:#E08A1E;
+    --logika-bg:#FDF1DF;
+    --memori:#D9497B;
+    --memori-bg:#FDEAF0;
+    --keimanan:#1E9A6B;
+    --keimanan-bg:#E4F6EE;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Nunito',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  h1,h2,h3,.brand{font-family:'Baloo 2',sans-serif;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:52px 20px 40px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 12% 20%, #FDE9C8 0%, transparent 40%),
+      radial-gradient(circle at 88% 15%, #DDEBFE 0%, transparent 42%),
+      radial-gradient(circle at 50% 100%, #F4E6FA 0%, transparent 45%),
+      var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .kicker{
+    font-size:15px;
+    color:var(--ink-soft);
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+  .hero h1{
+    font-size:clamp(28px,5vw,44px);
+    margin:8px 0 10px;
+    font-weight:800;
+  }
+  .hero p.sub{
+    max-width:560px;
+    margin:0 auto;
+    color:var(--ink-soft);
+    font-size:16.5px;
+  }
+  .hero .badges{
+    margin-top:22px;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .hero .badges span{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- TABS ---------- */
+  .tabbar-wrap{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:14px 16px;
+  }
+  .tabbar{
+    max-width:920px;
+    margin:0 auto;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    padding-bottom:2px;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Baloo 2',sans-serif;
+    font-size:15.5px;
+    font-weight:700;
+    border:2px solid var(--line);
+    background:var(--card);
+    color:var(--ink-soft);
+    padding:10px 18px;
+    border-radius:14px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap;
+    transition:transform .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .tab-btn:hover{transform:translateY(-1px);}
+  .tab-btn .emo{font-size:19px;}
+  .tab-btn[data-c="numerik"].active{background:var(--numerik-bg); border-color:var(--numerik); color:var(--numerik);}
+  .tab-btn[data-c="spasial"].active{background:var(--spasial-bg); border-color:var(--spasial); color:var(--spasial);}
+  .tab-btn[data-c="logika"].active{background:var(--logika-bg); border-color:var(--logika); color:var(--logika);}
+  .tab-btn[data-c="memori"].active{background:var(--memori-bg); border-color:var(--memori); color:var(--memori);}
+  .tab-btn[data-c="keimanan"].active{background:var(--keimanan-bg); border-color:var(--keimanan); color:var(--keimanan);}
+
+  /* ---------- CONTENT ---------- */
+  main{max-width:920px; margin:0 auto; padding:30px 18px 70px;}
+  .panel{display:none;}
+  .panel.active{display:block; animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  .panel-intro{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:20px;
+    border-radius:18px;
+    margin-bottom:22px;
+    border:1px solid var(--line);
+  }
+  .panel-intro .big-emo{font-size:38px; line-height:1;}
+  .panel-intro h2{margin:0 0 6px; font-size:23px;}
+  .panel-intro p{margin:0; color:var(--ink-soft); font-size:15px;}
+
+  .panel[data-c="numerik"] .panel-intro{background:var(--numerik-bg);}
+  .panel[data-c="numerik"] .panel-intro h2{color:var(--numerik);}
+  .panel[data-c="spasial"] .panel-intro{background:var(--spasial-bg);}
+  .panel[data-c="spasial"] .panel-intro h2{color:var(--spasial);}
+  .panel[data-c="logika"] .panel-intro{background:var(--logika-bg);}
+  .panel[data-c="logika"] .panel-intro h2{color:var(--logika);}
+  .panel[data-c="memori"] .panel-intro{background:var(--memori-bg);}
+  .panel[data-c="memori"] .panel-intro h2{color:var(--memori);}
+  .panel[data-c="keimanan"] .panel-intro{background:var(--keimanan-bg);}
+  .panel[data-c="keimanan"] .panel-intro h2{color:var(--keimanan);}
+
+  .month-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:6px solid var(--c-accent);
+    border-radius:14px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  .month-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px 18px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .month-num{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    color:#fff;
+    background:var(--c-accent);
+    width:34px; height:34px;
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto;
+  }
+  .month-titles{flex:1;}
+  .month-titles .bulan-label{font-size:12.5px; color:var(--ink-soft); font-weight:700; text-transform:uppercase; letter-spacing:.03em;}
+  .month-titles h3{margin:2px 0 0; font-size:17px;}
+  .chev{
+    font-size:14px;
+    color:var(--ink-soft);
+    transition:transform .2s ease;
+    flex:0 0 auto;
+  }
+  .month-card.open .chev{transform:rotate(180deg);}
+  .month-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    padding:0 18px;
+  }
+  .month-card.open .month-body{padding:0 18px 18px;}
+  .goal-line{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    background:var(--c-accent-bg);
+    border-radius:10px;
+    padding:10px 12px;
+    margin:0 0 10px;
+  }
+  .goal-line b{color:var(--ink);}
+  ul.activities{margin:0; padding:0; list-style:none;}
+  ul.activities li{
+    display:flex;
+    gap:9px;
+    align-items:flex-start;
+    font-size:14.5px;
+    padding:6px 0;
+  }
+  ul.activities li .dot{color:var(--c-accent); flex:0 0 auto; margin-top:1px;}
+
+  footer{
+    text-align:center;
+    padding:28px 20px 40px;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    border-top:1px solid var(--line);
+  }
+  footer .heart{color:var(--memori);}
+
+  @media (max-width:480px){
+    .hero{padding:40px 16px 30px;}
+    .panel-intro{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">📚 Kurikulum 1 Tahun</div>
+  <h1>Buku Ajar Si Kecil</h1>
+  <p class="sub">Rencana belajar untuk anak usia 4–5 tahun, mencakup kecerdasan Numerik, Spasial, Logika, Memori, dan Keimanan ala Nahdlatul Ulama — disusun per bulan, siap dipakai orang tua &amp; guru.</p>
+  <div class="badges">
+    <span>🔢 Numerik</span>
+    <span>🧩 Spasial</span>
+    <span>💡 Logika</span>
+    <span>🧠 Memori</span>
+    <span>🌙 Keimanan ala NU</span>
+  </div>
+</div>
+
+<div class="tabbar-wrap">
+  <div class="tabbar" id="tabbar">
+    <button class="tab-btn active" data-c="numerik"><span class="emo">🔢</span> Numerik</button>
+    <button class="tab-btn" data-c="spasial"><span class="emo">🧩</span> Spasial</button>
+    <button class="tab-btn" data-c="logika"><span class="emo">💡</span> Logika</button>
+    <button class="tab-btn" data-c="memori"><span class="emo">🧠</span> Memori</button>
+    <button class="tab-btn" data-c="keimanan"><span class="emo">🌙</span> Keimanan ala NU</button>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<footer>
+  Dibuat dengan <span class="heart">♥</span> untuk tumbuh kembang si kecil — cetak, gunakan, dan sesuaikan bebas untuk kebutuhan belajar di rumah atau sekolah.
+</footer>
+
+<script>
+const DATA = {
+  numerik: {
+    emoji: "🔢",
+    title: "Kecerdasan Numerik",
+    desc: "Mengenalkan angka, hitungan, dan konsep matematika dasar lewat benda nyata dan permainan, bertahap dari sederhana ke lebih kompleks.",
+    months: [
+      { judul:"Mengenal Angka 1–5", tujuan:"Anak mampu mengenali, menyebut, dan menunjuk angka 1 sampai 5.", kegiatan:["Berhitung menggunakan jari tangan","Mencocokkan angka dengan jumlah benda (buah, mainan)","Menyanyikan lagu angka 1–5","Bermain kartu angka besar berwarna"]},
+      { judul:"Mengenal Angka 6–10", tujuan:"Anak mampu mengenali dan mengurutkan angka 6 sampai 10.", kegiatan:["Berhitung kelereng atau kancing","Menempel stiker sesuai jumlah angka","Permainan lompat angka di lantai","Menyusun kartu angka 1–10 berurutan"]},
+      { judul:"Membandingkan Jumlah", tujuan:"Anak memahami konsep lebih banyak, lebih sedikit, dan sama banyak.", kegiatan:["Membandingkan dua kelompok benda","Permainan \\"mana yang lebih banyak?\\"","Menyusun benda dari sedikit ke banyak","Bermain timbangan sederhana dari gantungan baju"]},
+      { judul:"Konsep Ukuran & Panjang", tujuan:"Anak mengenal konsep besar-kecil, panjang-pendek, dan tinggi-rendah.", kegiatan:["Mengurutkan pensil dari pendek ke panjang","Membandingkan tinggi badan dengan teman","Menyortir mainan besar dan kecil","Membuat bentuk panjang-pendek dari playdough"]},
+      { judul:"Mengenal Angka 11–15", tujuan:"Anak mampu mengenali dan menulis angka 11 sampai 15.", kegiatan:["Menulis angka di atas pasir atau tepung","Permainan kartu angka berpasangan","Menghitung jumlah anak tangga rumah","Menempelkan angka pada gambar yang sesuai"]},
+      { judul:"Mengenal Angka 16–20", tujuan:"Anak mampu mengenali angka 16 sampai 20 dan menghitung mundur sederhana.", kegiatan:["Bermain ular tangga sederhana 1–20","Menghitung mundur dari 20 ke 1 sambil bertepuk","Menyusun puzzle angka 11–20","Berlomba menunjuk angka yang disebutkan"]},
+      { judul:"Penjumlahan Sederhana (1–5)", tujuan:"Anak memahami konsep menambah menggunakan benda konkret.", kegiatan:["Menggabungkan dua kelompok kelereng lalu menghitung","Cerita bergambar \\"2 apel ditambah 1 apel\\"","Permainan dadu kecil angka 1–3","Mengisi lembar kerja bergambar penjumlahan"]},
+      { judul:"Pengurangan Sederhana (1–5)", tujuan:"Anak memahami konsep berkurang menggunakan benda konkret.", kegiatan:["Cerita bergambar tentang benda yang berkurang","Permainan balon: pecahkan lalu hitung sisa","Menggunakan jari untuk pengurangan sederhana","Kartu soal bergambar pengurangan"]},
+      { judul:"Mengenal Pola & Urutan Angka", tujuan:"Anak mampu mengenali pola angka dan menebak angka berikutnya.", kegiatan:["Bermain menyusun angka yang hilang","Permainan \\"angka berikutnya berapa?\\"","Lagu pola angka genap dan ganjil sederhana","Menyusun angka naik dan turun bergantian"]},
+      { judul:"Mengenal Uang Mainan", tujuan:"Anak mengenal bentuk uang dan konsep tukar sederhana.", kegiatan:["Mengenal koin dan uang kertas mainan","Bermain pasar-pasaran di rumah","Menghitung uang mainan sederhana","Diskusi konsep membeli dan menukar barang"]},
+      { judul:"Mengenal Waktu Sederhana", tujuan:"Anak mengenal konsep pagi, siang, malam, dan jam bulat.", kegiatan:["Membuat jadwal harian bergambar","Bermain jam mainan menunjuk jam bulat","Diskusi kegiatan pagi, siang, dan malam","Lagu tentang waktu dan kegiatan sehari-hari"]},
+      { judul:"Review & Proyek Angka", tujuan:"Anak mampu menggabungkan seluruh kemampuan numerik yang telah dipelajari.", kegiatan:["Permainan papan angka gabungan","Kuis angka bergambar berhadiah bintang","Proyek \\"toko-tokoan\\" menghitung uang dan barang","Pentas kecil menyanyikan lagu angka"]}
+    ]
+  },
   spasial: {
     emoji: "🧩",
     title: "Kecerdasan Spasial",
@@ -34,3 +323,117 @@
       { judul:"Memecahkan Masalah Sehari-hari", tujuan:"Anak mampu memikirkan solusi sederhana atas suatu masalah.", kegiatan:["Diskusi skenario sederhana (mainan hilang, dll)","Bermain simulasi mencari solusi bersama","Cerita tentang tokoh yang memecahkan masalah","Latihan bertanya \\"bagaimana caranya?\\""]},
       { judul:"Permainan Strategi Sederhana", tujuan:"Anak mampu memahami aturan dan giliran dalam permainan strategi.", kegiatan:["Bermain congklak mini","Bermain ular tangga bersama","Latihan mengikuti aturan dan menunggu giliran","Diskusi strategi sederhana yang digunakan"]},
       { judul:"Review & Tantangan Logika Gabungan", tujuan:"Anak mampu menggabungkan seluruh kemampuan logika yang telah dipelajari.", kegiatan:["Lomba logika antar kelompok kecil","Kuis besar akhir tahun bertema logika","Membuat permainan logika sederhana sendiri","Pameran hasil karya berpikir anak selama setahun"]}
+    ]
+  },
+  memori: {
+    emoji: "🧠",
+    title: "Kecerdasan Memori",
+    desc: "Melatih daya ingat anak melalui permainan mencocokkan, mengingat urutan, menghafal, dan mengenali detail — bertahap sesuai kemampuan usia.",
+    months: [
+      { judul:"Mengingat 2–3 Benda", tujuan:"Anak mampu mengingat 2 sampai 3 benda yang ditunjukkan.", kegiatan:["Permainan \\"apa yang hilang?\\"","Menunjukkan beberapa benda lalu ditutup kain","Menebak benda yang disembunyikan","Mengulang menyebutkan nama benda yang diingat"]},
+      { judul:"Kartu Memori (Matching) 4 Pasang", tujuan:"Anak mampu mencocokkan pasangan kartu bergambar sederhana.", kegiatan:["Bermain kartu memori 4 pasang","Mencari pasangan gambar yang sama","Permainan berkelompok bergantian giliran","Diskusi gambar pada kartu yang ditemukan"]},
+      { judul:"Mengingat Urutan 2 Langkah Instruksi", tujuan:"Anak mampu mengikuti dan mengingat instruksi dua langkah.", kegiatan:["Permainan \\"ambil bola lalu taruh di keranjang\\"","Latihan instruksi sehari-hari dua tahap","Permainan estafet instruksi sederhana","Mengulang instruksi sebelum melaksanakan"]},
+      { judul:"Mengulang Cerita Pendek", tujuan:"Anak mampu mengingat dan menceritakan ulang cerita pendek.", kegiatan:["Mendengarkan cerita pendek bergambar","Menceritakan ulang dengan kata-kata sendiri","Tanya jawab seputar isi cerita","Menggambar adegan yang paling diingat"]},
+      { judul:"Menghafal Nama Anggota Keluarga", tujuan:"Anak mampu menyebutkan nama-nama anggota keluarga inti.", kegiatan:["Bermain dengan foto keluarga","Menyanyikan lagu nama anggota keluarga","Membuat silsilah keluarga sederhana bergambar","Tanya jawab seputar anggota keluarga"]},
+      { judul:"Kartu Memori 6 Pasang", tujuan:"Anak mampu bermain memori dengan jumlah kartu lebih banyak.", kegiatan:["Bermain kartu memori 6 pasang","Permainan berkelompok dengan waktu terbatas","Mencatat berapa kali percobaan hingga berhasil","Bermain ulang untuk melihat peningkatan"]},
+      { judul:"Mengingat Urutan 3 Langkah Instruksi", tujuan:"Anak mampu mengikuti dan mengingat instruksi tiga langkah.", kegiatan:["Permainan Simon Says versi lanjutan","Instruksi harian tiga tahap (ambil, bawa, letakkan)","Permainan estafet instruksi berkelompok","Mengulang instruksi dengan suara lantang"]},
+      { judul:"Menghafal Lagu Anak Pendek", tujuan:"Anak mampu menghafal lagu anak sederhana empat baris.", kegiatan:["Belajar lagu anak baris demi baris","Gerak dan lagu bersama","Tepuk tangan mengikuti irama hafalan","Tampil menyanyikan lagu di depan keluarga"]},
+      { judul:"Mengingat Detail Gambar (Spot the Difference)", tujuan:"Anak mampu mengenali perbedaan detail pada dua gambar mirip.", kegiatan:["Permainan mencari perbedaan gambar","Latihan pengamatan pada benda sehari-hari","Diskusi detail yang berhasil ditemukan","Membuat gambar sendiri dengan sedikit perbedaan"]},
+      { judul:"Menghafal Alamat Rumah & Nama Orang Tua", tujuan:"Anak mampu menyebutkan alamat rumah dan nama orang tua sebagai bekal keamanan diri.", kegiatan:["Latihan tanya jawab alamat rumah","Menghafal nama lengkap ayah dan ibu","Lagu sederhana tentang alamat rumah","Bermain peran situasi bertanya arah pulang"]},
+      { judul:"Kartu Memori 8 Pasang", tujuan:"Anak mampu bermain memori pada tingkat yang lebih menantang.", kegiatan:["Bermain kartu memori 8 pasang","Kompetisi memori antar teman","Mencatat waktu dan jumlah percobaan","Refleksi strategi mengingat yang digunakan"]},
+      { judul:"Review & Tantangan Memori Gabungan", tujuan:"Anak mampu menggabungkan seluruh kemampuan memori yang telah dilatih.", kegiatan:["Lomba memori antar anak","Kuis akhir tahun bertema daya ingat","Permainan estafet ingatan berkelompok","Perayaan kecil pencapaian belajar setahun"]}
+    ]
+  },
+  keimanan: {
+    emoji: "🌙",
+    title: "Keimanan ala Nahdlatul Ulama",
+    desc: "Menanamkan dasar-dasar akidah, ibadah, dan akhlak dengan cara yang lembut dan menyenangkan, berlandaskan nilai-nilai ke-NU-an: tawasuth (moderat), tasamuh (toleran), dan tawazun (seimbang).",
+    months: [
+      { judul:"Kalimat Thayyibah", tujuan:"Anak terbiasa mengucapkan kalimat thayyibah dalam kegiatan sehari-hari.", kegiatan:["Mengenal ucapan Bismillah, Alhamdulillah, Masyaallah, InsyaAllah","Lagu kalimat thayyibah bersama","Kartu bergambar makna setiap kalimat","Membiasakan ucapan sesuai konteks kegiatan"]},
+      { judul:"Rukun Islam", tujuan:"Anak mengenal lima rukun Islam secara sederhana.", kegiatan:["Lagu rukun Islam dengan gerakan jari","Cerita bergambar setiap rukun","Bermain kartu urutan rukun Islam","Diskusi sederhana makna masing-masing rukun"]},
+      { judul:"Rukun Iman", tujuan:"Anak mengenal enam rukun iman secara sederhana.", kegiatan:["Lagu rukun iman yang mudah diingat","Cerita tentang ciptaan Allah di sekitar anak","Mengenal malaikat lewat kisah sederhana","Diskusi ringan tentang kitab dan rasul Allah"]},
+      { judul:"Doa Harian Sederhana", tujuan:"Anak hafal dan terbiasa membaca doa harian sederhana.", kegiatan:["Doa sebelum dan sesudah makan","Doa sebelum tidur dan bangun tidur","Kartu doa bergambar untuk ditempel di kamar","Pembiasaan doa setiap hari bersama orang tua"]},
+      { judul:"Adab Sehari-hari", tujuan:"Anak memahami dan mempraktikkan adab dasar dalam keseharian.", kegiatan:["Adab makan dan minum sesuai contoh","Membiasakan mengucap salam saat bertemu","Adab kepada orang tua dan guru","Permainan peran mempraktikkan adab"]},
+      { judul:"Mengenal Shalawat & Cinta Nabi", tujuan:"Anak mengenal shalawat pendek dan kisah teladan Nabi Muhammad.", kegiatan:["Menghafal shalawat pendek bersama","Kisah teladan Nabi untuk anak-anak","Lagu shalawat anak yang ceria","Diskusi sifat baik yang bisa dicontoh"]},
+      { judul:"Mengenal Huruf Hijaiyah (Tahap Awal)", tujuan:"Anak mengenal huruf hijaiyah dari alif hingga bertahap.", kegiatan:["Lagu huruf hijaiyah tahap awal","Kartu huruf hijaiyah bergambar","Menjiplak dan mewarnai huruf hijaiyah","Permainan tebak huruf hijaiyah"]},
+      { judul:"Praktik Wudhu & Pengenalan Gerakan Sholat", tujuan:"Anak mengenal tahapan wudhu sederhana dan gerakan sholat dasar.", kegiatan:["Mengenal langkah-langkah wudhu sederhana","Lagu tata cara wudhu","Meniru gerakan sholat bersama","Praktik sederhana didampingi orang tua"]},
+      { judul:"Mengenal Asmaul Husna (5 Nama Pertama)", tujuan:"Anak mengenal lima Asmaul Husna pertama beserta makna sederhananya.", kegiatan:["Lagu Asmaul Husna: Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus, As-Salam","Cerita makna sederhana setiap nama","Kartu bergambar Asmaul Husna","Diskusi rasa syukur atas kasih sayang Allah"]},
+      { judul:"Nilai-nilai Ke-NU-an: Tasamuh & Ta'awun", tujuan:"Anak mengenal sikap toleransi dan tolong-menolong sejak dini.", kegiatan:["Cerita tentang sikap saling menghargai teman","Praktik berbagi mainan dan makanan","Permainan kerja sama kelompok","Diskusi sederhana tentang hidup rukun"]},
+      { judul:"Mengenal Hari Besar & Tradisi Keluarga", tujuan:"Anak mengenal Idul Fitri, silaturahmi, dan doa untuk keluarga sesuai usia.", kegiatan:["Mengenal makna Idul Fitri dan silaturahmi","Praktik bersalaman dan meminta maaf","Doa sederhana untuk kakek, nenek, dan keluarga","Cerita tentang menghormati orang tua dan leluhur"]},
+      { judul:"Review & Pembiasaan Akhlak Mulia", tujuan:"Anak konsisten mempraktikkan doa, adab, dan kalimat thayyibah sehari-hari.", kegiatan:["Pembiasaan doa harian secara mandiri","Praktik adab dan kalimat thayyibah dalam keseharian","Pentas kecil hafalan doa dan shalawat","Perayaan pencapaian belajar keimanan setahun"]}
+    ]
+  }
+};
+
+const BULAN_LABEL = ["Bulan 1","Bulan 2","Bulan 3","Bulan 4","Bulan 5","Bulan 6","Bulan 7","Bulan 8","Bulan 9","Bulan 10","Bulan 11","Bulan 12"];
+const ACCENT = {
+  numerik: {c:"var(--numerik)", bg:"var(--numerik-bg)"},
+  spasial: {c:"var(--spasial)", bg:"var(--spasial-bg)"},
+  logika: {c:"var(--logika)", bg:"var(--logika-bg)"},
+  memori: {c:"var(--memori)", bg:"var(--memori-bg)"},
+  keimanan: {c:"var(--keimanan)", bg:"var(--keimanan-bg)"}
+};
+
+function buildPanel(key){
+  const d = DATA[key];
+  const acc = ACCENT[key];
+  let months = d.months.map((m,i) => `
+    <div class="month-card" style="--c-accent:${acc.c}; --c-accent-bg:${acc.bg};">
+      <div class="month-head" onclick="this.parentElement.classList.toggle('open')">
+        <div class="month-num">${i+1}</div>
+        <div class="month-titles">
+          <div class="bulan-label">${BULAN_LABEL[i]}</div>
+          <h3>${m.judul}</h3>
+        </div>
+        <div class="chev">▾</div>
+      </div>
+      <div class="month-body">
+        <p class="goal-line"><b>🎯 Tujuan:</b> ${m.tujuan}</p>
+        <ul class="activities">
+          ${m.kegiatan.map(k => `<li><span class="dot">●</span><span>${k}</span></li>`).join("")}
+        </ul>
+      </div>
+    </div>
+  `).join("");
+
+  return `
+    <div class="panel-intro">
+      <div class="big-emo">${d.emoji}</div>
+      <div>
+        <h2>${d.title}</h2>
+        <p>${d.desc}</p>
+      </div>
+    </div>
+    ${months}
+  `;
+}
+
+function render(){
+  const main = document.getElementById('main');
+  main.innerHTML = Object.keys(DATA).map(key => `
+    <section class="panel${key==='numerik' ? ' active' : ''}" data-c="${key}">
+      ${buildPanel(key)}
+    </section>
+  `).join("");
+}
+
+function setupTabs(){
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = btn.dataset.c;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelector(`.panel[data-c="${c}"]`).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+}
+
+render();
+setupTabs();
+// buka bulan pertama tiap tab secara default
+document.querySelectorAll('.panel .month-card:first-of-type').forEach(el => el.classList.add('open'));
+</script>
+</body>
+</html>

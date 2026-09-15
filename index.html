@@ -10,6 +10,7 @@
 
 
 
+
 :root{
     --cream:#FFFBF3;
     --ink:#3A3226;
@@ -83,6 +84,51 @@
     font-size:14px;
     font-weight:700;
     color:var(--ink-soft);
+  }
+
+  .jadwal-mingguan{
+    max-width:640px;
+    margin:22px auto 0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+  }
+  .jadwal-title{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    margin-bottom:12px;
+  }
+  .jadwal-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:8px;
+  }
+  .jadwal-cell{
+    border-radius:10px;
+    padding:8px 4px;
+    text-align:center;
+    font-size:11.5px;
+    line-height:1.5;
+    color:#fff;
+  }
+  .jadwal-cell b{display:block; font-size:11px;}
+  .jadwal-numerik{background:var(--numerik);}
+  .jadwal-spasial{background:var(--spasial);}
+  .jadwal-logika{background:var(--logika);}
+  .jadwal-memori{background:var(--memori);}
+  .jadwal-keimanan{background:var(--keimanan);}
+  .jadwal-libur{background:#D8D2C4; color:var(--ink-soft);}
+  .jadwal-note{
+    margin:12px 0 0;
+    font-size:12px;
+    color:var(--ink-soft);
+    line-height:1.5;
+    text-align:left;
+  }
+  @media (max-width:600px){
+    .jadwal-grid{grid-template-columns:repeat(3, 1fr);}
   }
 
   .catatan-level{
@@ -227,6 +273,8 @@
     .wk-footer{margin-top:30px; font-size:11px; color:#999; text-align:center;}
     @page{margin:14mm;}
   }
+
+  .info-toggle-btn{
     margin-top:20px;
     font-family:'Nunito',sans-serif;
     font-weight:800;
@@ -438,8 +486,28 @@
     background:#FAF9F5;
     overflow:hidden;
   }
+  .kegiatan-item.done{background:#F3FAF6; border-color:#CDEBDD;}
+  .kegiatan-head-row{
+    display:flex;
+    align-items:center;
+    gap:2px;
+  }
+  .done-checkbox{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    padding:0 0 0 12px;
+    cursor:pointer;
+  }
+  .done-checkbox input{
+    width:18px;
+    height:18px;
+    cursor:pointer;
+    accent-color:var(--c-accent);
+  }
+  .kegiatan-item.done .kegiatan-nama{color:#1E9A6B; text-decoration:line-through; text-decoration-color:#9AD4BB;}
   .kegiatan-head{
-    width:100%;
+    flex:1;
     display:flex;
     align-items:center;
     gap:9px;
@@ -707,6 +775,7 @@
 
 
 
+
 </style>
 </head>
 <body>
@@ -714,7 +783,7 @@
 <div class="hero">
   <div class="kicker">📚 Kurikulum 1 Tahun</div>
   <h1>Buku Ajar Si Kecil</h1>
-  <p class="sub">Rencana belajar harian untuk anak usia 4–5 tahun, mencakup kecerdasan Numerik, Spasial, Logika, Memori, dan Keimanan ala Nahdlatul Ulama — disusun per hari (48 hari/topik per aspek), siap dipakai orang tua &amp; guru, lengkap dengan lembar kerja yang bisa dicetak.</p>
+  <p class="sub">Rencana belajar untuk anak usia 4–5 tahun, mencakup kecerdasan Numerik, Spasial, Logika, Memori, dan Keimanan ala Nahdlatul Ulama — <b>1 aspek per hari</b> (bukan digabung), siap dipakai orang tua &amp; guru, lengkap dengan lembar kerja yang bisa dicetak.</p>
   <div class="badges">
     <span>🔢 Numerik</span>
     <span>🧩 Spasial</span>
@@ -722,18 +791,33 @@
     <span>🧠 Memori</span>
     <span>🌙 Keimanan ala NU</span>
   </div>
+
+  <div class="jadwal-mingguan">
+    <div class="jadwal-title">📅 Jadwal Mingguan Tetap</div>
+    <div class="jadwal-grid">
+      <div class="jadwal-cell jadwal-numerik"><b>Senin</b><br>🔢 Numerik</div>
+      <div class="jadwal-cell jadwal-spasial"><b>Selasa</b><br>🧩 Spasial</div>
+      <div class="jadwal-cell jadwal-logika"><b>Rabu</b><br>💡 Logika</div>
+      <div class="jadwal-cell jadwal-memori"><b>Kamis</b><br>🧠 Memori</div>
+      <div class="jadwal-cell jadwal-keimanan"><b>Jumat</b><br>🌙 Keimanan</div>
+      <div class="jadwal-cell jadwal-libur"><b>Sabtu–Minggu</b><br>🎈 Istirahat</div>
+    </div>
+    <p class="jadwal-note">Tiap aspek diajarkan 1x/minggu di hari tetapnya — supaya fokus anak tidak pecah. Karena itu 1 topik (4 minggu) ≈ 1 bulan, dan evaluasi di akhir topik otomatis jadi <b>evaluasi bulanan</b>.</p>
+  </div>
+
   <button class="info-toggle-btn" id="info-toggle">ℹ️ Cara menilai perkembangan anak ▼</button>
   <div class="info-box" id="info-box">
-    <h4>📋 Cara Menggunakan Indikator, Evaluasi &amp; Cetak Lembar Kerja</h4>
-    <p>Kurikulum disusun <b>harian</b>: setiap topik berisi 4 hari kegiatan (bisa diulang beberapa hari untuk pemantapan sebelum lanjut). Tiap topik punya 3 <b>indikator pencapaian</b> yang dinilai di akhir topik menggunakan rubrik standar PAUD berikut:</p>
+    <h4>📋 Cara Menggunakan Ceklis, Evaluasi &amp; Cetak Lembar Kerja</h4>
+    <p>Kurikulum disusun <b>mingguan</b>: setiap topik berisi 4 minggu kegiatan (bisa diulang beberapa minggu untuk pemantapan sebelum lanjut). Tiap sesi minggu punya <b>ceklis "sudah dipelajari"</b> — centang setelah kegiatan itu dilakukan, supaya orang tua bisa lihat sekilas progres tanpa harus menilai dulu.</p>
+    <p>Selain ceklis harian, tiap topik punya 3 <b>indikator pencapaian</b> yang dinilai sebagai <b>evaluasi bulanan</b> (di akhir topik/minggu ke-4) menggunakan rubrik standar PAUD berikut — atau bisa juga dicek sekilas di minggu ke-2 sebagai evaluasi 2 minggu-an:</p>
     <div class="rubrik-legend">
       <div class="rubrik-legend-item"><span class="kode">BB</span> Belum Berkembang — anak belum menunjukkan kemampuan ini meski sudah dibimbing</div>
       <div class="rubrik-legend-item"><span class="kode">MB</span> Mulai Berkembang — anak masih perlu bimbingan/pengulangan untuk bisa</div>
       <div class="rubrik-legend-item"><span class="kode">BSH</span> Berkembang Sesuai Harapan — anak bisa melakukannya secara konsisten</div>
       <div class="rubrik-legend-item"><span class="kode">BSB</span> Berkembang Sangat Baik — anak bisa melakukannya mandiri dan bisa membantu teman</div>
     </div>
-    <p>Cara menilai: teliti secara <b>observasi langsung</b> (amati saat bermain/beraktivitas), <b>hasil karya</b> (gambar, tulisan, bangunan balok, dsb), dan <b>unjuk kerja</b> (minta anak mempraktikkan langsung). Klik tombol BB/MB/BSH/BSB pada tiap indikator — nilai tersimpan otomatis di browser ini, dan status topik berubah jadi "Tercapai" bila rata-rata indikator ≥ BSH.</p>
-    <p>🖨️ <b>Cetak lembar kerja:</b> buka detail hari yang diinginkan (klik judul kegiatannya), lalu klik tombol "Cetak Lembar Kerja Hari ke-N" — halaman akan membuka dialog cetak browser berisi lembar kerja siap print untuk hari itu.</p>
+    <p>Cara menilai: teliti secara <b>observasi langsung</b> (amati saat bermain/beraktivitas), <b>hasil karya</b> (gambar, tulisan, bangunan balok, dsb), dan <b>unjuk kerja</b> (minta anak mempraktikkan langsung). Klik tombol BB/MB/BSH/BSB pada tiap indikator — nilai tersimpan otomatis, dan status topik berubah jadi "Tercapai" bila rata-rata indikator ≥ BSH.</p>
+    <p>🖨️ <b>Cetak lembar kerja:</b> buka detail minggu yang diinginkan (klik judul kegiatannya), lalu klik tombol "Cetak Lembar Kerja Minggu ke-N" — halaman akan membuka dialog cetak browser berisi lembar kerja siap print untuk minggu itu.</p>
   </div>
 </div>
 
@@ -3941,16 +4025,27 @@ const ACCENT = {
   keimanan: {c:"var(--keimanan)", bg:"var(--keimanan-bg)"}
 };
 
-// Setiap topik berisi 4 kegiatan = 4 hari belajar (bisa diulang beberapa
-// hari untuk pemantapan sebelum lanjut ke hari berikutnya).
+// Jadwal mingguan tetap: tiap aspek diajarkan 1x/minggu di hari yang
+// berbeda, supaya fokus anak tidak pecah dalam satu hari yang sama.
+const WEEKDAY_MAP = {
+  numerik: "Senin",
+  spasial: "Selasa",
+  logika: "Rabu",
+  memori: "Kamis",
+  keimanan: "Jumat"
+};
+
+// Setiap topik berisi 4 kegiatan = 4 minggu belajar (karena tiap aspek
+// hanya diajarkan 1x/minggu pada hari tetapnya) — jadi 1 topik ≈ 1 bulan,
+// dan evaluasi di akhir topik otomatis menjadi evaluasi bulanan.
 const HARI_PER_TOPIK = 4;
 
 // Catatan penyesuaian level: ditampilkan di atas tab tertentu supaya
 // orang tua tahu bagian mana yang bisa dipercepat karena anak sudah
 // punya kemampuan awal.
 const CATATAN_LEVEL = {
-  numerik: "📝 <b>Catatan penyesuaian:</b> karena anak sudah bisa berhitung 1–20 memakai jari, jadikan <b>Hari 1–24 (Topik 1–6)</b> sebagai pemantapan cepat saja (1–2 hari per topik cukup, tidak perlu 4 hari penuh) — lalu percepat masuk ke <b>Hari 25 (Topik 7: Penjumlahan)</b> dan seterusnya yang levelnya lebih menantang.",
-  keimanan: "📝 <b>Catatan penyesuaian:</b> jika anak sudah mengenal beberapa huruf, pada <b>Topik 7 (Huruf Hijaiyah, Hari 25–28)</b> lewati huruf yang sudah dikuasai dan fokuskan waktu pada huruf yang belum dikenal."
+  numerik: "📝 <b>Catatan penyesuaian:</b> karena anak sudah bisa berhitung 1–20 memakai jari, jadikan <b>Minggu 1–24 (Topik 1–6)</b> sebagai pemantapan cepat saja (1–2 minggu per topik cukup, tidak perlu 4 minggu penuh) — lalu percepat masuk ke <b>Minggu 25 (Topik 7: Penjumlahan)</b> dan seterusnya yang levelnya lebih menantang.",
+  keimanan: "📝 <b>Catatan penyesuaian:</b> jika anak sudah mengenal beberapa huruf, pada <b>Topik 7 (Huruf Hijaiyah, Minggu 25–28)</b> lewati huruf yang sudah dikuasai dan fokuskan waktu pada huruf yang belum dikenal."
 };
 
 const CPA_INFO = {
@@ -3981,6 +4076,7 @@ function getSubjectStats(subject){
 }
 
 const STORAGE_KEY = "buku-ajar-si-kecil-progress-v1";
+const DONE_STORAGE_KEY = "buku-ajar-si-kecil-done-v1";
 
 function loadProgress(){
   try {
@@ -3991,6 +4087,28 @@ function saveProgress(progress){
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch(e) {}
 }
 let PROGRESS = loadProgress();
+
+function loadDone(){
+  try {
+    return JSON.parse(localStorage.getItem(DONE_STORAGE_KEY)) || {};
+  } catch(e) { return {}; }
+}
+function saveDone(done){
+  try { localStorage.setItem(DONE_STORAGE_KEY, JSON.stringify(done)); } catch(e) {}
+}
+let DONE = loadDone();
+
+function toggleDone(checkbox){
+  const key = checkbox.dataset.donekey;
+  if(checkbox.checked){
+    DONE[key] = true;
+  } else {
+    delete DONE[key];
+  }
+  saveDone(DONE);
+  const item = checkbox.closest('.kegiatan-item');
+  if(item) item.classList.toggle('done', checkbox.checked);
+}
 
 function scoreKey(subject, monthIdx, indIdx){
   return subject + ":" + monthIdx + ":" + indIdx;
@@ -4021,33 +4139,41 @@ function buildPanel(key){
   const stats = getSubjectStats(key);
   const catatan = CATATAN_LEVEL[key] ? `<div class="catatan-level">${CATATAN_LEVEL[key]}</div>` : "";
   const cpaInfo = CPA_INFO[key] || "";
+  const weekday = WEEKDAY_MAP[key] || "";
 
   let topikBlocks = d.months.map((m,i) => {
-    const hariAwal = i * HARI_PER_TOPIK + 1;
-    const hariAkhir = hariAwal + HARI_PER_TOPIK - 1;
+    const mingguAwal = i * HARI_PER_TOPIK + 1;
+    const mingguAkhir = mingguAwal + HARI_PER_TOPIK - 1;
     const avg = getMonthAverage(key, i, m.indikator.length);
     const badgeClass = avg === null ? "" : (avg >= 3 ? "badge-ok" : (avg >= 2 ? "badge-mid" : "badge-low"));
     const badgeText = avg === null ? "Belum dinilai" : (avg >= 3 ? "Tercapai" : (avg >= 2 ? "Berkembang" : "Perlu latihan"));
 
-    const hariRows = m.kegiatan.map((k, ki) => {
-      const hariKe = hariAwal + ki;
+    const mingguRows = m.kegiatan.map((k, ki) => {
+      const mingguKe = mingguAwal + ki;
       const alatList = k.alat.map(a => `<li>${a}</li>`).join("");
       const tahapChip = k.tahap ? `<span class="tahap-chip tahap-${k.tahap.toLowerCase()}">${k.tahap}</span>` : "";
+      const doneKey = scoreKey(key, i, ki) + ":done";
+      const isDone = !!DONE[doneKey];
       return `
-        <li class="kegiatan-item">
-          <button type="button" class="kegiatan-head" onclick="this.parentElement.classList.toggle('open'); event.stopPropagation();">
-            <span class="hari-chip">Hari ${hariKe}</span>
-            ${tahapChip}
-            <span class="kegiatan-nama">${k.nama}</span>
-            <span class="kegiatan-chev">▾</span>
-          </button>
+        <li class="kegiatan-item${isDone ? ' done' : ''}">
+          <div class="kegiatan-head-row">
+            <label class="done-checkbox" onclick="event.stopPropagation();">
+              <input type="checkbox" data-donekey="${doneKey}" ${isDone ? 'checked' : ''} onchange="toggleDone(this)">
+            </label>
+            <button type="button" class="kegiatan-head" onclick="this.closest('.kegiatan-item').classList.toggle('open'); event.stopPropagation();">
+              <span class="hari-chip">${weekday} · Minggu ${mingguKe}</span>
+              ${tahapChip}
+              <span class="kegiatan-nama">${k.nama}</span>
+              <span class="kegiatan-chev">▾</span>
+            </button>
+          </div>
           <div class="kegiatan-detail">
             <p class="kegiatan-field"><b>🎓 Yang diajarkan:</b> ${k.diajarkan}</p>
             <p class="kegiatan-field"><b>💬 Contoh:</b> ${k.contoh}</p>
             <p class="kegiatan-field-label"><b>🧰 Yang diperlukan:</b></p>
             <ul class="alat-list">${alatList}</ul>
             <button type="button" class="print-btn" onclick="event.stopPropagation(); printWorksheet('${key}', ${i}, ${ki});">
-              🖨️ Cetak Lembar Kerja Hari ${hariKe}
+              🖨️ Cetak Lembar Kerja Minggu ${mingguKe}
             </button>
           </div>
         </li>
@@ -4075,7 +4201,7 @@ function buildPanel(key){
       <div class="month-head" onclick="this.parentElement.classList.toggle('open')">
         <div class="month-num">${i+1}</div>
         <div class="month-titles">
-          <div class="bulan-label">Topik ${i+1} · Hari ${hariAwal}–${hariAkhir}</div>
+          <div class="bulan-label">Topik ${i+1} · Minggu ${mingguAwal}–${mingguAkhir} (≈ 1 bulan, tiap ${weekday})</div>
           <h3>${m.judul}</h3>
         </div>
         <span class="status-badge ${badgeClass}">${badgeText}</span>
@@ -4083,11 +4209,11 @@ function buildPanel(key){
       </div>
       <div class="month-body">
         <p class="goal-line"><b>🎯 Tujuan Topik Ini:</b> ${m.tujuan}</p>
-        <p class="section-label">📅 Rencana Harian <span class="hint">(klik tiap hari untuk lihat detail + cetak)</span></p>
+        <p class="section-label">📅 Rencana Mingguan <span class="hint">(setiap ${weekday} · centang ✅ kalau sudah dipelajari · klik judul untuk detail + cetak)</span></p>
         <ul class="activities">
-          ${hariRows}
+          ${mingguRows}
         </ul>
-        <p class="section-label">📋 Indikator Pencapaian &amp; Evaluasi (nilai di akhir topik / Hari ${hariAkhir})</p>
+        <p class="section-label">🗓️ Evaluasi Bulanan <span class="hint">(di akhir topik / Minggu ${mingguAkhir} — bisa juga dicek sekilas di Minggu ${mingguAwal+1} sebagai evaluasi 2 minggu-an)</span></p>
         <ul class="indikator-list">
           ${indikatorRows}
         </ul>
@@ -4279,13 +4405,14 @@ const WORK_AREA_FN = {
 function printWorksheet(subject, topikIdx, kegiatanIdx){
   const topik = DATA[subject].months[topikIdx];
   const keg = topik.kegiatan[kegiatanIdx];
-  const hariKe = topikIdx * 4 + kegiatanIdx + 1;
+  const mingguKe = topikIdx * 4 + kegiatanIdx + 1;
+  const weekday = WEEKDAY_MAP[subject] || "";
   const workArea = subject === "numerik" ? workAreaNumerik(keg.tahap) : (WORK_AREA_FN[subject] ? WORK_AREA_FN[subject]() : "");
   const tahapTag = keg.tahap ? ` · Tahap ${keg.tahap}` : "";
 
   const html = `
     <div class="wk-header">
-      <div class="wk-header-title">${SUBJECT_LABEL[subject]} — Hari ke-${hariKe}${tahapTag}</div>
+      <div class="wk-header-title">${SUBJECT_LABEL[subject]} — ${weekday}, Minggu ke-${mingguKe}${tahapTag}</div>
       <div class="wk-header-sub">${topik.judul}</div>
     </div>
     <div class="wk-meta">
@@ -4458,6 +4585,7 @@ setupCodeModal();
 setupSheetModal();
 if(getSheetUrl()){ loadFromSheet().catch(() => {}); }
 document.querySelectorAll('.panel .month-card:first-of-type').forEach(el => el.classList.add('open'));
+
 
 
 

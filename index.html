@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 
+
+
 :root{
     --cream:#FFFBF3;
     --ink:#3A3226;
@@ -526,11 +528,183 @@
     border-top:1px solid var(--line);
   }
   footer .heart{color:var(--memori);}
+  .footer-bottom{
+    margin-top:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .code-toggle-btn{
+    font-family:'Nunito',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    background:var(--card);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 12px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .code-toggle-btn:hover{border-color:var(--numerik); color:var(--numerik);}
+  .version-tag{
+    font-size:11.5px;
+    font-weight:800;
+    color:#fff;
+    background:var(--ink-soft);
+    padding:4px 10px;
+    border-radius:999px;
+  }
+
+  .code-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  .code-modal.open{display:flex;}
+  .code-modal-box{
+    background:#1E1E1E;
+    border-radius:14px;
+    max-width:720px;
+    width:100%;
+    max-height:80vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .code-modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    background:#151515;
+    color:#fff;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:14px;
+  }
+  .code-modal-close{
+    background:transparent;
+    border:none;
+    color:#aaa;
+    font-size:16px;
+    cursor:pointer;
+    padding:2px 8px;
+  }
+  .code-modal-close:hover{color:#fff;}
+  .code-modal-hint{
+    color:#bbb;
+    font-size:12.5px;
+    padding:10px 18px 0;
+    margin:0;
+  }
+  .code-modal-body-wrap{
+    overflow:auto;
+    padding:12px 18px;
+    flex:1;
+  }
+  .code-modal-body-wrap pre{margin:0;}
+  .code-modal-body-wrap code{
+    color:#D4D4D4;
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    line-height:1.6;
+    white-space:pre;
+  }
+  .copy-code-btn{
+    margin:0 18px 16px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:13px;
+    background:var(--numerik);
+    border:none;
+    color:#fff;
+    padding:9px 16px;
+    border-radius:9px;
+    cursor:pointer;
+    align-self:flex-start;
+  }
+  .copy-code-btn:hover{opacity:.9;}
+
+  .sheet-toggle-btn:hover{border-color:var(--keimanan); color:var(--keimanan);}
+
+  .sheet-modal-box{
+    background:var(--card);
+    border-radius:14px;
+    max-width:520px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:0 0 18px;
+  }
+  .sheet-modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+    background:var(--keimanan-bg);
+    color:var(--keimanan);
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    border-radius:14px 14px 0 0;
+  }
+  .sheet-modal-box .code-modal-close{color:var(--keimanan);}
+  .sheet-steps{
+    margin:14px 20px 10px;
+    padding-left:20px;
+    font-size:13.5px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .sheet-steps li{margin-bottom:6px;}
+  .sheet-steps code{
+    background:#F1EFE8;
+    padding:2px 5px;
+    border-radius:5px;
+    font-size:12px;
+  }
+  .sheet-url-input{
+    display:block;
+    width:calc(100% - 40px);
+    margin:6px 20px 12px;
+    padding:10px 12px;
+    font-size:13.5px;
+    font-family:'Nunito',sans-serif;
+    border:1.5px solid var(--line);
+    border-radius:9px;
+    box-sizing:border-box;
+  }
+  .sheet-url-input:focus{border-color:var(--keimanan); outline:none;}
+  .sheet-modal-box .copy-code-btn{background:var(--keimanan); margin:0 20px 10px;}
+  .sheet-status{
+    margin:0 20px 8px;
+    font-size:13px;
+    font-weight:700;
+    min-height:18px;
+  }
+  .sheet-status.ok{color:var(--keimanan);}
+  .sheet-status.warn{color:#B5750F;}
+  .sheet-status.err{color:#C24141;}
+  .sheet-note{
+    margin:0 20px;
+    font-size:12px;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
 
   @media (max-width:480px){
     .hero{padding:40px 16px 30px;}
     .panel-intro{flex-direction:column; gap:8px;}
   }
+
+
 
 
 </style>
@@ -576,13 +750,411 @@
 <main id="main"></main>
 
 <footer>
-  Dibuat dengan <span class="heart">♥</span> untuk tumbuh kembang si kecil — cetak, gunakan, dan sesuaikan bebas untuk kebutuhan belajar di rumah atau sekolah.
+  <div>Dibuat dengan <span class="heart">♥</span> untuk tumbuh kembang si kecil — cetak, gunakan, dan sesuaikan bebas untuk kebutuhan belajar di rumah atau sekolah.</div>
+  <div class="footer-bottom">
+    <button type="button" id="show-code-btn" class="code-toggle-btn">📄 Lihat Kode Apps Script (Code.gs)</button>
+    <button type="button" id="show-sheet-btn" class="code-toggle-btn sheet-toggle-btn">🔗 Sambungkan Google Sheets</button>
+    <span class="version-tag">Versi 1.0</span>
+  </div>
 </footer>
+
+<div id="code-modal" class="code-modal">
+  <div class="code-modal-box">
+    <div class="code-modal-head">
+      <span>📄 Code.gs — Tracker Evaluasi Google Spreadsheet</span>
+      <button type="button" id="close-code-btn" class="code-modal-close">✕</button>
+    </div>
+    <p class="code-modal-hint">Salin (Copy) kode ini, lalu tempel di Google Sheets → Extensions → Apps Script (lihat README di bagian penjelasan sebelumnya untuk langkah lengkap).</p>
+    <div class="code-modal-body-wrap">
+      <pre><code id="code-modal-body"></code></pre>
+    </div>
+    <button type="button" id="copy-code-btn" class="copy-code-btn">📋 Copy Kode</button>
+  </div>
+</div>
+
+<div id="sheet-modal" class="code-modal">
+  <div class="sheet-modal-box">
+    <div class="sheet-modal-head">
+      <span>🔗 Sambungkan ke Google Sheets</span>
+      <button type="button" id="close-sheet-btn" class="code-modal-close">✕</button>
+    </div>
+    <ol class="sheet-steps">
+      <li>Buka Google Sheets yang sudah berisi <b>Code.gs</b> (lihat tombol "Lihat Kode Apps Script" di footer).</li>
+      <li>Di Apps Script editor: <b>Deploy → New deployment</b> → pilih tipe <b>Web app</b>.</li>
+      <li>Execute as: <b>Me</b>. Who has access: <b>Anyone</b>. Klik <b>Deploy</b>, izinkan akses.</li>
+      <li>Copy URL Web App yang muncul (bentuknya <code>https://script.google.com/macros/s/.../exec</code>), tempel di bawah ini.</li>
+    </ol>
+    <input type="url" id="sheet-url-input" class="sheet-url-input" placeholder="https://script.google.com/macros/s/..../exec">
+    <button type="button" id="save-sheet-btn" class="copy-code-btn">💾 Simpan &amp; Sambungkan</button>
+    <p id="sheet-status" class="sheet-status"></p>
+    <p class="sheet-note">Setelah tersambung, setiap kali kamu klik BB/MB/BSH/BSB pada indikator, nilainya otomatis terkirim dan tersimpan ke Google Sheets ini — tidak hanya di browser.</p>
+  </div>
+</div>
+
+<script type="text/plain" id="gs-code-raw">/**
+ * TRACKER BUKU AJAR SI KECIL (4-5 TAHUN)
+ * -----------------------------------------
+ * Cara pakai:
+ * 1. Buka Google Sheets baru -> Extensions > Apps Script.
+ * 2. Hapus isi Code.gs bawaan, tempel seluruh isi file ini.
+ * 3. Klik Run > buatTrackerLengkap (izinkan akses saat diminta).
+ * 4. Kembali ke Spreadsheet, akan muncul sheet "Ringkasan" + 5 sheet
+ *    per aspek (Numerik, Spasial, Logika, Memori, Keimanan ala NU),
+ *    masing-masing 12 bulan lengkap dengan:
+ *      - 3 indikator pencapaian per bulan
+ *      - Dropdown nilai rubrik: BB / MB / BSH / BSB (standar PAUD)
+ *      - Rata-rata skor & status otomatis (Tercapai/Berkembang/Perlu Latihan)
+ *      - Kolom tanggal evaluasi & catatan orang tua/guru
+ * 5. Menu custom "📚 Tracker Anak" muncul di Spreadsheet untuk
+ *    membuat ulang atau mereset nilai kapan saja.
+ * 6. Untuk menyambungkan langsung dari halaman index.html (agar klik
+ *    BB/MB/BSH/BSB di web langsung tersimpan ke Spreadsheet ini),
+ *    baca bagian "WEB APP: JEMBATAN KE HTML" di bagian bawah file ini.
+ *
+ * RUBRIK PENILAIAN (skala umum PAUD di Indonesia):
+ *   BB  = Belum Berkembang           (skor 1)
+ *   MB  = Mulai Berkembang           (skor 2)
+ *   BSH = Berkembang Sesuai Harapan  (skor 3)
+ *   BSB = Berkembang Sangat Baik     (skor 4)
+ * Status bulan "Tercapai" jika rata-rata skor indikator >= 3 (BSH).
+ */
+
+const KURIKULUM = {
+  "Numerik": {
+    emoji: "🔢",
+    warna: "#3C7CD9",
+    bulan: [
+      ['Mengenal Angka 1–5', 'Anak mampu mengenali, menyebut, dan menunjuk angka 1 sampai 5.', 'Berhitung menggunakan jari tangan; Mencocokkan angka dengan jumlah benda (buah, mainan); Menyanyikan lagu angka 1–5; Bermain kartu angka besar berwarna', ['Anak mampu menyebutkan angka 1 sampai 5 secara berurutan', 'Anak mampu menunjuk angka yang disebutkan (1–5)', 'Anak mampu menghitung benda hingga 5 dengan tepat']],
+      ['Mengenal Angka 6–10', 'Anak mampu mengenali dan mengurutkan angka 6 sampai 10.', 'Berhitung kelereng atau kancing; Menempel stiker sesuai jumlah angka; Permainan lompat angka di lantai; Menyusun kartu angka 1–10 berurutan', ['Anak mampu menyebutkan angka 6 sampai 10 secara berurutan', 'Anak mampu mengurutkan kartu angka 1–10', 'Anak mampu menghitung benda hingga 10 dengan tepat']],
+      ['Membandingkan Jumlah', 'Anak memahami konsep lebih banyak, lebih sedikit, dan sama banyak.', 'Membandingkan dua kelompok benda; Permainan "mana yang lebih banyak?"; Menyusun benda dari sedikit ke banyak; Bermain timbangan sederhana dari gantungan baju', ['Anak mampu menunjukkan kelompok benda yang lebih banyak/sedikit', 'Anak mampu menyusun benda dari sedikit ke banyak', 'Anak mampu menjelaskan alasan pilihannya dengan kata sederhana']],
+      ['Konsep Ukuran & Panjang', 'Anak mengenal konsep besar-kecil, panjang-pendek, dan tinggi-rendah.', 'Mengurutkan pensil dari pendek ke panjang; Membandingkan tinggi badan dengan teman; Menyortir mainan besar dan kecil; Membuat bentuk panjang-pendek dari playdough', ['Anak mampu mengurutkan benda dari pendek ke panjang', 'Anak mampu membedakan besar-kecil dengan tepat', 'Anak mampu menggunakan kata "lebih tinggi/rendah" dengan benar']],
+      ['Mengenal Angka 11–15', 'Anak mampu mengenali dan menulis angka 11 sampai 15.', 'Menulis angka di atas pasir atau tepung; Permainan kartu angka berpasangan; Menghitung jumlah anak tangga rumah; Menempelkan angka pada gambar yang sesuai', ['Anak mampu menyebutkan angka 11–15 dengan benar', 'Anak mampu menuliskan angka 11–15 meski belum sempurna', 'Anak mampu mencocokkan angka dengan jumlah benda 11–15']],
+      ['Mengenal Angka 16–20', 'Anak mampu mengenali angka 16 sampai 20 dan menghitung mundur sederhana.', 'Bermain ular tangga sederhana 1–20; Menghitung mundur dari 20 ke 1 sambil bertepuk; Menyusun puzzle angka 11–20; Berlomba menunjuk angka yang disebutkan', ['Anak mampu menyebutkan angka 16–20 secara berurutan', 'Anak mampu berhitung mundur dari 20 hingga 1 dengan bantuan', 'Anak mampu menunjuk angka acak antara 11–20']],
+      ['Penjumlahan Sederhana (1–5)', 'Anak memahami konsep menambah menggunakan benda konkret.', 'Menggabungkan dua kelompok kelereng lalu menghitung; Cerita bergambar "2 apel ditambah 1 apel"; Permainan dadu kecil angka 1–3; Mengisi lembar kerja bergambar penjumlahan', ['Anak mampu menggabungkan dua kelompok benda dan menghitung totalnya (maks. 5)', 'Anak mampu menceritakan proses penjumlahan sederhana', 'Anak mampu menjawab soal penjumlahan bergambar']],
+      ['Pengurangan Sederhana (1–5)', 'Anak memahami konsep berkurang menggunakan benda konkret.', 'Cerita bergambar tentang benda yang berkurang; Permainan balon: pecahkan lalu hitung sisa; Menggunakan jari untuk pengurangan sederhana; Kartu soal bergambar pengurangan', ['Anak mampu mengurangi benda konkret dan menyebutkan sisanya', 'Anak mampu menjawab soal pengurangan bergambar sederhana', 'Anak mampu menggunakan jari untuk membantu menghitung pengurangan']],
+      ['Mengenal Pola & Urutan Angka', 'Anak mampu mengenali pola angka dan menebak angka berikutnya.', 'Bermain menyusun angka yang hilang; Permainan "angka berikutnya berapa?"; Lagu pola angka genap dan ganjil sederhana; Menyusun angka naik dan turun bergantian', ['Anak mampu melengkapi angka yang hilang dalam suatu urutan', 'Anak mampu menyebutkan angka berikutnya dari suatu pola', 'Anak mampu mengenali pola angka genap/ganjil sederhana']],
+      ['Mengenal Uang Mainan', 'Anak mengenal bentuk uang dan konsep tukar sederhana.', 'Mengenal koin dan uang kertas mainan; Bermain pasar-pasaran di rumah; Menghitung uang mainan sederhana; Diskusi konsep membeli dan menukar barang', ['Anak mampu mengenali bentuk koin dan uang kertas mainan', 'Anak mampu bermain peran jual-beli sederhana', 'Anak mampu menghitung jumlah uang mainan secara sederhana']],
+      ['Mengenal Waktu Sederhana', 'Anak mengenal konsep pagi, siang, malam, dan jam bulat.', 'Membuat jadwal harian bergambar; Bermain jam mainan menunjuk jam bulat; Diskusi kegiatan pagi, siang, dan malam; Lagu tentang waktu dan kegiatan sehari-hari', ['Anak mampu membedakan kegiatan pagi, siang, dan malam', 'Anak mampu menunjukkan jam bulat pada jam mainan', 'Anak mampu menyusun jadwal harian bergambar sendiri']],
+      ['Review & Proyek Angka', 'Anak mampu menggabungkan seluruh kemampuan numerik yang telah dipelajari.', 'Permainan papan angka gabungan; Kuis angka bergambar berhadiah bintang; Proyek "toko-tokoan" menghitung uang dan barang; Pentas kecil menyanyikan lagu angka', ['Anak mampu mengulang kemampuan berhitung 1–20 secara keseluruhan', 'Anak mampu menyelesaikan kuis angka bergambar secara mandiri', 'Anak mampu bermain proyek "toko-tokoan" menggunakan angka dan uang mainan']],
+    ]
+  },
+  "Spasial": {
+    emoji: "🧩",
+    warna: "#8A5CF6",
+    bulan: [
+      ['Bentuk Dasar (Lingkaran, Segitiga, Persegi)', 'Anak mampu mengenali dan menyebut nama bentuk dasar.', 'Mencari benda berbentuk sama di rumah; Menempel bentuk pada gambar yang sesuai; Bermain puzzle bentuk sederhana; Mewarnai bentuk dasar dengan warna berbeda', ['Anak mampu menyebutkan nama bentuk lingkaran, segitiga, dan persegi', 'Anak mampu menunjuk benda berbentuk sama di sekitarnya', 'Anak mampu mewarnai bentuk sesuai instruksi']],
+      ['Bentuk Lanjutan (Persegi Panjang, Oval, Bintang, Hati)', 'Anak mengenal bentuk-bentuk tambahan di sekitarnya.', 'Menjiplak bentuk menggunakan cetakan; Menyusun bentuk menjadi gambar baru (rumah, mobil); Permainan tebak bentuk dari sentuhan (mata tertutup); Kolase bentuk dari kertas warna', ['Anak mampu menyebutkan bentuk persegi panjang, oval, bintang, dan hati', 'Anak mampu menyusun beberapa bentuk menjadi satu gambar baru', 'Anak mampu menebak bentuk melalui perabaan sederhana']],
+      ['Konsep Arah (Atas-Bawah-Kiri-Kanan)', 'Anak memahami dan mempraktikkan konsep arah sederhana.', 'Permainan "Simon Says" dengan instruksi arah; Menyusun mainan sesuai instruksi arah; Menggambar tanda panah arah; Permainan petak umpet dengan petunjuk arah', ['Anak mampu mengikuti instruksi arah atas-bawah-kiri-kanan', 'Anak mampu menggambar tanda arah dengan benar', 'Anak mampu menyusun benda sesuai posisi arah yang diminta']],
+      ['Puzzle 4–6 Keping', 'Anak mampu menyusun puzzle sederhana secara mandiri.', 'Menyusun puzzle bertema hewan; Membuat puzzle sendiri dari kartu gambar yang dipotong; Lomba puzzle dengan teman; Menyusun puzzle sambil bercerita gambarnya', ['Anak mampu menyusun puzzle 4–6 keping secara mandiri', 'Anak mampu menyelesaikan puzzle dalam waktu yang wajar', 'Anak mampu menceritakan gambar hasil puzzle yang disusun']],
+      ['Menyusun Balok Sesuai Contoh', 'Anak mampu meniru susunan balok atau lego dari contoh gambar.', 'Membangun menara dari balok; Meniru bangunan sederhana dari gambar; Bermain lego bebas dengan tema tertentu; Membandingkan hasil bangunan dengan contoh', ['Anak mampu meniru susunan balok dari contoh gambar', 'Anak mampu membangun menara balok yang stabil', 'Anak mampu membandingkan hasil karyanya dengan contoh']],
+      ['Posisi (Dalam-Luar, Depan-Belakang)', 'Anak memahami konsep posisi benda terhadap benda lain.', 'Permainan menyembunyikan benda di dalam/luar kotak; Menyusun mainan sesuai posisi yang diminta; Instruksi posisi bertahap (di depan, di belakang); Bermain kotak berlapis untuk konsep dalam-luar', ['Anak mampu menjelaskan posisi benda (dalam-luar, depan-belakang)', 'Anak mampu menyembunyikan dan menemukan benda sesuai instruksi posisi', 'Anak mampu mengikuti instruksi posisi secara bertahap']],
+      ['Menggambar & Meniru Bentuk Geometri', 'Anak mampu menjiplak dan menggambar bentuk geometri sederhana.', 'Menjiplak bentuk menggunakan penggaris bentuk; Menggambar bebas menggunakan bentuk dasar; Mewarnai pola geometri berulang; Membuat gambar wajah dari gabungan bentuk', ['Anak mampu menjiplak bentuk geometri dengan rapi', 'Anak mampu menggambar bebas menggunakan bentuk-bentuk dasar', 'Anak mampu mewarnai pola geometri berulang dengan konsisten']],
+      ['Puzzle 8–12 Keping', 'Anak mampu menyusun puzzle dengan tingkat kesulitan lebih tinggi.', 'Menyusun puzzle bertema kendaraan; Puzzle berkelompok bersama teman; Mengatur waktu menyusun puzzle; Puzzle berdasarkan cerita bergambar', ['Anak mampu menyusun puzzle 8–12 keping', 'Anak mampu bekerja sama menyusun puzzle secara berkelompok', 'Anak mampu menyelesaikan puzzle bertema tertentu']],
+      ['Melipat Kertas Sederhana (Origami Dasar)', 'Anak melatih koordinasi tangan dan pemahaman ruang lewat lipatan kertas.', 'Melipat topi dari kertas; Melipat perahu kertas sederhana; Melipat pesawat kertas; Bermain dengan hasil lipatan yang dibuat', ['Anak mampu melipat kertas menjadi bentuk sederhana (topi/perahu/pesawat)', 'Anak mampu mengikuti langkah lipatan secara berurutan', 'Anak mampu menjaga kerapian hasil lipatannya']],
+      ['Membaca Denah Sederhana', 'Anak mengenal konsep denah dan posisi benda dalam ruang.', 'Membuat denah sederhana kamar tidur; Permainan harta karun dengan peta gambar; Menandai posisi benda pada denah kelas; Diskusi arah dari satu ruangan ke ruangan lain', ['Anak mampu membuat denah sederhana kamar atau kelas', 'Anak mampu menemukan benda menggunakan peta gambar', 'Anak mampu menjelaskan arah dari satu ruang ke ruang lain']],
+      ['Menyusun Balok 3D sesuai Gambar', 'Anak mampu meniru bentuk tiga dimensi dari kartu contoh.', 'Membangun rumah-rumahan dari balok; Meniru bentuk 3D dari kartu contoh bergambar; Membandingkan bentuk 2D dan 3D; Bermain membangun bersama teman', ['Anak mampu meniru bentuk 3D dari kartu contoh', 'Anak mampu membedakan bentuk 2D dan bentuk 3D', 'Anak mampu bekerja sama membangun bersama teman']],
+      ['Review & Proyek Spasial', 'Anak mampu menerapkan seluruh kemampuan spasial dalam satu proyek.', 'Membuat miniatur rumah atau kota dari kardus dan balok; Pameran kecil hasil karya; Permainan estafet spasial antar kelompok; Cerita tentang miniatur yang telah dibuat', ['Anak mampu membuat miniatur sederhana dari kardus/balok', 'Anak mampu menceritakan hasil karya spasial yang dibuatnya', 'Anak mampu mengikuti permainan estafet spasial secara berkelompok']],
+    ]
+  },
+  "Logika": {
+    emoji: "💡",
+    warna: "#E08A1E",
+    bulan: [
+      ['Mengelompokkan Berdasarkan Warna', 'Anak mampu mengelompokkan benda berdasarkan warna.', 'Menyortir manik atau mainan berdasarkan warna; Lomba kelompok warna antar teman; Bernyanyi lagu warna sambil menunjuk benda; Mengurutkan warna pelangi sederhana', ['Anak mampu mengelompokkan benda berdasarkan warna', 'Anak mampu menyebutkan alasan pengelompokan yang dipilih', 'Anak mampu mengurutkan warna pelangi secara sederhana']],
+      ['Mengelompokkan Bentuk & Ukuran', 'Anak mampu mengelompokkan benda berdasarkan bentuk dan ukuran.', 'Menyortir kancing berdasarkan bentuk; Permainan tebak kelompok benda; Menyusun benda dari kecil ke besar dalam kelompok; Diskusi alasan pengelompokan yang dipilih', ['Anak mampu mengelompokkan benda berdasarkan bentuk dan ukuran', 'Anak mampu mengurutkan benda dari kecil ke besar', 'Anak mampu menjelaskan dasar pengelompokan yang digunakan']],
+      ['Pola Sederhana AB-AB', 'Anak mampu mengenali dan melanjutkan pola dua elemen.', 'Menyusun manik dengan pola warna AB-AB; Menebak pola lanjutan pada barisan benda; Permainan tepuk tangan berpola; Menggambar pola sederhana di kertas', ['Anak mampu melanjutkan pola dua elemen (AB-AB)', 'Anak mampu menyusun pola sederhana secara mandiri', 'Anak mampu menebak pola yang dibuat oleh temannya']],
+      ['Pola Lanjutan ABC-ABC', 'Anak mampu mengenali dan melanjutkan pola tiga elemen.', 'Menyusun balok dengan pola tiga warna; Permainan kartu pola berurutan; Menebak benda yang hilang dalam pola; Membuat pola sendiri lalu diminta teman menebak', ['Anak mampu melanjutkan pola tiga elemen (ABC-ABC)', 'Anak mampu menemukan benda yang hilang dalam suatu pola', 'Anak mampu membuat pola baru secara mandiri']],
+      ['Sebab Akibat Sederhana', 'Anak memahami hubungan sebab dan akibat dalam kehidupan sehari-hari.', 'Diskusi cerita "kalau hujan, maka..."; Eksperimen sederhana air dan pasir; Diskusi gambar sebab-akibat; Permainan tebak akibat dari suatu kejadian', ['Anak mampu menjelaskan hubungan sebab-akibat sederhana dari cerita/gambar', 'Anak mampu memprediksi akibat dari suatu kejadian', 'Anak mampu mengikuti eksperimen sederhana dengan penuh perhatian']],
+      ['Mencari Benda yang Berbeda (Ganjil Satu)', 'Anak mampu mengidentifikasi benda yang berbeda dari kelompoknya.', 'Permainan "yang beda sendiri" dari benda nyata; Mengerjakan lembar kerja gambar; Kuis kelompok mencari perbedaan; Diskusi alasan memilih benda yang berbeda', ['Anak mampu menemukan benda yang berbeda dari kelompoknya', 'Anak mampu menjelaskan alasan perbedaan yang ditemukan', 'Anak mampu menyelesaikan kuis "yang beda sendiri" secara mandiri']],
+      ['Sortir Berdasarkan Kategori', 'Anak mampu mengelompokkan benda berdasarkan kategori umum.', 'Mengelompokkan gambar hewan, buah, dan kendaraan; Permainan memori berbasis kategori; Bermain peran di pasar mengelompokkan barang; Menyusun kartu kategori bersama', ['Anak mampu mengelompokkan benda berdasarkan kategori umum (hewan/buah/kendaraan)', 'Anak mampu bermain peran sesuai kategori yang ditentukan', 'Anak mampu menjelaskan ciri-ciri tiap kategori']],
+      ['Tebak-tebakan Sederhana', 'Anak mampu menebak benda dari ciri-ciri yang diberikan.', 'Teka-teki ciri-ciri hewan atau benda; Permainan tanya-jawab sederhana untuk menebak; Menggambar jawaban tebakan; Bergantian menjadi pemberi dan penebak', ['Anak mampu menebak benda dari ciri-ciri yang diberikan', 'Anak mampu memberikan ciri-ciri benda untuk ditebak temannya', 'Anak mampu menjawab teka-teki sederhana dengan tepat']],
+      ['Menyusun Cerita dari Urutan Gambar', 'Anak mampu menyusun urutan kejadian dari gambar acak.', 'Menyusun kartu cerita menjadi urutan yang benar; Menceritakan ulang urutan kejadian; Drama sederhana berdasarkan cerita gambar; Diskusi "apa yang terjadi selanjutnya?"', ['Anak mampu menyusun kartu cerita menjadi urutan yang benar', 'Anak mampu menceritakan ulang urutan kejadian dengan kata sendiri', 'Anak mampu memprediksi kejadian selanjutnya dalam cerita']],
+      ['Memecahkan Masalah Sehari-hari', 'Anak mampu memikirkan solusi sederhana atas suatu masalah.', 'Diskusi skenario sederhana (mainan hilang, dll); Bermain simulasi mencari solusi bersama; Cerita tentang tokoh yang memecahkan masalah; Latihan bertanya "bagaimana caranya?"', ['Anak mampu memberikan usulan solusi sederhana atas suatu masalah', 'Anak mampu mengikuti simulasi pemecahan masalah bersama', 'Anak mampu menjelaskan langkah penyelesaian dengan kata sendiri']],
+      ['Permainan Strategi Sederhana', 'Anak mampu memahami aturan dan giliran dalam permainan strategi.', 'Bermain congklak mini; Bermain ular tangga bersama; Latihan mengikuti aturan dan menunggu giliran; Diskusi strategi sederhana yang digunakan', ['Anak mampu mengikuti aturan permainan strategi sederhana', 'Anak mampu menunggu giliran dengan baik', 'Anak mampu menjelaskan strategi yang digunakannya']],
+      ['Review & Tantangan Logika Gabungan', 'Anak mampu menggabungkan seluruh kemampuan logika yang telah dipelajari.', 'Lomba logika antar kelompok kecil; Kuis besar akhir tahun bertema logika; Membuat permainan logika sederhana sendiri; Pameran hasil karya berpikir anak selama setahun', ['Anak mampu mengikuti tantangan logika gabungan dengan percaya diri', 'Anak mampu menjelaskan proses berpikirnya dalam menyelesaikan tantangan', 'Anak mampu bekerja sama dalam lomba logika berkelompok']],
+    ]
+  },
+  "Memori": {
+    emoji: "🧠",
+    warna: "#D9497B",
+    bulan: [
+      ['Mengingat 2–3 Benda', 'Anak mampu mengingat 2 sampai 3 benda yang ditunjukkan.', 'Permainan "apa yang hilang?"; Menunjukkan beberapa benda lalu ditutup kain; Menebak benda yang disembunyikan; Mengulang menyebutkan nama benda yang diingat', ['Anak mampu mengingat 2–3 benda yang ditunjukkan', 'Anak mampu menyebutkan benda yang hilang dari kelompoknya', 'Anak mampu berkonsentrasi selama permainan berlangsung']],
+      ['Kartu Memori (Matching) 4 Pasang', 'Anak mampu mencocokkan pasangan kartu bergambar sederhana.', 'Bermain kartu memori 4 pasang; Mencari pasangan gambar yang sama; Permainan berkelompok bergantian giliran; Diskusi gambar pada kartu yang ditemukan', ['Anak mampu mencocokkan 4 pasang kartu memori', 'Anak mampu menunggu giliran dalam permainan kelompok', 'Anak mampu menyebutkan gambar pada kartu yang ditemukan']],
+      ['Mengingat Urutan 2 Langkah Instruksi', 'Anak mampu mengikuti dan mengingat instruksi dua langkah.', 'Permainan "ambil bola lalu taruh di keranjang"; Latihan instruksi sehari-hari dua tahap; Permainan estafet instruksi sederhana; Mengulang instruksi sebelum melaksanakan', ['Anak mampu mengikuti instruksi dua langkah dengan benar', 'Anak mampu mengulang instruksi sebelum melaksanakannya', 'Anak mampu menyelesaikan tugas sesuai urutan yang diminta']],
+      ['Mengulang Cerita Pendek', 'Anak mampu mengingat dan menceritakan ulang cerita pendek.', 'Mendengarkan cerita pendek bergambar; Menceritakan ulang dengan kata-kata sendiri; Tanya jawab seputar isi cerita; Menggambar adegan yang paling diingat', ['Anak mampu menceritakan ulang cerita pendek dengan kata sendiri', 'Anak mampu menjawab pertanyaan seputar isi cerita', 'Anak mampu menggambar adegan yang paling diingat']],
+      ['Menghafal Nama Anggota Keluarga', 'Anak mampu menyebutkan nama-nama anggota keluarga inti.', 'Bermain dengan foto keluarga; Menyanyikan lagu nama anggota keluarga; Membuat silsilah keluarga sederhana bergambar; Tanya jawab seputar anggota keluarga', ['Anak mampu menyebutkan nama-nama anggota keluarga inti', 'Anak mampu menjelaskan hubungan keluarga secara sederhana', 'Anak mampu menyanyikan lagu nama anggota keluarga']],
+      ['Kartu Memori 6 Pasang', 'Anak mampu bermain memori dengan jumlah kartu lebih banyak.', 'Bermain kartu memori 6 pasang; Permainan berkelompok dengan waktu terbatas; Mencatat berapa kali percobaan hingga berhasil; Bermain ulang untuk melihat peningkatan', ['Anak mampu mencocokkan 6 pasang kartu memori', 'Anak mampu menyelesaikan permainan dalam waktu yang semakin singkat', 'Anak mampu menggunakan strategi mengingat posisi kartu']],
+      ['Mengingat Urutan 3 Langkah Instruksi', 'Anak mampu mengikuti dan mengingat instruksi tiga langkah.', 'Permainan Simon Says versi lanjutan; Instruksi harian tiga tahap (ambil, bawa, letakkan); Permainan estafet instruksi berkelompok; Mengulang instruksi dengan suara lantang', ['Anak mampu mengikuti instruksi tiga langkah dengan benar', 'Anak mampu mengulang instruksi dengan lantang sebelum bertindak', 'Anak mampu menyelesaikan tugas tiga tahap secara berurutan']],
+      ['Menghafal Lagu Anak Pendek', 'Anak mampu menghafal lagu anak sederhana empat baris.', 'Belajar lagu anak baris demi baris; Gerak dan lagu bersama; Tepuk tangan mengikuti irama hafalan; Tampil menyanyikan lagu di depan keluarga', ['Anak mampu menghafal lagu anak 4 baris', 'Anak mampu menyanyikan lagu dengan gerakan yang sesuai', 'Anak mampu tampil menyanyi di depan orang lain']],
+      ['Mengingat Detail Gambar (Spot the Difference)', 'Anak mampu mengenali perbedaan detail pada dua gambar mirip.', 'Permainan mencari perbedaan gambar; Latihan pengamatan pada benda sehari-hari; Diskusi detail yang berhasil ditemukan; Membuat gambar sendiri dengan sedikit perbedaan', ['Anak mampu menemukan perbedaan pada dua gambar yang mirip', 'Anak mampu menjelaskan detail perbedaan yang ditemukan', 'Anak mampu berkonsentrasi mengamati gambar dengan teliti']],
+      ['Menghafal Alamat Rumah & Nama Orang Tua', 'Anak mampu menyebutkan alamat rumah dan nama orang tua sebagai bekal keamanan diri.', 'Latihan tanya jawab alamat rumah; Menghafal nama lengkap ayah dan ibu; Lagu sederhana tentang alamat rumah; Bermain peran situasi bertanya arah pulang', ['Anak mampu menyebutkan alamat rumah dengan benar', 'Anak mampu menyebutkan nama lengkap ayah dan ibu', 'Anak mampu mempraktikkan situasi bertanya arah pulang']],
+      ['Kartu Memori 8 Pasang', 'Anak mampu bermain memori pada tingkat yang lebih menantang.', 'Bermain kartu memori 8 pasang; Kompetisi memori antar teman; Mencatat waktu dan jumlah percobaan; Refleksi strategi mengingat yang digunakan', ['Anak mampu mencocokkan 8 pasang kartu memori', 'Anak mampu menjelaskan strategi mengingat yang digunakan', 'Anak mampu bermain kompetisi memori dengan sportif']],
+      ['Review & Tantangan Memori Gabungan', 'Anak mampu menggabungkan seluruh kemampuan memori yang telah dilatih.', 'Lomba memori antar anak; Kuis akhir tahun bertema daya ingat; Permainan estafet ingatan berkelompok; Perayaan kecil pencapaian belajar setahun', ['Anak mampu mengikuti tantangan memori gabungan dengan percaya diri', 'Anak mampu menunjukkan peningkatan daya ingat dibanding awal tahun', 'Anak mampu bekerja sama dalam permainan estafet ingatan']],
+    ]
+  },
+  "Keimanan ala NU": {
+    emoji: "🌙",
+    warna: "#1E9A6B",
+    bulan: [
+      ['Kalimat Thayyibah', 'Anak terbiasa mengucapkan kalimat thayyibah dalam kegiatan sehari-hari.', 'Mengenal ucapan Bismillah, Alhamdulillah, Masyaallah, InsyaAllah; Lagu kalimat thayyibah bersama; Kartu bergambar makna setiap kalimat; Membiasakan ucapan sesuai konteks kegiatan', ['Anak mampu mengucapkan kalimat thayyibah sesuai konteks kegiatan', 'Anak mampu menjelaskan arti sederhana dari tiap kalimat', 'Anak mampu membiasakan ucapan tersebut tanpa diingatkan']],
+      ['Rukun Islam', 'Anak mengenal lima rukun Islam secara sederhana.', 'Lagu rukun Islam dengan gerakan jari; Cerita bergambar setiap rukun; Bermain kartu urutan rukun Islam; Diskusi sederhana makna masing-masing rukun', ['Anak mampu menyebutkan lima rukun Islam secara berurutan', 'Anak mampu menjelaskan makna sederhana tiap rukun', 'Anak mampu menyanyikan lagu rukun Islam']],
+      ['Rukun Iman', 'Anak mengenal enam rukun iman secara sederhana.', 'Lagu rukun iman yang mudah diingat; Cerita tentang ciptaan Allah di sekitar anak; Mengenal malaikat lewat kisah sederhana; Diskusi ringan tentang kitab dan rasul Allah', ['Anak mampu menyebutkan enam rukun iman secara berurutan', 'Anak mampu menceritakan salah satu ciptaan Allah yang diketahuinya', 'Anak mampu menjelaskan siapa malaikat secara sederhana']],
+      ['Doa Harian Sederhana', 'Anak hafal dan terbiasa membaca doa harian sederhana.', 'Doa sebelum dan sesudah makan; Doa sebelum tidur dan bangun tidur; Kartu doa bergambar untuk ditempel di kamar; Pembiasaan doa setiap hari bersama orang tua', ['Anak mampu membaca doa sebelum dan sesudah makan', 'Anak mampu membaca doa sebelum tidur dan bangun tidur', 'Anak mampu membiasakan doa tanpa diingatkan']],
+      ['Adab Sehari-hari', 'Anak memahami dan mempraktikkan adab dasar dalam keseharian.', 'Adab makan dan minum sesuai contoh; Membiasakan mengucap salam saat bertemu; Adab kepada orang tua dan guru; Permainan peran mempraktikkan adab', ['Anak mampu mempraktikkan adab makan dan minum yang baik', 'Anak mampu mengucap salam saat bertemu orang lain', 'Anak mampu menunjukkan sikap sopan kepada orang tua dan guru']],
+      ['Mengenal Shalawat & Cinta Nabi', 'Anak mengenal shalawat pendek dan kisah teladan Nabi Muhammad.', 'Menghafal shalawat pendek bersama; Kisah teladan Nabi untuk anak-anak; Lagu shalawat anak yang ceria; Diskusi sifat baik yang bisa dicontoh', ['Anak mampu menghafal shalawat pendek', 'Anak mampu menceritakan salah satu kisah teladan Nabi Muhammad', 'Anak mampu menyebutkan sifat baik yang bisa dicontoh dari Nabi']],
+      ['Mengenal Huruf Hijaiyah (Tahap Awal)', 'Anak mengenal huruf hijaiyah dari alif hingga bertahap.', 'Lagu huruf hijaiyah tahap awal; Kartu huruf hijaiyah bergambar; Menjiplak dan mewarnai huruf hijaiyah; Permainan tebak huruf hijaiyah', ['Anak mampu menyebutkan beberapa huruf hijaiyah tahap awal', 'Anak mampu menunjuk huruf hijaiyah yang disebutkan', 'Anak mampu menjiplak dan mewarnai huruf hijaiyah dengan rapi']],
+      ['Praktik Wudhu & Pengenalan Gerakan Sholat', 'Anak mengenal tahapan wudhu sederhana dan gerakan sholat dasar.', 'Mengenal langkah-langkah wudhu sederhana; Lagu tata cara wudhu; Meniru gerakan sholat bersama; Praktik sederhana didampingi orang tua', ['Anak mampu menyebutkan urutan wudhu secara sederhana', 'Anak mampu meniru gerakan sholat dasar', 'Anak mampu mempraktikkan wudhu sederhana dengan bimbingan']],
+      ['Mengenal Asmaul Husna (5 Nama Pertama)', 'Anak mengenal lima Asmaul Husna pertama beserta makna sederhananya.', 'Lagu Asmaul Husna: Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus, As-Salam; Cerita makna sederhana setiap nama; Kartu bergambar Asmaul Husna; Diskusi rasa syukur atas kasih sayang Allah', ['Anak mampu menyebutkan 5 Asmaul Husna pertama', 'Anak mampu menjelaskan makna sederhana salah satu nama', 'Anak mampu menunjukkan rasa syukur atas kasih sayang Allah']],
+      ['Nilai-nilai Ke-NU-an: Tasamuh & Ta\'awun', 'Anak mengenal sikap toleransi dan tolong-menolong sejak dini.', 'Cerita tentang sikap saling menghargai teman; Praktik berbagi mainan dan makanan; Permainan kerja sama kelompok; Diskusi sederhana tentang hidup rukun', ['Anak mampu menunjukkan sikap berbagi dengan teman', 'Anak mampu bekerja sama dalam permainan kelompok', 'Anak mampu menjelaskan pentingnya hidup rukun dengan kata sederhana']],
+      ['Mengenal Hari Besar & Tradisi Keluarga', 'Anak mengenal Idul Fitri, silaturahmi, dan doa untuk keluarga sesuai usia.', 'Mengenal makna Idul Fitri dan silaturahmi; Praktik bersalaman dan meminta maaf; Doa sederhana untuk kakek, nenek, dan keluarga; Cerita tentang menghormati orang tua dan leluhur', ['Anak mampu menjelaskan makna sederhana Idul Fitri', 'Anak mampu mempraktikkan bersalaman dan meminta maaf', 'Anak mampu membaca doa sederhana untuk keluarga']],
+      ['Review & Pembiasaan Akhlak Mulia', 'Anak konsisten mempraktikkan doa, adab, dan kalimat thayyibah sehari-hari.', 'Pembiasaan doa harian secara mandiri; Praktik adab dan kalimat thayyibah dalam keseharian; Pentas kecil hafalan doa dan shalawat; Perayaan pencapaian belajar keimanan setahun', ['Anak mampu mempraktikkan doa harian secara mandiri', 'Anak mampu menunjukkan adab dan kalimat thayyibah dalam keseharian', 'Anak mampu tampil dalam pentas hafalan doa/shalawat sederhana']],
+    ]
+  },
+};
+const HEADER = [
+  "Bulan", "Topik", "Tujuan Pembelajaran", "Kegiatan (dipisah titik koma)",
+  "Indikator 1", "Nilai 1", "Indikator 2", "Nilai 2", "Indikator 3", "Nilai 3",
+  "Rata-rata Skor", "Status", "Tanggal Evaluasi", "Catatan Orang Tua/Guru"
+];
+
+const COL = {
+  BULAN: 1, TOPIK: 2, TUJUAN: 3, KEGIATAN: 4,
+  IND1: 5, NILAI1: 6, IND2: 7, NILAI2: 8, IND3: 9, NILAI3: 10,
+  RATA: 11, STATUS: 12, TANGGAL: 13, CATATAN: 14
+};
+
+const RUBRIK_LIST = ["", "BB", "MB", "BSH", "BSB"];
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('📚 Tracker Anak')
+    .addItem('Buat / Perbarui Semua Sheet', 'buatTrackerLengkap')
+    .addItem('Reset Semua Nilai', 'resetStatus')
+    .addToUi();
+}
+
+function buatTrackerLengkap() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  Object.keys(KURIKULUM).forEach(nama => {
+    const data = KURIKULUM[nama];
+    let sheet = ss.getSheetByName(nama);
+    if (sheet) { ss.deleteSheet(sheet); }
+    sheet = ss.insertSheet(nama);
+
+    sheet.getRange(1, 1, 1, HEADER.length).setValues([HEADER]);
+    sheet.getRange(1, 1, 1, HEADER.length)
+      .setBackground(data.warna)
+      .setFontColor('#FFFFFF')
+      .setFontWeight('bold')
+      .setFontSize(10);
+
+    const totalBulan = data.bulan.length;
+
+    data.bulan.forEach((b, i) => {
+      const row = i + 2;
+      const [judul, tujuan, kegiatan, indikator] = b;
+      sheet.getRange(row, COL.BULAN).setValue(`${data.emoji} Bulan ${i + 1}`);
+      sheet.getRange(row, COL.TOPIK).setValue(judul);
+      sheet.getRange(row, COL.TUJUAN).setValue(tujuan);
+      sheet.getRange(row, COL.KEGIATAN).setValue(kegiatan);
+      sheet.getRange(row, COL.IND1).setValue(indikator[0] || "");
+      sheet.getRange(row, COL.IND2).setValue(indikator[1] || "");
+      sheet.getRange(row, COL.IND3).setValue(indikator[2] || "");
+
+      // Formula rata-rata skor (BB=1, MB=2, BSH=3, BSB=4)
+      const f1 = `IFERROR(SWITCH(F${row},"BB",1,"MB",2,"BSH",3,"BSB",4),"")`;
+      const f2 = `IFERROR(SWITCH(H${row},"BB",1,"MB",2,"BSH",3,"BSB",4),"")`;
+      const f3 = `IFERROR(SWITCH(J${row},"BB",1,"MB",2,"BSH",3,"BSB",4),"")`;
+      sheet.getRange(row, COL.RATA).setFormula(`=IFERROR(AVERAGE(${f1},${f2},${f3}),"")`);
+      sheet.getRange(row, COL.STATUS).setFormula(
+        `=IF(K${row}="","Belum dinilai",IF(K${row}>=3,"Tercapai ✅",IF(K${row}>=2,"Berkembang 🟡","Perlu Latihan 🔴")))`
+      );
+    });
+
+    // Dropdown rubrik utk kolom Nilai 1, 2, 3
+    const rule = SpreadsheetApp.newDataValidation()
+      .requireValueInList(RUBRIK_LIST, true)
+      .setAllowInvalid(false)
+      .build();
+    sheet.getRange(2, COL.NILAI1, totalBulan, 1).setDataValidation(rule);
+    sheet.getRange(2, COL.NILAI2, totalBulan, 1).setDataValidation(rule);
+    sheet.getRange(2, COL.NILAI3, totalBulan, 1).setDataValidation(rule);
+
+    // Format lebar kolom
+    sheet.setColumnWidths(COL.BULAN, 1, 100);
+    sheet.setColumnWidths(COL.TOPIK, 1, 200);
+    sheet.setColumnWidths(COL.TUJUAN, 1, 260);
+    sheet.setColumnWidths(COL.KEGIATAN, 1, 300);
+    sheet.setColumnWidths(COL.IND1, 1, 240);
+    sheet.setColumnWidths(COL.NILAI1, 1, 60);
+    sheet.setColumnWidths(COL.IND2, 1, 240);
+    sheet.setColumnWidths(COL.NILAI2, 1, 60);
+    sheet.setColumnWidths(COL.IND3, 1, 240);
+    sheet.setColumnWidths(COL.NILAI3, 1, 60);
+    sheet.setColumnWidths(COL.RATA, 1, 90);
+    sheet.setColumnWidths(COL.STATUS, 1, 130);
+    sheet.setColumnWidths(COL.TANGGAL, 1, 120);
+    sheet.setColumnWidths(COL.CATATAN, 1, 220);
+
+    sheet.getRange(2, 1, totalBulan, HEADER.length).setWrap(true).setVerticalAlignment('top');
+    sheet.setFrozenRows(1);
+    sheet.setFrozenColumns(2);
+    sheet.setTabColor(data.warna);
+
+    // Warna selang-seling ringan
+    for (let r = 0; r < totalBulan; r++) {
+      if (r % 2 === 1) {
+        sheet.getRange(r + 2, 1, 1, HEADER.length).setBackground('#FAF9F5');
+      }
+    }
+
+    // Conditional formatting kolom Status
+    const statusRange = sheet.getRange(2, COL.STATUS, totalBulan, 1);
+    const rules = sheet.getConditionalFormatRules();
+    rules.push(SpreadsheetApp.newConditionalFormatRule()
+      .whenTextContains("Tercapai")
+      .setBackground("#E1F5EA").setFontColor("#1E9A6B")
+      .setRanges([statusRange]).build());
+    rules.push(SpreadsheetApp.newConditionalFormatRule()
+      .whenTextContains("Berkembang")
+      .setBackground("#FDF1DF").setFontColor("#B5750F")
+      .setRanges([statusRange]).build());
+    rules.push(SpreadsheetApp.newConditionalFormatRule()
+      .whenTextContains("Perlu Latihan")
+      .setBackground("#FDEAEA").setFontColor("#C24141")
+      .setRanges([statusRange]).build());
+    sheet.setConditionalFormatRules(rules);
+  });
+
+  buatRingkasan(ss);
+  ss.toast('Semua sheet tracker berhasil dibuat! 🎉', '📚 Tracker Anak', 5);
+}
+
+function buatRingkasan(ss) {
+  let ring = ss.getSheetByName('Ringkasan');
+  if (ring) { ss.deleteSheet(ring); }
+  ring = ss.insertSheet('Ringkasan', 0);
+
+  ring.getRange(1, 1).setValue('📚 Ringkasan Progres Belajar Si Kecil (4-5 Tahun)')
+    .setFontWeight('bold').setFontSize(14);
+  ring.getRange(2, 1).setValue('Status "Tercapai" = rata-rata nilai bulan itu ≥ BSH (Berkembang Sesuai Harapan)')
+    .setFontStyle('italic').setFontColor('#6B6255').setFontSize(10);
+
+  const headers = ['Aspek Kecerdasan', 'Total Bulan', 'Tercapai', 'Berkembang', 'Perlu Latihan', 'Belum Dinilai', 'Progres'];
+  ring.getRange(4, 1, 1, headers.length).setValues([headers]).setFontWeight('bold').setBackground('#EDE6D6');
+
+  let row = 5;
+  Object.keys(KURIKULUM).forEach(nama => {
+    const total = KURIKULUM[nama].bulan.length;
+    const emoji = KURIKULUM[nama].emoji;
+    const lastRow = total + 1;
+    ring.getRange(row, 1).setValue(`${emoji} ${nama}`);
+    ring.getRange(row, 2).setValue(total);
+    ring.getRange(row, 3).setFormula(`=COUNTIF('${nama}'!L2:L${lastRow},"Tercapai ✅")`);
+    ring.getRange(row, 4).setFormula(`=COUNTIF('${nama}'!L2:L${lastRow},"Berkembang 🟡")`);
+    ring.getRange(row, 5).setFormula(`=COUNTIF('${nama}'!L2:L${lastRow},"Perlu Latihan 🔴")`);
+    ring.getRange(row, 6).setFormula(`=COUNTIF('${nama}'!L2:L${lastRow},"Belum dinilai")`);
+    ring.getRange(row, 7).setFormula(`=C${row}/B${row}`);
+    ring.getRange(row, 7).setNumberFormat('0%');
+    row++;
+  });
+
+  ring.setColumnWidths(1, 1, 220);
+  ring.setColumnWidths(2, 6, 100);
+  ring.setFrozenRows(4);
+}
+
+function resetStatus() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  Object.keys(KURIKULUM).forEach(nama => {
+    const sheet = ss.getSheetByName(nama);
+    if (!sheet) return;
+    const total = KURIKULUM[nama].bulan.length;
+    sheet.getRange(2, COL.NILAI1, total, 1).setValue("");
+    sheet.getRange(2, COL.NILAI2, total, 1).setValue("");
+    sheet.getRange(2, COL.NILAI3, total, 1).setValue("");
+    sheet.getRange(2, COL.TANGGAL, total, 1).setValue("");
+    sheet.getRange(2, COL.CATATAN, total, 1).setValue("");
+  });
+  ss.toast('Semua nilai direset.', '📚 Tracker Anak', 4);
+}
+
+/**
+ * ================= WEB APP: JEMBATAN KE HTML =================
+ * Bagian di bawah ini membuat spreadsheet ini bisa "disambungkan" dari
+ * halaman index.html, supaya nilai BB/MB/BSH/BSB yang diklik di HTML
+ * langsung tersimpan ke Google Sheets ini (bukan cuma di browser).
+ *
+ * CARA DEPLOY:
+ * 1. Di Apps Script editor, klik Deploy > New deployment.
+ * 2. Pilih tipe "Web app".
+ * 3. Execute as: Me. Who has access: Anyone.
+ * 4. Klik Deploy, izinkan akses, lalu copy URL Web App yang muncul
+ *    (bentuknya seperti https://script.google.com/macros/s/xxxx/exec).
+ * 5. Tempel URL itu di halaman index.html lewat tombol
+ *    "🔗 Sambungkan Google Sheets" di bagian footer.
+ */
+
+const SHEET_KEY = {
+  numerik: "Numerik",
+  spasial: "Spasial",
+  logika: "Logika",
+  memori: "Memori",
+  keimanan: "Keimanan ala NU"
+};
+
+function doGet(e) {
+  try {
+    const action = e.parameter.action;
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    if (action === 'setNilai') {
+      const subjectKey = e.parameter.subject;
+      const topikIdx = parseInt(e.parameter.topik, 10);
+      const indIdx = parseInt(e.parameter.ind, 10);
+      const score = parseInt(e.parameter.score, 10);
+      const sheetName = SHEET_KEY[subjectKey];
+      const sheet = sheetName ? ss.getSheetByName(sheetName) : null;
+      if (sheet) {
+        const row = topikIdx + 2;
+        const colMap = [COL.NILAI1, COL.NILAI2, COL.NILAI3];
+        const col = colMap[indIdx];
+        const scoreMap = { 1: 'BB', 2: 'MB', 3: 'BSH', 4: 'BSB' };
+        const value = scoreMap[score] || '';
+        if (col) sheet.getRange(row, col).setValue(value);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    if (action === 'getAll') {
+      const result = {};
+      Object.keys(SHEET_KEY).forEach(subjectKey => {
+        const sheetName = SHEET_KEY[subjectKey];
+        const sheet = ss.getSheetByName(sheetName);
+        if (!sheet || !KURIKULUM[sheetName]) return;
+        const total = KURIKULUM[sheetName].bulan.length;
+        const n1 = sheet.getRange(2, COL.NILAI1, total, 1).getValues().map(r => r[0]);
+        const n2 = sheet.getRange(2, COL.NILAI2, total, 1).getValues().map(r => r[0]);
+        const n3 = sheet.getRange(2, COL.NILAI3, total, 1).getValues().map(r => r[0]);
+        result[subjectKey] = [n1, n2, n3];
+      });
+      return ContentService.createTextOutput(JSON.stringify(result))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({ error: 'unknown action' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ error: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+</script>
 
 <div id="print-area"></div>
 
 <script>
-
 const DATA = {
   "numerik": {
     "emoji": "🔢",
@@ -3561,12 +4133,16 @@ function attachRubrikHandlers(){
       const indIdx = parseInt(btn.dataset.ind, 10);
       const score = parseInt(btn.dataset.score, 10);
       const key = scoreKey(subject, monthIdx, indIdx);
+      let newScore;
       if(PROGRESS[key] === score){
         delete PROGRESS[key];
+        newScore = 0;
       } else {
         PROGRESS[key] = score;
+        newScore = score;
       }
       saveProgress(PROGRESS);
+      syncToSheet(subject, monthIdx, indIdx, newScore);
       const openMonths = new Set();
       document.querySelectorAll('.panel.active .month-card.open').forEach(card => {
         openMonths.add(card.querySelector('h3').textContent);
@@ -3730,10 +4306,160 @@ function printWorksheet(subject, topikIdx, kegiatanIdx){
   setTimeout(() => { document.body.classList.remove('printing'); }, 500);
 }
 
+// ================= MODAL KODE APPS SCRIPT =================
+
+function escapeHtml(str){
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function setupCodeModal(){
+  const showBtn = document.getElementById('show-code-btn');
+  const closeBtn = document.getElementById('close-code-btn');
+  const copyBtn = document.getElementById('copy-code-btn');
+  const modal = document.getElementById('code-modal');
+  const body = document.getElementById('code-modal-body');
+  const rawEl = document.getElementById('gs-code-raw');
+  if(!showBtn || !modal || !body || !rawEl) return;
+
+  const rawCode = rawEl.textContent;
+
+  showBtn.addEventListener('click', () => {
+    body.innerHTML = escapeHtml(rawCode);
+    modal.classList.add('open');
+  });
+  closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) modal.classList.remove('open');
+  });
+  copyBtn.addEventListener('click', () => {
+    const doCopyFallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = rawCode;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(rawCode).catch(doCopyFallback);
+    } else {
+      doCopyFallback();
+    }
+    const orig = copyBtn.textContent;
+    copyBtn.textContent = "✅ Tersalin!";
+    setTimeout(() => { copyBtn.textContent = orig; }, 1800);
+  });
+}
+
+// ================= KONEKSI KE GOOGLE SHEETS (WEB APP) =================
+
+const GSHEET_KEY = "buku-ajar-si-kecil-gsheet-url";
+
+function getSheetUrl(){
+  return localStorage.getItem(GSHEET_KEY) || "";
+}
+function setSheetUrl(url){
+  try { localStorage.setItem(GSHEET_KEY, url); } catch(e) {}
+}
+
+// Kirim satu nilai (fire-and-forget) ke Web App Apps Script.
+// mode:'no-cors' dipakai karena kita tidak perlu membaca hasilnya,
+// cukup memastikan permintaannya terkirim ke server.
+function syncToSheet(subject, topikIdx, indIdx, score){
+  const url = getSheetUrl();
+  if(!url) return;
+  const params = new URLSearchParams({
+    action: 'setNilai',
+    subject: subject,
+    topik: topikIdx,
+    ind: indIdx,
+    score: score
+  });
+  fetch(`${url}?${params.toString()}`, { mode: 'no-cors' }).catch(() => {});
+}
+
+// Ambil semua nilai yang sudah tersimpan di Google Sheets, lalu
+// gabungkan ke PROGRESS lokal (localStorage tetap dipakai sebagai cadangan).
+function loadFromSheet(){
+  const url = getSheetUrl();
+  if(!url) return Promise.reject(new Error("URL belum diisi"));
+
+  return fetch(`${url}?action=getAll`)
+    .then(r => r.json())
+    .then(data => {
+      if(data.error) throw new Error(data.error);
+      const scoreMap = { BB:1, MB:2, BSH:3, BSB:4 };
+      Object.keys(data).forEach(subject => {
+        const cols = data[subject];
+        if(!cols) return;
+        cols.forEach((colValues, indIdx) => {
+          colValues.forEach((val, topikIdx) => {
+            const s = scoreMap[val];
+            if(s){ PROGRESS[scoreKey(subject, topikIdx, indIdx)] = s; }
+          });
+        });
+      });
+      saveProgress(PROGRESS);
+      render();
+      return true;
+    });
+}
+
+function setupSheetModal(){
+  const showBtn = document.getElementById('show-sheet-btn');
+  const closeBtn = document.getElementById('close-sheet-btn');
+  const saveBtn = document.getElementById('save-sheet-btn');
+  const modal = document.getElementById('sheet-modal');
+  const input = document.getElementById('sheet-url-input');
+  const status = document.getElementById('sheet-status');
+  if(!showBtn || !modal) return;
+
+  const existing = getSheetUrl();
+  if(existing && input){
+    input.value = existing;
+    if(status){ status.textContent = "✅ Tersambung ke Google Sheets"; status.className = "sheet-status ok"; }
+  }
+
+  showBtn.addEventListener('click', () => modal.classList.add('open'));
+  closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
+
+  saveBtn.addEventListener('click', () => {
+    const url = input.value.trim();
+    if(!url){
+      status.textContent = "⚠️ Masukkan URL Web App dulu";
+      status.className = "sheet-status warn";
+      return;
+    }
+    setSheetUrl(url);
+    status.textContent = "🔄 Menyambungkan & memuat data dari Google Sheets...";
+    status.className = "sheet-status warn";
+    loadFromSheet()
+      .then(() => {
+        status.textContent = "✅ Tersambung! Data dari Google Sheets sudah dimuat.";
+        status.className = "sheet-status ok";
+      })
+      .catch(() => {
+        status.textContent = "❌ Gagal menyambungkan. Pastikan URL benar dan Web App sudah di-deploy dengan akses \"Anyone\".";
+        status.className = "sheet-status err";
+      });
+  });
+}
+
 render();
 setupTabs();
 setupInfoToggle();
+setupCodeModal();
+setupSheetModal();
+if(getSheetUrl()){ loadFromSheet().catch(() => {}); }
 document.querySelectorAll('.panel .month-card:first-of-type').forEach(el => el.classList.add('open'));
+
+
 
 
 </script>

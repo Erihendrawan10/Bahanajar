@@ -7,7 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
+
+:root{
     --cream:#FFFBF3;
     --ink:#3A3226;
     --ink-soft:#6B6255;
@@ -82,6 +83,186 @@
     color:var(--ink-soft);
   }
 
+  .catatan-level{
+    background:#FFF6E0;
+    border:1px solid #F0DBA0;
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:13.5px;
+    color:#7A5B10;
+    margin-bottom:18px;
+    line-height:1.5;
+  }
+
+  .cpa-banner{
+    background:#EFF6FF;
+    border:1px solid #C9E0FB;
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:18px;
+  }
+  .cpa-banner b{font-size:14px; color:var(--numerik);}
+  .cpa-banner p{font-size:13px; color:var(--ink-soft); margin:6px 0;}
+  .cpa-steps{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:10px 0;
+  }
+  .cpa-step{
+    font-size:12.5px;
+    font-weight:700;
+    padding:6px 11px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .cpa-konkret{background:#E08A1E;}
+  .cpa-piktorial{background:#3C7CD9;}
+  .cpa-abstrak{background:#8A5CF6;}
+  .cpa-arrow{color:var(--ink-soft); font-weight:700;}
+
+  .tahap-chip{
+    font-size:10.5px;
+    font-weight:800;
+    padding:3px 8px;
+    border-radius:6px;
+    color:#fff;
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+  .tahap-konkret{background:#E08A1E;}
+  .tahap-piktorial{background:#3C7CD9;}
+  .tahap-abstrak{background:#8A5CF6;}
+
+  .hari-chip{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:11.5px;
+    color:#fff;
+    background:var(--c-accent);
+    padding:3px 9px;
+    border-radius:7px;
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  .print-btn{
+    margin-top:10px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:13px;
+    background:#fff;
+    border:1.5px solid var(--c-accent);
+    color:var(--c-accent);
+    padding:7px 14px;
+    border-radius:9px;
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--c-accent); color:#fff;}
+
+  /* ---------- AREA CETAK (tersembunyi kecuali saat print) ---------- */
+  #print-area{display:none;}
+
+  @media print{
+    body.printing > *:not(#print-area){display:none !important;}
+    body.printing #print-area{
+      display:block !important;
+      font-family:'Nunito', sans-serif;
+      color:#222;
+      padding:10px;
+    }
+    .wk-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      border-bottom:2px solid #333;
+      padding-bottom:8px;
+      margin-bottom:14px;
+    }
+    .wk-header-title{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:18px;}
+    .wk-header-sub{font-size:13px; color:#555;}
+    .wk-meta{display:flex; gap:30px; font-size:13px; margin-bottom:16px;}
+    .wk-title{font-family:'Baloo 2',sans-serif; font-size:20px; margin:0 0 10px;}
+    .wk-instruksi{font-size:13.5px; margin:0 0 8px; line-height:1.5;}
+    .wk-area{margin-top:20px;}
+    .wk-label{font-size:13px; font-weight:700; margin-bottom:10px;}
+    .wk-grid{display:flex; flex-wrap:wrap; gap:10px;}
+    .wk-grid-20 .wk-box{
+      width:46px; height:46px;
+      border:1.5px solid #999;
+      border-radius:6px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; font-weight:700; color:#999;
+    }
+    .wk-box-trace{color:#ccc !important; font-size:20px !important;}
+    .wk-checklist{display:flex; flex-direction:column; gap:12px; margin:10px 0;}
+    .wk-check-line{font-size:14px;}
+    .wk-grid-4{gap:16px;}
+    .wk-shape{width:110px; height:110px;}
+    .wk-shape svg{width:100%; height:100%;}
+    .wk-sort{display:flex; gap:14px; margin-top:8px;}
+    .wk-sort-col{flex:1;}
+    .wk-sort-title{font-size:13px; font-weight:700; text-align:center; margin-bottom:6px;}
+    .wk-sort-box{border:1.5px dashed #999; border-radius:8px; height:140px;}
+    .wk-grid-8 .wk-card{
+      width:80px; height:100px;
+      border:1.5px solid #999;
+      border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:20px; color:#bbb;
+    }
+    .wk-trace{
+      font-size:34px;
+      color:#bbb;
+      text-align:center;
+      margin:10px 0 18px;
+      direction:rtl;
+      letter-spacing:2px;
+    }
+    .wk-lines{display:flex; flex-direction:column; gap:22px; margin-top:6px;}
+    .wk-line{border-bottom:1.5px dotted #999; height:1px;}
+    .wk-footer{margin-top:30px; font-size:11px; color:#999; text-align:center;}
+    @page{margin:14mm;}
+  }
+    margin-top:20px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    background:var(--card);
+    border:1.5px solid var(--line);
+    color:var(--ink);
+    padding:9px 18px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .info-toggle-btn:hover{border-color:#D9497B;}
+  .info-box{
+    max-width:640px;
+    margin:14px auto 0;
+    text-align:left;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:0 20px;
+    max-height:0;
+    overflow:hidden;
+    transition:all .25s ease;
+  }
+  .info-box.open{max-height:600px; padding:18px 20px;}
+  .info-box h4{margin:0 0 8px; font-size:15px;}
+  .info-box p{margin:0 0 12px; font-size:14px; color:var(--ink-soft);}
+  .rubrik-legend{display:flex; flex-direction:column; gap:8px; margin-bottom:12px;}
+  .rubrik-legend-item{display:flex; gap:10px; align-items:baseline; font-size:13.5px;}
+  .rubrik-legend-item .kode{
+    font-weight:800;
+    font-size:12px;
+    background:#EDE6D6;
+    padding:3px 8px;
+    border-radius:6px;
+    flex:0 0 auto;
+  }
+
   /* ---------- TABS ---------- */
   .tabbar-wrap{
     position:sticky;
@@ -136,26 +317,37 @@
   .panel-intro{
     display:flex;
     gap:16px;
-    align-items:flex-start;
+    align-items:center;
     padding:20px;
     border-radius:18px;
     margin-bottom:22px;
     border:1px solid var(--line);
   }
   .panel-intro .big-emo{font-size:38px; line-height:1;}
+  .panel-intro-text{flex:1;}
   .panel-intro h2{margin:0 0 6px; font-size:23px;}
   .panel-intro p{margin:0; color:var(--ink-soft); font-size:15px;}
+  .panel-progress{
+    flex:0 0 auto;
+    text-align:center;
+    background:var(--card);
+    border-radius:14px;
+    padding:10px 16px;
+    min-width:84px;
+  }
+  .panel-progress-num{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:22px;}
+  .panel-progress-label{font-size:11.5px; color:var(--ink-soft); font-weight:700;}
 
   .panel[data-c="numerik"] .panel-intro{background:var(--numerik-bg);}
-  .panel[data-c="numerik"] .panel-intro h2{color:var(--numerik);}
+  .panel[data-c="numerik"] .panel-intro h2, .panel[data-c="numerik"] .panel-progress-num{color:var(--numerik);}
   .panel[data-c="spasial"] .panel-intro{background:var(--spasial-bg);}
-  .panel[data-c="spasial"] .panel-intro h2{color:var(--spasial);}
+  .panel[data-c="spasial"] .panel-intro h2, .panel[data-c="spasial"] .panel-progress-num{color:var(--spasial);}
   .panel[data-c="logika"] .panel-intro{background:var(--logika-bg);}
-  .panel[data-c="logika"] .panel-intro h2{color:var(--logika);}
+  .panel[data-c="logika"] .panel-intro h2, .panel[data-c="logika"] .panel-progress-num{color:var(--logika);}
   .panel[data-c="memori"] .panel-intro{background:var(--memori-bg);}
-  .panel[data-c="memori"] .panel-intro h2{color:var(--memori);}
+  .panel[data-c="memori"] .panel-intro h2, .panel[data-c="memori"] .panel-progress-num{color:var(--memori);}
   .panel[data-c="keimanan"] .panel-intro{background:var(--keimanan-bg);}
-  .panel[data-c="keimanan"] .panel-intro h2{color:var(--keimanan);}
+  .panel[data-c="keimanan"] .panel-intro h2, .panel[data-c="keimanan"] .panel-progress-num{color:var(--keimanan);}
 
   .month-card{
     background:var(--card);
@@ -172,6 +364,7 @@
     padding:15px 18px;
     cursor:pointer;
     user-select:none;
+    flex-wrap:wrap;
   }
   .month-num{
     font-family:'Baloo 2',sans-serif;
@@ -184,9 +377,22 @@
     display:flex; align-items:center; justify-content:center;
     flex:0 0 auto;
   }
-  .month-titles{flex:1;}
+  .month-titles{flex:1; min-width:140px;}
   .month-titles .bulan-label{font-size:12.5px; color:var(--ink-soft); font-weight:700; text-transform:uppercase; letter-spacing:.03em;}
   .month-titles h3{margin:2px 0 0; font-size:17px;}
+  .status-badge{
+    font-size:12px;
+    font-weight:700;
+    padding:5px 11px;
+    border-radius:999px;
+    background:var(--line);
+    color:var(--ink-soft);
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+  .status-badge.badge-ok{background:#E1F5EA; color:#1E9A6B;}
+  .status-badge.badge-mid{background:#FDF1DF; color:#B5750F;}
+  .status-badge.badge-low{background:#FDEAEA; color:#C24141;}
   .chev{
     font-size:14px;
     color:var(--ink-soft);
@@ -200,25 +406,117 @@
     transition:max-height .25s ease;
     padding:0 18px;
   }
-  .month-card.open .month-body{padding:0 18px 18px;}
+  .month-card.open .month-body{max-height:none; padding:0 18px 18px;}
   .goal-line{
     font-size:14.5px;
     color:var(--ink-soft);
     background:var(--c-accent-bg);
     border-radius:10px;
     padding:10px 12px;
-    margin:0 0 10px;
+    margin:0 0 14px;
   }
   .goal-line b{color:var(--ink);}
-  ul.activities{margin:0; padding:0; list-style:none;}
-  ul.activities li{
-    display:flex;
-    gap:9px;
-    align-items:flex-start;
-    font-size:14.5px;
-    padding:6px 0;
+  .section-label{
+    font-size:12.5px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0 0 8px;
+    text-transform:none;
   }
-  ul.activities li .dot{color:var(--c-accent); flex:0 0 auto; margin-top:1px;}
+  .section-label .hint{
+    font-weight:600;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    text-transform:none;
+  }
+  ul.activities{margin:0 0 16px; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .kegiatan-item{
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#FAF9F5;
+    overflow:hidden;
+  }
+  .kegiatan-head{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-family:'Nunito',sans-serif;
+    font-size:14.5px;
+    text-align:left;
+    background:transparent;
+    border:none;
+    padding:9px 12px;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  .kegiatan-head .dot{color:var(--c-accent); flex:0 0 auto;}
+  .kegiatan-nama{flex:1;}
+  .kegiatan-chev{
+    font-size:12px;
+    color:var(--ink-soft);
+    transition:transform .2s ease;
+    flex:0 0 auto;
+  }
+  .kegiatan-item.open .kegiatan-chev{transform:rotate(180deg);}
+  .kegiatan-detail{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    padding:0 14px;
+  }
+  .kegiatan-item.open .kegiatan-detail{max-height:none; padding:0 14px 13px;}
+  .kegiatan-field{font-size:13.5px; margin:0 0 8px; color:var(--ink);}
+  .kegiatan-field b{color:var(--c-accent);}
+  .kegiatan-field-label{font-size:13.5px; margin:0 0 5px; color:var(--ink);}
+  .kegiatan-field-label b{color:var(--c-accent);}
+  ul.alat-list{margin:0; padding:0 0 0 4px; list-style:none;}
+  ul.alat-list li{
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:3px 0 3px 16px;
+    position:relative;
+  }
+  ul.alat-list li::before{
+    content:"🔹";
+    position:absolute;
+    left:0;
+    font-size:10px;
+    top:5px;
+  }
+
+  ul.indikator-list{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .indikator-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    background:#FAF9F5;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:9px 12px;
+  }
+  .indikator-teks{font-size:14px; flex:1; min-width:180px;}
+  .rubrik-group{display:flex; gap:5px; flex:0 0 auto;}
+  .rubrik-pill{
+    font-family:'Nunito',sans-serif;
+    font-size:11.5px;
+    font-weight:800;
+    border:1.5px solid var(--line);
+    background:#fff;
+    color:var(--ink-soft);
+    padding:5px 9px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .rubrik-pill:hover{border-color:var(--c-accent);}
+  .rubrik-pill.selected{
+    background:var(--c-accent);
+    border-color:var(--c-accent);
+    color:#fff;
+  }
 
   footer{
     text-align:center;
@@ -233,6 +531,8 @@
     .hero{padding:40px 16px 30px;}
     .panel-intro{flex-direction:column; gap:8px;}
   }
+
+
 </style>
 </head>
 <body>
@@ -240,13 +540,26 @@
 <div class="hero">
   <div class="kicker">📚 Kurikulum 1 Tahun</div>
   <h1>Buku Ajar Si Kecil</h1>
-  <p class="sub">Rencana belajar untuk anak usia 4–5 tahun, mencakup kecerdasan Numerik, Spasial, Logika, Memori, dan Keimanan ala Nahdlatul Ulama — disusun per bulan, siap dipakai orang tua &amp; guru.</p>
+  <p class="sub">Rencana belajar harian untuk anak usia 4–5 tahun, mencakup kecerdasan Numerik, Spasial, Logika, Memori, dan Keimanan ala Nahdlatul Ulama — disusun per hari (48 hari/topik per aspek), siap dipakai orang tua &amp; guru, lengkap dengan lembar kerja yang bisa dicetak.</p>
   <div class="badges">
     <span>🔢 Numerik</span>
     <span>🧩 Spasial</span>
     <span>💡 Logika</span>
     <span>🧠 Memori</span>
     <span>🌙 Keimanan ala NU</span>
+  </div>
+  <button class="info-toggle-btn" id="info-toggle">ℹ️ Cara menilai perkembangan anak ▼</button>
+  <div class="info-box" id="info-box">
+    <h4>📋 Cara Menggunakan Indikator, Evaluasi &amp; Cetak Lembar Kerja</h4>
+    <p>Kurikulum disusun <b>harian</b>: setiap topik berisi 4 hari kegiatan (bisa diulang beberapa hari untuk pemantapan sebelum lanjut). Tiap topik punya 3 <b>indikator pencapaian</b> yang dinilai di akhir topik menggunakan rubrik standar PAUD berikut:</p>
+    <div class="rubrik-legend">
+      <div class="rubrik-legend-item"><span class="kode">BB</span> Belum Berkembang — anak belum menunjukkan kemampuan ini meski sudah dibimbing</div>
+      <div class="rubrik-legend-item"><span class="kode">MB</span> Mulai Berkembang — anak masih perlu bimbingan/pengulangan untuk bisa</div>
+      <div class="rubrik-legend-item"><span class="kode">BSH</span> Berkembang Sesuai Harapan — anak bisa melakukannya secara konsisten</div>
+      <div class="rubrik-legend-item"><span class="kode">BSB</span> Berkembang Sangat Baik — anak bisa melakukannya mandiri dan bisa membantu teman</div>
+    </div>
+    <p>Cara menilai: teliti secara <b>observasi langsung</b> (amati saat bermain/beraktivitas), <b>hasil karya</b> (gambar, tulisan, bangunan balok, dsb), dan <b>unjuk kerja</b> (minta anak mempraktikkan langsung). Klik tombol BB/MB/BSH/BSB pada tiap indikator — nilai tersimpan otomatis di browser ini, dan status topik berubah jadi "Tercapai" bila rata-rata indikator ≥ BSH.</p>
+    <p>🖨️ <b>Cetak lembar kerja:</b> buka detail hari yang diinginkan (klik judul kegiatannya), lalu klik tombol "Cetak Lembar Kerja Hari ke-N" — halaman akan membuka dialog cetak browser berisi lembar kerja siap print untuk hari itu.</p>
   </div>
 </div>
 
@@ -266,106 +579,2788 @@
   Dibuat dengan <span class="heart">♥</span> untuk tumbuh kembang si kecil — cetak, gunakan, dan sesuaikan bebas untuk kebutuhan belajar di rumah atau sekolah.
 </footer>
 
+<div id="print-area"></div>
+
 <script>
+
 const DATA = {
-  numerik: {
-    emoji: "🔢",
-    title: "Kecerdasan Numerik",
-    desc: "Mengenalkan angka, hitungan, dan konsep matematika dasar lewat benda nyata dan permainan, bertahap dari sederhana ke lebih kompleks.",
-    months: [
-      { judul:"Mengenal Angka 1–5", tujuan:"Anak mampu mengenali, menyebut, dan menunjuk angka 1 sampai 5.", kegiatan:["Berhitung menggunakan jari tangan","Mencocokkan angka dengan jumlah benda (buah, mainan)","Menyanyikan lagu angka 1–5","Bermain kartu angka besar berwarna"]},
-      { judul:"Mengenal Angka 6–10", tujuan:"Anak mampu mengenali dan mengurutkan angka 6 sampai 10.", kegiatan:["Berhitung kelereng atau kancing","Menempel stiker sesuai jumlah angka","Permainan lompat angka di lantai","Menyusun kartu angka 1–10 berurutan"]},
-      { judul:"Membandingkan Jumlah", tujuan:"Anak memahami konsep lebih banyak, lebih sedikit, dan sama banyak.", kegiatan:["Membandingkan dua kelompok benda","Permainan \\"mana yang lebih banyak?\\"","Menyusun benda dari sedikit ke banyak","Bermain timbangan sederhana dari gantungan baju"]},
-      { judul:"Konsep Ukuran & Panjang", tujuan:"Anak mengenal konsep besar-kecil, panjang-pendek, dan tinggi-rendah.", kegiatan:["Mengurutkan pensil dari pendek ke panjang","Membandingkan tinggi badan dengan teman","Menyortir mainan besar dan kecil","Membuat bentuk panjang-pendek dari playdough"]},
-      { judul:"Mengenal Angka 11–15", tujuan:"Anak mampu mengenali dan menulis angka 11 sampai 15.", kegiatan:["Menulis angka di atas pasir atau tepung","Permainan kartu angka berpasangan","Menghitung jumlah anak tangga rumah","Menempelkan angka pada gambar yang sesuai"]},
-      { judul:"Mengenal Angka 16–20", tujuan:"Anak mampu mengenali angka 16 sampai 20 dan menghitung mundur sederhana.", kegiatan:["Bermain ular tangga sederhana 1–20","Menghitung mundur dari 20 ke 1 sambil bertepuk","Menyusun puzzle angka 11–20","Berlomba menunjuk angka yang disebutkan"]},
-      { judul:"Penjumlahan Sederhana (1–5)", tujuan:"Anak memahami konsep menambah menggunakan benda konkret.", kegiatan:["Menggabungkan dua kelompok kelereng lalu menghitung","Cerita bergambar \\"2 apel ditambah 1 apel\\"","Permainan dadu kecil angka 1–3","Mengisi lembar kerja bergambar penjumlahan"]},
-      { judul:"Pengurangan Sederhana (1–5)", tujuan:"Anak memahami konsep berkurang menggunakan benda konkret.", kegiatan:["Cerita bergambar tentang benda yang berkurang","Permainan balon: pecahkan lalu hitung sisa","Menggunakan jari untuk pengurangan sederhana","Kartu soal bergambar pengurangan"]},
-      { judul:"Mengenal Pola & Urutan Angka", tujuan:"Anak mampu mengenali pola angka dan menebak angka berikutnya.", kegiatan:["Bermain menyusun angka yang hilang","Permainan \\"angka berikutnya berapa?\\"","Lagu pola angka genap dan ganjil sederhana","Menyusun angka naik dan turun bergantian"]},
-      { judul:"Mengenal Uang Mainan", tujuan:"Anak mengenal bentuk uang dan konsep tukar sederhana.", kegiatan:["Mengenal koin dan uang kertas mainan","Bermain pasar-pasaran di rumah","Menghitung uang mainan sederhana","Diskusi konsep membeli dan menukar barang"]},
-      { judul:"Mengenal Waktu Sederhana", tujuan:"Anak mengenal konsep pagi, siang, malam, dan jam bulat.", kegiatan:["Membuat jadwal harian bergambar","Bermain jam mainan menunjuk jam bulat","Diskusi kegiatan pagi, siang, dan malam","Lagu tentang waktu dan kegiatan sehari-hari"]},
-      { judul:"Review & Proyek Angka", tujuan:"Anak mampu menggabungkan seluruh kemampuan numerik yang telah dipelajari.", kegiatan:["Permainan papan angka gabungan","Kuis angka bergambar berhadiah bintang","Proyek \\"toko-tokoan\\" menghitung uang dan barang","Pentas kecil menyanyikan lagu angka"]}
+  "numerik": {
+    "emoji": "🔢",
+    "title": "Kecerdasan Numerik",
+    "desc": "Mengenalkan angka dan konsep matematika dasar memakai metode CPA (Concrete-Pictorial-Abstract): mulai dari benda nyata, lalu gambar, baru simbol angka — urutan belajar matematika yang terbukti efektif untuk anak usia dini.",
+    "months": [
+      {
+        "judul": "Mengenal Angka 1–5",
+        "tujuan": "Anak mampu mengenali, menyebut, dan menunjuk angka 1 sampai 5.",
+        "kegiatan": [
+          {
+            "nama": "Berhitung benda nyata memakai jari tangan",
+            "tahap": "Konkret",
+            "diajarkan": "Korespondensi satu-satu antara benda nyata dan hitungan lisan, dibantu jari sebagai alat bantu fisik.",
+            "contoh": "Sediakan 5 kelereng, angkat satu jari sambil mengambil satu kelereng dan menyebut \"satu\", lanjutkan sampai lima.",
+            "alat": [
+              "Kelereng/kancing 5 butir",
+              "Jari tangan"
+            ]
+          },
+          {
+            "nama": "Mencocokkan benda nyata dengan kartu angka",
+            "tahap": "Konkret",
+            "diajarkan": "Memindahkan pemahaman jumlah dari sekadar menghitung ke memasangkannya dengan simbol angka, namun benda tetap nyata dan bisa disentuh.",
+            "contoh": "Letakkan kartu angka 1–5 di meja, minta anak menaruh jumlah kancing yang sesuai tepat di bawah tiap kartu.",
+            "alat": [
+              "Kartu angka 1–5",
+              "Kancing/kelereng/buah mainan"
+            ]
+          },
+          {
+            "nama": "Menghitung & menggambar titik sesuai angka",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer dari benda nyata ke representasi gambar/titik di atas kertas — anak mulai membayangkan jumlah tanpa memegang bendanya langsung.",
+            "contoh": "Beri lembar bergambar 3 keranjang kosong bertanda angka 2, 4, 5; anak menggambar bulatan sejumlah angka tersebut di tiap keranjang.",
+            "alat": [
+              "Lembar gambar keranjang kosong",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Mengenal & menulis simbol angka 1–5",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan bentuk angka sebagai simbol murni, tanpa bantuan benda atau gambar — inti dari tahap abstrak.",
+            "contoh": "Tunjukkan kartu angka besar satu per satu, anak menyebut namanya, lalu coba menjiplak/menulis angka tersebut di kertas kosong.",
+            "alat": [
+              "Kartu angka besar 1–5",
+              "Kertas",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan angka 1 sampai 5 secara berurutan",
+          "Anak mampu menunjuk angka yang disebutkan (1–5)",
+          "Anak mampu menghitung benda hingga 5 dengan tepat"
+        ]
+      },
+      {
+        "judul": "Mengenal Angka 6–10",
+        "tujuan": "Anak mampu mengenali dan mengurutkan angka 6 sampai 10.",
+        "kegiatan": [
+          {
+            "nama": "Berhitung benda nyata 6–10",
+            "tahap": "Konkret",
+            "diajarkan": "Memperluas korespondensi satu-satu ke rentang angka yang lebih besar (6–10) dengan benda yang bisa dipegang langsung.",
+            "contoh": "Sediakan mangkuk berisi 10 kelereng, minta anak mengambil dan menghitung 6, lalu 8, hingga 10 butir satu per satu.",
+            "alat": [
+              "Kelereng/kancing ±15 butir",
+              "Mangkuk kecil"
+            ]
+          },
+          {
+            "nama": "Menempel benda fisik sesuai jumlah pada kartu angka",
+            "tahap": "Konkret",
+            "diajarkan": "Melatih ketepatan jumlah 6–10 lewat aktivitas menempel benda nyata (bukan gambar) yang melatih motorik halus.",
+            "contoh": "Sediakan kartu bertanda angka 7 dan 9, minta anak menempelkan stiker bulat sejumlah itu tepat di kartu.",
+            "alat": [
+              "Kartu angka 6–10",
+              "Stiker bulat"
+            ]
+          },
+          {
+            "nama": "Mewarnai gambar sejumlah angka pada lembar kerja",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer pemahaman 6–10 ke representasi visual — anak menghitung gambar, bukan benda nyata, untuk pertama kali di rentang ini.",
+            "contoh": "Beri lembar berisi 10 gambar apel berbaris, minta anak mewarnai hanya 8 apel sesuai angka yang diminta.",
+            "alat": [
+              "Lembar gambar buah berbaris",
+              "Krayon"
+            ]
+          },
+          {
+            "nama": "Menyusun & menyebut simbol angka 1–10 berurutan",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan angka sebagai deretan simbol murni yang harus diurutkan tanpa bantuan visual maupun benda.",
+            "contoh": "Acak 10 kartu angka bertuliskan simbol saja (tanpa gambar bantu), minta anak menyusunnya kembali dari 1 sampai 10.",
+            "alat": [
+              "Kartu angka 1–10 (simbol saja)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan angka 6 sampai 10 secara berurutan",
+          "Anak mampu mengurutkan kartu angka 1–10",
+          "Anak mampu menghitung benda hingga 10 dengan tepat"
+        ]
+      },
+      {
+        "judul": "Membandingkan Jumlah",
+        "tujuan": "Anak memahami konsep lebih banyak, lebih sedikit, dan sama banyak.",
+        "kegiatan": [
+          {
+            "nama": "Membandingkan dua kelompok benda nyata",
+            "tahap": "Konkret",
+            "diajarkan": "Perbandingan kuantitas dua kelompok benda nyata secara langsung, sebelum dikenalkan simbol pembanding.",
+            "contoh": "Taruh 4 apel di satu piring dan 7 di piring lain, tanya \"piring mana yang lebih banyak?\" sambil membandingkan langsung.",
+            "alat": [
+              "2 piring/wadah",
+              "Buah atau mainan sejenis"
+            ]
+          },
+          {
+            "nama": "Bermain timbangan sederhana & urutkan benda",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep \"lebih banyak/sedikit\" diperluas lewat pengalaman fisik berat-ringan dan pengurutan benda nyata.",
+            "contoh": "Gantung 2 kantong berisi jumlah benda berbeda di gantungan baju, amati mana yang turun lebih rendah (lebih berat/lebih banyak).",
+            "alat": [
+              "Gantungan baju",
+              "2 kantong plastik",
+              "Benda pemberat (kerikil/kelereng)"
+            ]
+          },
+          {
+            "nama": "Melingkari gambar kelompok yang lebih banyak",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer perbandingan dari benda nyata ke representasi gambar di atas kertas.",
+            "contoh": "Lembar kerja berisi 2 kelompok gambar bintang (5 vs 8), anak melingkari kelompok yang jumlahnya lebih banyak.",
+            "alat": [
+              "Lembar kerja 2 kelompok gambar",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Mengenal simbol lebih dari, kurang dari, sama dengan",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan awal simbol pembanding (>, <, =) versi ramah anak sebagai representasi abstrak dari \"lebih banyak/sedikit/sama\".",
+            "contoh": "Gambarkan simbol > sebagai \"mulut buaya\" yang selalu membuka ke arah angka lebih besar, lalu minta anak memilih simbol yang tepat antara dua angka tertulis (misal 3 dan 7).",
+            "alat": [
+              "Kartu angka",
+              "Kartu simbol >, <, ="
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menunjukkan kelompok benda yang lebih banyak/sedikit",
+          "Anak mampu menyusun benda dari sedikit ke banyak",
+          "Anak mampu menjelaskan alasan pilihannya dengan kata sederhana"
+        ]
+      },
+      {
+        "judul": "Konsep Ukuran & Panjang",
+        "tujuan": "Anak mengenal konsep besar-kecil, panjang-pendek, dan tinggi-rendah.",
+        "kegiatan": [
+          {
+            "nama": "Mengurutkan benda nyata dari pendek ke panjang",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep panjang-pendek dipahami lewat perbandingan fisik langsung antar benda sejenis.",
+            "contoh": "Kumpulkan 5 pensil berbeda panjang, minta anak menyusunnya berjajar dari yang paling pendek ke paling panjang.",
+            "alat": [
+              "5 pensil/sedotan berbeda panjang"
+            ]
+          },
+          {
+            "nama": "Membandingkan tinggi badan & membentuk playdough",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep tinggi-rendah dan panjang-pendek diperkuat lewat pengalaman tubuh nyata dan karya tangan yang bisa dibentuk bebas.",
+            "contoh": "Anak berdiri berdampingan dengan teman untuk membandingkan tinggi, lalu membuat 3 \"ular\" playdough dengan panjang berbeda.",
+            "alat": [
+              "Playdough/tanah liat mainan"
+            ]
+          },
+          {
+            "nama": "Mengurutkan gambar benda dari pendek ke panjang",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer konsep ukuran dari benda nyata ke representasi gambar yang harus diurutkan secara visual.",
+            "contoh": "Lembar kerja berisi gambar 4 ular dengan panjang berbeda dalam posisi acak, anak menomori urutan dari terpendek.",
+            "alat": [
+              "Lembar gambar benda berbagai ukuran",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Mencocokkan kata \"panjang-pendek-tinggi-rendah\" dengan gambar",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan kosakata pembanding ukuran sebagai label abstrak yang mewakili konsep, dilepas dari benda nyata.",
+            "contoh": "Tunjukkan kartu kata \"PENDEK\" dan \"PANJANG\" tanpa gambar, minta anak menjodohkan dengan gambar benda yang sesuai secara mandiri.",
+            "alat": [
+              "Kartu kata ukuran",
+              "Kartu gambar benda"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengurutkan benda dari pendek ke panjang",
+          "Anak mampu membedakan besar-kecil dengan tepat",
+          "Anak mampu menggunakan kata \"lebih tinggi/rendah\" dengan benar"
+        ]
+      },
+      {
+        "judul": "Mengenal Angka 11–15",
+        "tujuan": "Anak mampu mengenali dan menulis angka 11 sampai 15.",
+        "kegiatan": [
+          {
+            "nama": "Menghitung benda nyata jumlah besar (11–15)",
+            "tahap": "Konkret",
+            "diajarkan": "Memperluas korespondensi satu-satu ke rentang belasan menggunakan benda yang familiar di rumah.",
+            "contoh": "Ajak anak menghitung anak tangga rumah atau ubin lantai sambil menaikinya satu per satu hingga 13 atau 14.",
+            "alat": [
+              "Tangga rumah atau ubin lantai"
+            ]
+          },
+          {
+            "nama": "Kartu angka berpasangan dengan benda fisik",
+            "tahap": "Konkret",
+            "diajarkan": "Memasangkan simbol angka 11–15 dengan jumlah benda nyata yang sesuai, memperkuat makna angka besar.",
+            "contoh": "Sediakan kartu angka 11–15, minta anak menaruh jumlah kelereng yang sesuai persis di sebelah tiap kartu.",
+            "alat": [
+              "Kartu angka 11–15",
+              "Kelereng/kancing ±15 butir"
+            ]
+          },
+          {
+            "nama": "Menghitung & menggambar titik sesuai angka 11–15",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer pemahaman angka belasan ke representasi visual berupa gambar/titik di kertas.",
+            "contoh": "Beri gambar 13 bintang kosong dalam kotak, anak mewarnai atau menggambar titik pada tiap bintang sambil menghitung.",
+            "alat": [
+              "Lembar gambar bertema bintang/buah",
+              "Krayon"
+            ]
+          },
+          {
+            "nama": "Menulis simbol angka 11–15 di kertas bergaris",
+            "tahap": "Abstrak",
+            "diajarkan": "Latihan menulis bentuk angka belasan sebagai simbol murni tanpa bantuan benda atau gambar.",
+            "contoh": "Sediakan kertas bergaris dengan angka putus-putus 11–15, anak menjiplak lalu mencoba menuliskannya sendiri di baris kosong.",
+            "alat": [
+              "Kertas bergaris angka putus-putus",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan angka 11–15 dengan benar",
+          "Anak mampu menuliskan angka 11–15 meski belum sempurna",
+          "Anak mampu mencocokkan angka dengan jumlah benda 11–15"
+        ]
+      },
+      {
+        "judul": "Mengenal Angka 16–20",
+        "tujuan": "Anak mampu mengenali angka 16 sampai 20 dan menghitung mundur sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Bermain ular tangga fisik sambil menghitung langkah",
+            "tahap": "Konkret",
+            "diajarkan": "Pengenalan angka 16–20 lewat pengalaman gerak nyata (melangkah/melompat) yang dihitung langsung.",
+            "contoh": "Gambar kotak 1–20 di lantai dengan kapur, anak melompat dari kotak ke kotak sambil menyebut angkanya dengan lantang.",
+            "alat": [
+              "Kapur tulis atau selotip lantai"
+            ]
+          },
+          {
+            "nama": "Menghitung mundur menggunakan benda nyata",
+            "tahap": "Konkret",
+            "diajarkan": "Melatih arah hitungan mundur (20 ke 1) dengan bantuan benda fisik yang diambil satu per satu.",
+            "contoh": "Sediakan 20 kelereng dalam mangkuk, ambil satu per satu sambil menghitung mundur dari 20 hingga 1.",
+            "alat": [
+              "Kelereng/kancing 20 butir",
+              "Mangkuk"
+            ]
+          },
+          {
+            "nama": "Puzzle & menghubungkan titik angka 16–20",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer pengenalan angka besar ke aktivitas visual yang membutuhkan pengurutan gambar/simbol.",
+            "contoh": "Beri lembar \"hubungkan titik\" bernomor 16 sampai 20 yang membentuk gambar sederhana saat disambung berurutan.",
+            "alat": [
+              "Lembar hubungkan titik angka 16–20",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Menulis & mengurutkan simbol angka 11–20",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan angka 11–20 murni sebagai simbol tertulis yang harus dikenali dan diurutkan tanpa bantuan apa pun.",
+            "contoh": "Acak kartu angka 11–20 (simbol saja), minta anak menyusunnya kembali dari kecil ke besar, lalu menuliskannya di kertas.",
+            "alat": [
+              "Kartu angka 11–20 (simbol saja)",
+              "Kertas",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan angka 16–20 secara berurutan",
+          "Anak mampu berhitung mundur dari 20 hingga 1 dengan bantuan",
+          "Anak mampu menunjuk angka acak antara 11–20"
+        ]
+      },
+      {
+        "judul": "Penjumlahan Sederhana (1–5)",
+        "tujuan": "Anak memahami konsep menambah menggunakan benda konkret.",
+        "kegiatan": [
+          {
+            "nama": "Menggabungkan benda nyata lalu menghitung total",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep penjumlahan sebagai \"menggabungkan dua kelompok benda nyata jadi satu\", dasar paling konkret dari operasi tambah.",
+            "contoh": "Gabungkan 2 kelereng dan 3 kelereng dalam satu mangkuk, lalu hitung bersama totalnya (5).",
+            "alat": [
+              "Kelereng/kancing",
+              "Mangkuk kecil"
+            ]
+          },
+          {
+            "nama": "Bermain dadu kecil untuk menjumlah hasil lemparan",
+            "tahap": "Konkret",
+            "diajarkan": "Penjumlahan lewat aktivitas fisik acak (dadu) yang tetap menggunakan benda nyata sebagai alat hitung.",
+            "contoh": "Lempar dua dadu kecil bernomor 1–3, minta anak mengambil kelereng sejumlah tiap dadu lalu menghitung totalnya.",
+            "alat": [
+              "2 dadu kecil",
+              "Kelereng/kancing"
+            ]
+          },
+          {
+            "nama": "Menjawab & menggambar soal penjumlahan bergambar",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer konsep penjumlahan dari benda nyata ke representasi gambar — anak \"melihat\" penjumlahan tanpa memegang bendanya.",
+            "contoh": "Tunjukkan gambar 2 apel + 1 apel, minta anak menggambar hasil gabungannya dan menghitung total apel dalam gambar.",
+            "alat": [
+              "Lembar kerja penjumlahan bergambar",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Menulis kalimat penjumlahan dengan simbol + dan =",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan notasi matematis penjumlahan (+, =) sebagai representasi abstrak murni tanpa gambar atau benda bantu.",
+            "contoh": "Tulis soal \"2 + 1 = ?\" di kertas kosong tanpa gambar, minta anak menjawab langsung dari hasil hitungan mental/jarinya.",
+            "alat": [
+              "Lembar kerja soal angka",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menggabungkan dua kelompok benda dan menghitung totalnya (maks. 5)",
+          "Anak mampu menceritakan proses penjumlahan sederhana",
+          "Anak mampu menjawab soal penjumlahan bergambar"
+        ]
+      },
+      {
+        "judul": "Pengurangan Sederhana (1–5)",
+        "tujuan": "Anak memahami konsep berkurang menggunakan benda konkret.",
+        "kegiatan": [
+          {
+            "nama": "Memecahkan balon nyata lalu menghitung sisa",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep pengurangan sebagai \"berkurang dari kelompok benda nyata\", dialami langsung lewat aksi fisik yang seru.",
+            "contoh": "Tiup 5 balon, pecahkan 2 satu per satu, minta anak menghitung sisa balon yang belum pecah.",
+            "alat": [
+              "5 balon",
+              "Peniti (dipegang orang dewasa)"
+            ]
+          },
+          {
+            "nama": "Mengurangi benda nyata menggunakan jari",
+            "tahap": "Konkret",
+            "diajarkan": "Pengurangan dipraktikkan langsung dengan mengambil benda satu per satu sambil dibantu hitungan jari.",
+            "contoh": "Sediakan 5 kancing, minta anak mengambil 2 kancing sambil melipat 2 jari, lalu menghitung sisa kancing dan jari yang terangkat.",
+            "alat": [
+              "Kancing/kelereng 5 butir",
+              "Jari tangan"
+            ]
+          },
+          {
+            "nama": "Menjawab & menggambar soal pengurangan bergambar",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer konsep pengurangan dari aksi nyata ke representasi gambar yang menunjukkan proses \"berkurang\".",
+            "contoh": "Tunjukkan gambar 4 kue lalu 1 dicoret, minta anak menggambar ulang sisa kue dan menuliskan jumlahnya.",
+            "alat": [
+              "Lembar kerja pengurangan bergambar",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Menulis kalimat pengurangan dengan simbol - dan =",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan notasi matematis pengurangan (-, =) sebagai representasi abstrak murni tanpa gambar atau benda bantu.",
+            "contoh": "Tulis soal \"4 - 1 = ?\" di kertas kosong tanpa gambar, minta anak menjawab langsung dari hasil hitungan mental/jarinya.",
+            "alat": [
+              "Lembar kerja soal angka",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengurangi benda konkret dan menyebutkan sisanya",
+          "Anak mampu menjawab soal pengurangan bergambar sederhana",
+          "Anak mampu menggunakan jari untuk membantu menghitung pengurangan"
+        ]
+      },
+      {
+        "judul": "Mengenal Pola & Urutan Angka",
+        "tujuan": "Anak mampu mengenali pola angka dan menebak angka berikutnya.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun kartu angka fisik sesuai urutan",
+            "tahap": "Konkret",
+            "diajarkan": "Pengenalan keteraturan urutan angka lewat manipulasi langsung kartu/benda fisik yang bisa disusun ulang.",
+            "contoh": "Acak kartu angka 1–10, minta anak menyusunnya kembali secara berurutan di atas meja.",
+            "alat": [
+              "Kartu angka 1–10"
+            ]
+          },
+          {
+            "nama": "Melompat sesuai urutan angka di lantai",
+            "tahap": "Konkret",
+            "diajarkan": "Latihan urutan dan prediksi angka berikutnya lewat gerak fisik yang menyenangkan.",
+            "contoh": "Gambar angka di lantai dengan kapur, anak melompat berurutan sambil menyebut \"angka berikutnya berapa?\" sebelum melompat.",
+            "alat": [
+              "Kapur tulis/selotip lantai"
+            ]
+          },
+          {
+            "nama": "Melengkapi pola angka yang hilang pada lembar bergambar",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer pengenalan pola dari susunan fisik ke pengamatan visual pada lembar kerja bergambar.",
+            "contoh": "Lembar kerja berisi barisan angka 1,2,_,4,5 dengan gambar pendukung, anak mengisi angka yang kosong.",
+            "alat": [
+              "Lembar kerja pola angka",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Mengisi garis bilangan kosong secara tertulis",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan pola angka sebagai konsep abstrak murni pada garis bilangan tanpa bantuan gambar pendukung.",
+            "contoh": "Gambar garis lurus dengan beberapa angka kosong (garis bilangan sederhana 1–20), anak mengisi angka yang hilang.",
+            "alat": [
+              "Kertas garis bilangan",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu melengkapi angka yang hilang dalam suatu urutan",
+          "Anak mampu menyebutkan angka berikutnya dari suatu pola",
+          "Anak mampu mengenali pola angka genap/ganjil sederhana"
+        ]
+      },
+      {
+        "judul": "Mengenal Uang Mainan",
+        "tujuan": "Anak mengenal bentuk uang dan konsep tukar sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Mengenal & memegang koin serta uang kertas mainan",
+            "tahap": "Konkret",
+            "diajarkan": "Pengenalan bentuk fisik uang sebagai benda nyata dengan nilai, dikenali lewat sentuhan dan pengamatan langsung.",
+            "contoh": "Tunjukkan koin dan uang kertas mainan, minta anak menyebutkan bentuk, warna, dan meraba teksturnya.",
+            "alat": [
+              "Set uang mainan (koin & kertas)"
+            ]
+          },
+          {
+            "nama": "Bermain pasar-pasaran menukar barang dengan uang nyata",
+            "tahap": "Konkret",
+            "diajarkan": "Simulasi transaksi nyata sebagai pengenalan konsep membeli-menjual menggunakan uang mainan yang benar-benar berpindah tangan.",
+            "contoh": "Susun \"toko\" mini di rumah dengan barang bertanda harga, anak berperan sebagai penjual/pembeli menggunakan uang mainan sungguhan.",
+            "alat": [
+              "Uang mainan",
+              "Barang/mainan berlabel harga sederhana"
+            ]
+          },
+          {
+            "nama": "Mencocokkan gambar uang dengan gambar barang",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer konsep nilai tukar dari transaksi nyata ke representasi visual pada lembar kerja.",
+            "contoh": "Lembar kerja berisi gambar koin dan gambar barang berlabel harga, anak menggambar garis penghubung sesuai kecocokan nilai.",
+            "alat": [
+              "Lembar kerja gambar uang & barang",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Menghitung total nilai uang secara tertulis",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan nilai nominal sebagai angka abstrak yang dihitung tanpa harus memegang uang fisiknya.",
+            "contoh": "Tulis soal \"1 + 1 + 1 = berapa nilainya?\" mewakili 3 koin bernilai 1, anak menjawab dengan angka saja.",
+            "alat": [
+              "Lembar kerja soal angka",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengenali bentuk koin dan uang kertas mainan",
+          "Anak mampu bermain peran jual-beli sederhana",
+          "Anak mampu menghitung jumlah uang mainan secara sederhana"
+        ]
+      },
+      {
+        "judul": "Mengenal Waktu Sederhana",
+        "tujuan": "Anak mengenal konsep pagi, siang, malam, dan jam bulat.",
+        "kegiatan": [
+          {
+            "nama": "Memutar jarum jam mainan fisik",
+            "tahap": "Konkret",
+            "diajarkan": "Pengenalan konsep waktu lewat manipulasi langsung jarum jam sebagai benda nyata yang bisa diputar-putar.",
+            "contoh": "Putar jarum jam mainan ke pukul 7, tanyakan \"ini biasanya waktu apa di rumah kita?\"",
+            "alat": [
+              "Jam mainan/jam dinding bekas yang aman"
+            ]
+          },
+          {
+            "nama": "Mempraktikkan rutinitas nyata sesuai waktunya",
+            "tahap": "Konkret",
+            "diajarkan": "Konsep pagi-siang-malam dialami langsung lewat kegiatan nyata yang memang dilakukan pada waktu tersebut.",
+            "contoh": "Saat pagi, sore, dan malam tiba, ajak anak menyadari \"sekarang waktu apa ya? apa yang biasa kita lakukan sekarang?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menyusun jadwal harian bergambar",
+            "tahap": "Piktorial",
+            "diajarkan": "Transfer pemahaman waktu dari pengalaman nyata ke representasi visual berupa urutan gambar kegiatan.",
+            "contoh": "Anak menggambar/menempel gambar kegiatan (bangun, sekolah, tidur) berurutan sesuai waktunya di selembar kertas besar.",
+            "alat": [
+              "Kertas gambar/kartu kegiatan",
+              "Krayon/lem"
+            ]
+          },
+          {
+            "nama": "Membaca & menuliskan jam bulat dalam angka",
+            "tahap": "Abstrak",
+            "diajarkan": "Pengenalan waktu sebagai notasi angka abstrak (misalnya \"pukul 7\") yang dibaca langsung dari jam tanpa bantuan gambar rutinitas.",
+            "contoh": "Tunjukkan jam menunjuk angka 7, minta anak menuliskan \"pukul 7\" di kertas tanpa bantuan gambar kegiatan.",
+            "alat": [
+              "Jam mainan",
+              "Kertas",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu membedakan kegiatan pagi, siang, dan malam",
+          "Anak mampu menunjukkan jam bulat pada jam mainan",
+          "Anak mampu menyusun jadwal harian bergambar sendiri"
+        ]
+      },
+      {
+        "judul": "Review & Proyek Angka",
+        "tujuan": "Anak mampu menggabungkan seluruh kemampuan numerik yang telah dipelajari.",
+        "kegiatan": [
+          {
+            "nama": "Proyek toko-tokoan memakai uang & barang nyata",
+            "tahap": "Konkret",
+            "diajarkan": "Penerapan gabungan seluruh konsep numerik (hitung, uang, tambah-kurang) dalam simulasi bermain peran yang sepenuhnya konkret.",
+            "contoh": "Buka \"toko\" berisi barang berlabel harga 1–10, anak berbelanja menggunakan uang mainan dan menghitung kembalian sederhana.",
+            "alat": [
+              "Uang mainan",
+              "Barang berlabel harga",
+              "Keranjang belanja mini"
+            ]
+          },
+          {
+            "nama": "Bermain papan angka gabungan (ular tangga tantangan angka)",
+            "tahap": "Konkret",
+            "diajarkan": "Konsolidasi berbagai keterampilan numerik lewat permainan papan fisik yang menggabungkan hitung, tambah, dan kurang ringan.",
+            "contoh": "Mainkan papan ular tangga besar berisi tantangan angka, penjumlahan, dan pengurangan ringan di tiap kotak, memakai dadu dan bidak nyata.",
+            "alat": [
+              "Papan permainan gabungan",
+              "Dadu",
+              "Bidak"
+            ]
+          },
+          {
+            "nama": "Menyelesaikan kuis angka bergambar",
+            "tahap": "Piktorial",
+            "diajarkan": "Evaluasi pemahaman numerik lewat soal-soal bergambar yang menggabungkan hitung, banding, dan pola sekaligus.",
+            "contoh": "Berikan 10 soal bergambar (hitung, bandingkan, tambah), beri stiker bintang untuk setiap jawaban benar.",
+            "alat": [
+              "Lembar kuis bergambar",
+              "Stiker bintang"
+            ]
+          },
+          {
+            "nama": "Kuis angka murni & pentas menyanyi angka",
+            "tahap": "Abstrak",
+            "diajarkan": "Evaluasi akhir kemampuan mengenali dan mengoperasikan simbol angka murni tanpa bantuan gambar, ditutup dengan perayaan pencapaian.",
+            "contoh": "Berikan 5 soal angka tanpa gambar (misal \"7 + 2 = ?\"), lalu tutup sesi dengan anak menyanyikan lagu angka favoritnya di depan keluarga.",
+            "alat": [
+              "Lembar kuis angka murni",
+              "Pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengulang kemampuan berhitung 1–20 secara keseluruhan",
+          "Anak mampu menyelesaikan kuis angka bergambar secara mandiri",
+          "Anak mampu bermain proyek \"toko-tokoan\" menggunakan angka dan uang mainan"
+        ]
+      }
     ]
   },
-  spasial: {
-    emoji: "🧩",
-    title: "Kecerdasan Spasial",
-    desc: "Melatih kemampuan mengenali bentuk, ruang, arah, dan susunan benda — dasar penting untuk membaca, menggambar, dan berpikir konstruktif.",
-    months: [
-      { judul:"Bentuk Dasar (Lingkaran, Segitiga, Persegi)", tujuan:"Anak mampu mengenali dan menyebut nama bentuk dasar.", kegiatan:["Mencari benda berbentuk sama di rumah","Menempel bentuk pada gambar yang sesuai","Bermain puzzle bentuk sederhana","Mewarnai bentuk dasar dengan warna berbeda"]},
-      { judul:"Bentuk Lanjutan (Persegi Panjang, Oval, Bintang, Hati)", tujuan:"Anak mengenal bentuk-bentuk tambahan di sekitarnya.", kegiatan:["Menjiplak bentuk menggunakan cetakan","Menyusun bentuk menjadi gambar baru (rumah, mobil)","Permainan tebak bentuk dari sentuhan (mata tertutup)","Kolase bentuk dari kertas warna"]},
-      { judul:"Konsep Arah (Atas-Bawah-Kiri-Kanan)", tujuan:"Anak memahami dan mempraktikkan konsep arah sederhana.", kegiatan:["Permainan \\"Simon Says\\" dengan instruksi arah","Menyusun mainan sesuai instruksi arah","Menggambar tanda panah arah","Permainan petak umpet dengan petunjuk arah"]},
-      { judul:"Puzzle 4–6 Keping", tujuan:"Anak mampu menyusun puzzle sederhana secara mandiri.", kegiatan:["Menyusun puzzle bertema hewan","Membuat puzzle sendiri dari kartu gambar yang dipotong","Lomba puzzle dengan teman","Menyusun puzzle sambil bercerita gambarnya"]},
-      { judul:"Menyusun Balok Sesuai Contoh", tujuan:"Anak mampu meniru susunan balok atau lego dari contoh gambar.", kegiatan:["Membangun menara dari balok","Meniru bangunan sederhana dari gambar","Bermain lego bebas dengan tema tertentu","Membandingkan hasil bangunan dengan contoh"]},
-      { judul:"Posisi (Dalam-Luar, Depan-Belakang)", tujuan:"Anak memahami konsep posisi benda terhadap benda lain.", kegiatan:["Permainan menyembunyikan benda di dalam/luar kotak","Menyusun mainan sesuai posisi yang diminta","Instruksi posisi bertahap (di depan, di belakang)","Bermain kotak berlapis untuk konsep dalam-luar"]},
-      { judul:"Menggambar & Meniru Bentuk Geometri", tujuan:"Anak mampu menjiplak dan menggambar bentuk geometri sederhana.", kegiatan:["Menjiplak bentuk menggunakan penggaris bentuk","Menggambar bebas menggunakan bentuk dasar","Mewarnai pola geometri berulang","Membuat gambar wajah dari gabungan bentuk"]},
-      { judul:"Puzzle 8–12 Keping", tujuan:"Anak mampu menyusun puzzle dengan tingkat kesulitan lebih tinggi.", kegiatan:["Menyusun puzzle bertema kendaraan","Puzzle berkelompok bersama teman","Mengatur waktu menyusun puzzle","Puzzle berdasarkan cerita bergambar"]},
-      { judul:"Melipat Kertas Sederhana (Origami Dasar)", tujuan:"Anak melatih koordinasi tangan dan pemahaman ruang lewat lipatan kertas.", kegiatan:["Melipat topi dari kertas","Melipat perahu kertas sederhana","Melipat pesawat kertas","Bermain dengan hasil lipatan yang dibuat"]},
-      { judul:"Membaca Denah Sederhana", tujuan:"Anak mengenal konsep denah dan posisi benda dalam ruang.", kegiatan:["Membuat denah sederhana kamar tidur","Permainan harta karun dengan peta gambar","Menandai posisi benda pada denah kelas","Diskusi arah dari satu ruangan ke ruangan lain"]},
-      { judul:"Menyusun Balok 3D sesuai Gambar", tujuan:"Anak mampu meniru bentuk tiga dimensi dari kartu contoh.", kegiatan:["Membangun rumah-rumahan dari balok","Meniru bentuk 3D dari kartu contoh bergambar","Membandingkan bentuk 2D dan 3D","Bermain membangun bersama teman"]},
-      { judul:"Review & Proyek Spasial", tujuan:"Anak mampu menerapkan seluruh kemampuan spasial dalam satu proyek.", kegiatan:["Membuat miniatur rumah atau kota dari kardus dan balok","Pameran kecil hasil karya","Permainan estafet spasial antar kelompok","Cerita tentang miniatur yang telah dibuat"]}
+  "spasial": {
+    "emoji": "🧩",
+    "title": "Kecerdasan Spasial",
+    "desc": "Melatih kemampuan mengenali bentuk, ruang, arah, dan susunan benda — dasar penting untuk membaca, menggambar, dan berpikir konstruktif.",
+    "months": [
+      {
+        "judul": "Bentuk Dasar (Lingkaran, Segitiga, Persegi)",
+        "tujuan": "Anak mampu mengenali dan menyebut nama bentuk dasar.",
+        "kegiatan": [
+          {
+            "nama": "Mencari benda berbentuk sama di rumah",
+            "diajarkan": "Transfer pengenalan bentuk dari gambar ke benda nyata di lingkungan sekitar.",
+            "contoh": "Ajak anak berjalan keliling rumah mencari benda bundar (jam), segitiga (penggaris), persegi (buku).",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menempel bentuk pada gambar yang sesuai",
+            "diajarkan": "Mencocokkan bentuk sebagai latihan pengenalan visual dan koordinasi tangan-mata.",
+            "contoh": "Sediakan gambar berlubang siluet bentuk, anak menempel potongan bentuk yang sesuai di lubangnya.",
+            "alat": [
+              "Lembar gambar siluet bentuk",
+              "Potongan bentuk dari kertas/karton",
+              "Lem"
+            ]
+          },
+          {
+            "nama": "Bermain puzzle bentuk sederhana",
+            "diajarkan": "Pengenalan bentuk lewat manipulasi fisik keping puzzle sederhana.",
+            "contoh": "Gunakan puzzle kayu/karton bentuk dasar, anak mencocokkan tiap keping ke slot yang sesuai.",
+            "alat": [
+              "Puzzle bentuk dasar (kayu/karton)"
+            ]
+          },
+          {
+            "nama": "Mewarnai bentuk dasar dengan warna berbeda",
+            "diajarkan": "Penguatan nama & ciri bentuk lewat aktivitas mewarnai yang santai.",
+            "contoh": "Beri lembar berisi lingkaran, segitiga, persegi; minta anak mewarnai tiap bentuk dengan warna berbeda sesuai instruksi.",
+            "alat": [
+              "Lembar gambar bentuk dasar",
+              "Krayon/pensil warna"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan nama bentuk lingkaran, segitiga, dan persegi",
+          "Anak mampu menunjuk benda berbentuk sama di sekitarnya",
+          "Anak mampu mewarnai bentuk sesuai instruksi"
+        ]
+      },
+      {
+        "judul": "Bentuk Lanjutan (Persegi Panjang, Oval, Bintang, Hati)",
+        "tujuan": "Anak mengenal bentuk-bentuk tambahan di sekitarnya.",
+        "kegiatan": [
+          {
+            "nama": "Menjiplak bentuk menggunakan cetakan",
+            "diajarkan": "Pengenalan bentuk baru (oval, bintang, hati) lewat jiplakan yang presisi.",
+            "contoh": "Sediakan cetakan plastik bentuk oval/bintang/hati, anak menjiplak garis luarnya di kertas.",
+            "alat": [
+              "Cetakan bentuk (oval, bintang, hati)",
+              "Kertas",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Menyusun bentuk menjadi gambar baru (rumah, mobil)",
+            "diajarkan": "Kombinasi bentuk menjadi objek baru untuk melatih imajinasi spasial.",
+            "contoh": "Gunakan beberapa persegi dan segitiga potongan kertas untuk menyusun bentuk rumah sederhana.",
+            "alat": [
+              "Potongan bentuk kertas berbagai ukuran",
+              "Lem",
+              "Kertas alas"
+            ]
+          },
+          {
+            "nama": "Permainan tebak bentuk dari sentuhan (mata tertutup)",
+            "diajarkan": "Mengenali bentuk lewat indra peraba, melatih memori spasial tanpa bantuan visual.",
+            "contoh": "Tutup mata anak, berikan satu bentuk dari kayu/plastik, minta ia menebak nama bentuknya dari perabaan.",
+            "alat": [
+              "Set bentuk kayu/plastik",
+              "Kain penutup mata (opsional)"
+            ]
+          },
+          {
+            "nama": "Kolase bentuk dari kertas warna",
+            "diajarkan": "Eksplorasi bentuk lewat seni tempel untuk melatih kreativitas dan presisi tangan.",
+            "contoh": "Anak menempel potongan kertas warna berbagai bentuk untuk membuat kolase bebas bertema \"taman\".",
+            "alat": [
+              "Kertas warna berbagai bentuk",
+              "Lem",
+              "Kertas alas"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan bentuk persegi panjang, oval, bintang, dan hati",
+          "Anak mampu menyusun beberapa bentuk menjadi satu gambar baru",
+          "Anak mampu menebak bentuk melalui perabaan sederhana"
+        ]
+      },
+      {
+        "judul": "Konsep Arah (Atas-Bawah-Kiri-Kanan)",
+        "tujuan": "Anak memahami dan mempraktikkan konsep arah sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Permainan \"Simon Says\" dengan instruksi arah",
+            "diajarkan": "Pemahaman instruksi arah lewat permainan gerak yang melatih respons cepat.",
+            "contoh": "Beri instruksi \"Simon says: angkat tangan ke atas!\" atau \"ke kiri!\", anak hanya bergerak jika didahului \"Simon says\".",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menyusun mainan sesuai instruksi arah",
+            "diajarkan": "Penerapan konsep arah dalam menyusun benda sesuai instruksi verbal.",
+            "contoh": "Minta anak meletakkan mainan \"di atas kotak\", lalu \"di kanan kotak\", amati apakah sesuai.",
+            "alat": [
+              "Kotak/kardus kecil",
+              "Mainan kecil"
+            ]
+          },
+          {
+            "nama": "Menggambar tanda panah arah",
+            "diajarkan": "Representasi arah dalam bentuk simbol visual (tanda panah).",
+            "contoh": "Contohkan gambar panah ke atas/bawah/kiri/kanan, minta anak menggambar ulang dan menyebut artinya.",
+            "alat": [
+              "Kertas",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Permainan petak umpet dengan petunjuk arah",
+            "diajarkan": "Latihan arah dalam konteks bermain yang aktif dan menyenangkan.",
+            "contoh": "Bermain petak umpet dengan aturan tambahan: pemberi petunjuk hanya boleh bilang \"lebih ke kiri\" atau \"maju sedikit\".",
+            "alat": [
+              "Ruangan/halaman bermain"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti instruksi arah atas-bawah-kiri-kanan",
+          "Anak mampu menggambar tanda arah dengan benar",
+          "Anak mampu menyusun benda sesuai posisi arah yang diminta"
+        ]
+      },
+      {
+        "judul": "Puzzle 4–6 Keping",
+        "tujuan": "Anak mampu menyusun puzzle sederhana secara mandiri.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun puzzle bertema hewan",
+            "diajarkan": "Melatih penyelesaian gambar utuh dari bagian-bagian kecil bertema familiar.",
+            "contoh": "Sediakan puzzle 4-6 keping bergambar kucing atau gajah, dampingi anak menyusunnya dari sudut lebih dulu.",
+            "alat": [
+              "Puzzle 4–6 keping bertema hewan"
+            ]
+          },
+          {
+            "nama": "Membuat puzzle sendiri dari kartu gambar yang dipotong",
+            "diajarkan": "Membuat alat belajar sendiri sekaligus melatih pemahaman bagian-keseluruhan.",
+            "contoh": "Gunting satu gambar besar menjadi 4-6 potongan tidak beraturan, minta anak menyusunnya kembali.",
+            "alat": [
+              "Gambar/foto besar bekas majalah",
+              "Gunting"
+            ]
+          },
+          {
+            "nama": "Lomba puzzle dengan teman",
+            "diajarkan": "Motivasi lewat kompetisi ringan untuk melatih kecepatan dan ketelitian.",
+            "contoh": "Sediakan dua puzzle identik untuk dua anak, hitung waktu siapa yang selesai lebih dulu dengan benar.",
+            "alat": [
+              "2 set puzzle identik",
+              "Stopwatch/HP (opsional)"
+            ]
+          },
+          {
+            "nama": "Menyusun puzzle sambil bercerita gambarnya",
+            "diajarkan": "Menghubungkan aktivitas motorik dengan kemampuan bahasa lewat narasi gambar.",
+            "contoh": "Setelah puzzle tersusun, minta anak menceritakan apa yang terjadi dalam gambar tersebut.",
+            "alat": [
+              "Puzzle bergambar cerita sederhana"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyusun puzzle 4–6 keping secara mandiri",
+          "Anak mampu menyelesaikan puzzle dalam waktu yang wajar",
+          "Anak mampu menceritakan gambar hasil puzzle yang disusun"
+        ]
+      },
+      {
+        "judul": "Menyusun Balok Sesuai Contoh",
+        "tujuan": "Anak mampu meniru susunan balok atau lego dari contoh gambar.",
+        "kegiatan": [
+          {
+            "nama": "Membangun menara dari balok",
+            "diajarkan": "Latihan keseimbangan dan koordinasi lewat konstruksi vertikal sederhana.",
+            "contoh": "Beri 10 balok kayu/plastik, minta anak menyusun menara setinggi mungkin tanpa roboh.",
+            "alat": [
+              "Balok kayu/plastik ±10 keping"
+            ]
+          },
+          {
+            "nama": "Meniru bangunan sederhana dari gambar",
+            "diajarkan": "Meniru pola susunan dari referensi visual, melatih ketelitian spasial.",
+            "contoh": "Tunjukkan foto susunan balok berbentuk rumah sederhana, minta anak menirunya persis.",
+            "alat": [
+              "Balok/lego",
+              "Kartu contoh gambar susunan"
+            ]
+          },
+          {
+            "nama": "Bermain lego bebas dengan tema tertentu",
+            "diajarkan": "Eksplorasi bebas untuk melatih kreativitas dalam batasan tema tertentu.",
+            "contoh": "Beri tema \"buatlah kendaraan\", anak bebas menyusun lego menjadi bentuk kendaraan versinya sendiri.",
+            "alat": [
+              "Set lego/balok susun"
+            ]
+          },
+          {
+            "nama": "Membandingkan hasil bangunan dengan contoh",
+            "diajarkan": "Refleksi hasil karya lewat perbandingan untuk melatih ketelitian mengamati.",
+            "contoh": "Letakkan hasil bangunan anak di sebelah contoh gambar, tanyakan \"ada bagian yang beda tidak?\"",
+            "alat": [
+              "Hasil bangunan balok",
+              "Kartu contoh gambar"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu meniru susunan balok dari contoh gambar",
+          "Anak mampu membangun menara balok yang stabil",
+          "Anak mampu membandingkan hasil karyanya dengan contoh"
+        ]
+      },
+      {
+        "judul": "Posisi (Dalam-Luar, Depan-Belakang)",
+        "tujuan": "Anak memahami konsep posisi benda terhadap benda lain.",
+        "kegiatan": [
+          {
+            "nama": "Permainan menyembunyikan benda di dalam/luar kotak",
+            "diajarkan": "Pemahaman konsep dalam-luar lewat aktivitas mencari yang melibatkan rasa penasaran.",
+            "contoh": "Sembunyikan mainan kecil di dalam kotak dan di luar/di samping kotak, minta anak menemukan sesuai instruksi \"cari yang di dalam kotak\".",
+            "alat": [
+              "Kotak kecil",
+              "Mainan kecil"
+            ]
+          },
+          {
+            "nama": "Menyusun mainan sesuai posisi yang diminta",
+            "diajarkan": "Penerapan kosakata posisi dalam instruksi penyusunan benda.",
+            "contoh": "Minta anak meletakkan boneka \"di depan kursi\" kemudian \"di belakang kursi\", amati responsnya.",
+            "alat": [
+              "Kursi kecil/kotak",
+              "Boneka/mainan"
+            ]
+          },
+          {
+            "nama": "Instruksi posisi bertahap (di depan, di belakang)",
+            "diajarkan": "Latihan mengikuti instruksi posisi secara berurutan dan bertahap.",
+            "contoh": "Berikan instruksi berurutan: \"berdiri di depan pintu, lalu duduk di belakang sofa\", amati apakah anak mengikuti dengan benar.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Bermain kotak berlapis untuk konsep dalam-luar",
+            "diajarkan": "Eksplorasi konsep dalam-luar lewat struktur bertingkat yang konkret.",
+            "contoh": "Susun 2-3 kotak berbeda ukuran bertumpuk/bersarang, minta anak menaruh benda \"di dalam kotak paling kecil\".",
+            "alat": [
+              "2–3 kotak berbeda ukuran (bisa bersarang)",
+              "Benda kecil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menjelaskan posisi benda (dalam-luar, depan-belakang)",
+          "Anak mampu menyembunyikan dan menemukan benda sesuai instruksi posisi",
+          "Anak mampu mengikuti instruksi posisi secara bertahap"
+        ]
+      },
+      {
+        "judul": "Menggambar & Meniru Bentuk Geometri",
+        "tujuan": "Anak mampu menjiplak dan menggambar bentuk geometri sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Menjiplak bentuk menggunakan penggaris bentuk",
+            "diajarkan": "Latihan kontrol tangan lewat penjiplakan bentuk menggunakan alat bantu.",
+            "contoh": "Gunakan penggaris bentuk (mal) untuk menjiplak lingkaran dan segitiga di buku gambar.",
+            "alat": [
+              "Penggaris bentuk/mal",
+              "Buku gambar",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Menggambar bebas menggunakan bentuk dasar",
+            "diajarkan": "Kebebasan berekspresi menggunakan bentuk dasar sebagai kerangka gambar.",
+            "contoh": "Ajak anak menggambar rumah menggunakan persegi (dinding) dan segitiga (atap) sebagai dasarnya.",
+            "alat": [
+              "Buku gambar",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Mewarnai pola geometri berulang",
+            "diajarkan": "Melatih konsistensi motorik lewat pengulangan pola geometri sederhana.",
+            "contoh": "Gambar barisan pola segitiga-lingkaran berulang, minta anak mewarnainya dengan pola warna konsisten.",
+            "alat": [
+              "Lembar pola geometri",
+              "Krayon/pensil warna"
+            ]
+          },
+          {
+            "nama": "Membuat gambar wajah dari gabungan bentuk",
+            "diajarkan": "Menggabungkan beberapa bentuk menjadi representasi wajah, melatih komposisi spasial.",
+            "contoh": "Gunakan lingkaran besar (wajah), lingkaran kecil (mata), segitiga (hidung) untuk membuat gambar wajah.",
+            "alat": [
+              "Kertas",
+              "Pensil/krayon"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menjiplak bentuk geometri dengan rapi",
+          "Anak mampu menggambar bebas menggunakan bentuk-bentuk dasar",
+          "Anak mampu mewarnai pola geometri berulang dengan konsisten"
+        ]
+      },
+      {
+        "judul": "Puzzle 8–12 Keping",
+        "tujuan": "Anak mampu menyusun puzzle dengan tingkat kesulitan lebih tinggi.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun puzzle bertema kendaraan",
+            "diajarkan": "Peningkatan kompleksitas puzzle untuk melatih kesabaran dan strategi penyusunan.",
+            "contoh": "Sediakan puzzle 8-12 keping bertema mobil/pesawat, dampingi anak mengelompokkan potongan tepi dulu.",
+            "alat": [
+              "Puzzle 8–12 keping bertema kendaraan"
+            ]
+          },
+          {
+            "nama": "Puzzle berkelompok bersama teman",
+            "diajarkan": "Kolaborasi menyusun puzzle untuk melatih komunikasi dan pembagian tugas.",
+            "contoh": "Dua anak menyusun satu puzzle bersama, masing-masing bertugas mencari potongan warna tertentu.",
+            "alat": [
+              "1 set puzzle 8–12 keping"
+            ]
+          },
+          {
+            "nama": "Mengatur waktu menyusun puzzle",
+            "diajarkan": "Manajemen waktu dalam menyelesaikan tugas visual-spasial.",
+            "contoh": "Beri batas waktu 5 menit dengan timer, anak mencoba menyusun sebanyak mungkin keping sebelum waktu habis.",
+            "alat": [
+              "Puzzle",
+              "Timer/jam"
+            ]
+          },
+          {
+            "nama": "Puzzle berdasarkan cerita bergambar",
+            "diajarkan": "Menghubungkan hasil puzzle dengan narasi cerita untuk melatih bahasa dan spasial bersamaan.",
+            "contoh": "Setelah puzzle bertema \"pantai\" selesai, minta anak bercerita tentang apa yang terjadi di gambar itu.",
+            "alat": [
+              "Puzzle bergambar cerita"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyusun puzzle 8–12 keping",
+          "Anak mampu bekerja sama menyusun puzzle secara berkelompok",
+          "Anak mampu menyelesaikan puzzle bertema tertentu"
+        ]
+      },
+      {
+        "judul": "Melipat Kertas Sederhana (Origami Dasar)",
+        "tujuan": "Anak melatih koordinasi tangan dan pemahaman ruang lewat lipatan kertas.",
+        "kegiatan": [
+          {
+            "nama": "Melipat topi dari kertas",
+            "diajarkan": "Latihan melipat bertahap dengan garis lurus sederhana sebagai dasar origami.",
+            "contoh": "Ikuti langkah melipat topi dari kertas persegi, dampingi tiap lipatan sampai jadi.",
+            "alat": [
+              "Kertas persegi/koran",
+              "Contoh langkah lipatan"
+            ]
+          },
+          {
+            "nama": "Melipat perahu kertas sederhana",
+            "diajarkan": "Melipat bentuk dengan lebih banyak langkah untuk melatih urutan dan ketelitian.",
+            "contoh": "Lipat kertas menjadi perahu langkah demi langkah, tunjukkan hasilnya bisa \"berlayar\" di baskom air.",
+            "alat": [
+              "Kertas",
+              "Baskom air (opsional untuk main perahu)"
+            ]
+          },
+          {
+            "nama": "Melipat pesawat kertas",
+            "diajarkan": "Latihan lipatan simetris untuk melatih pemahaman ruang dan keseimbangan bentuk.",
+            "contoh": "Lipat kertas menjadi pesawat sederhana, lalu terbangkan bersama untuk lihat siapa yang paling jauh.",
+            "alat": [
+              "Kertas HVS/bekas"
+            ]
+          },
+          {
+            "nama": "Bermain dengan hasil lipatan yang dibuat",
+            "diajarkan": "Penerapan hasil karya dalam permainan untuk memperkuat rasa bangga dan pemahaman fungsi bentuk.",
+            "contoh": "Gunakan topi, perahu, dan pesawat yang sudah dilipat untuk bermain peran atau lomba kecil.",
+            "alat": [
+              "Hasil lipatan kertas yang sudah dibuat"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu melipat kertas menjadi bentuk sederhana (topi/perahu/pesawat)",
+          "Anak mampu mengikuti langkah lipatan secara berurutan",
+          "Anak mampu menjaga kerapian hasil lipatannya"
+        ]
+      },
+      {
+        "judul": "Membaca Denah Sederhana",
+        "tujuan": "Anak mengenal konsep denah dan posisi benda dalam ruang.",
+        "kegiatan": [
+          {
+            "nama": "Membuat denah sederhana kamar tidur",
+            "diajarkan": "Pengenalan representasi ruang dari sudut pandang atas (bird's eye view).",
+            "contoh": "Gambarkan kotak-kotak sederhana mewakili tempat tidur, lemari, pintu di kamar anak sesuai posisi aslinya.",
+            "alat": [
+              "Kertas gambar besar",
+              "Pensil/krayon"
+            ]
+          },
+          {
+            "nama": "Permainan harta karun dengan peta gambar",
+            "diajarkan": "Penerapan denah dalam permainan pencarian untuk melatih orientasi ruang.",
+            "contoh": "Sembunyikan \"harta\" (mainan kecil) di rumah, beri anak peta gambar sederhana untuk menemukannya.",
+            "alat": [
+              "Peta gambar sederhana rumah",
+              "Mainan kecil sebagai \"harta\""
+            ]
+          },
+          {
+            "nama": "Menandai posisi benda pada denah kelas",
+            "diajarkan": "Latihan menandai posisi benda pada representasi dua dimensi.",
+            "contoh": "Beri gambar denah kelas kosong, minta anak menandai/menempel simbol di posisi meja dan papan tulis.",
+            "alat": [
+              "Gambar denah kelas kosong",
+              "Stiker simbol kecil"
+            ]
+          },
+          {
+            "nama": "Diskusi arah dari satu ruangan ke ruangan lain",
+            "diajarkan": "Verbalisasi arah perpindahan antar ruang untuk memperkuat bahasa spasial.",
+            "contoh": "Tanyakan \"kalau dari kamar mau ke dapur, kita lewat mana?\" sambil menunjuk denah rumah.",
+            "alat": [
+              "Denah rumah sederhana yang sudah dibuat"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu membuat denah sederhana kamar atau kelas",
+          "Anak mampu menemukan benda menggunakan peta gambar",
+          "Anak mampu menjelaskan arah dari satu ruang ke ruang lain"
+        ]
+      },
+      {
+        "judul": "Menyusun Balok 3D sesuai Gambar",
+        "tujuan": "Anak mampu meniru bentuk tiga dimensi dari kartu contoh.",
+        "kegiatan": [
+          {
+            "nama": "Membangun rumah-rumahan dari balok",
+            "diajarkan": "Konstruksi 3D bertema rumah untuk melatih pemahaman ruang nyata.",
+            "contoh": "Susun balok membentuk dinding dan atap sederhana menyerupai rumah-rumahan.",
+            "alat": [
+              "Balok kayu/plastik"
+            ]
+          },
+          {
+            "nama": "Meniru bentuk 3D dari kartu contoh bergambar",
+            "diajarkan": "Meniru struktur 3D dari referensi visual dua dimensi ke bentuk nyata.",
+            "contoh": "Tunjukkan kartu bergambar susunan balok tertentu, minta anak membangunnya sesuai contoh.",
+            "alat": [
+              "Balok/lego",
+              "Kartu contoh bergambar susunan 3D"
+            ]
+          },
+          {
+            "nama": "Membandingkan bentuk 2D dan 3D",
+            "diajarkan": "Perbandingan konsep 2D dan 3D untuk memperdalam pemahaman ruang.",
+            "contoh": "Tunjukkan gambar persegi (2D) di samping kubus nyata (3D), diskusikan perbedaannya.",
+            "alat": [
+              "Gambar bentuk 2D",
+              "Balok/kubus 3D nyata"
+            ]
+          },
+          {
+            "nama": "Bermain membangun bersama teman",
+            "diajarkan": "Kolaborasi membangun struktur bersama untuk melatih kerja sama spasial.",
+            "contoh": "Dua anak membangun satu istana balok bersama, masing-masing menambahkan bagian berbeda.",
+            "alat": [
+              "Balok/lego jumlah banyak"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu meniru bentuk 3D dari kartu contoh",
+          "Anak mampu membedakan bentuk 2D dan bentuk 3D",
+          "Anak mampu bekerja sama membangun bersama teman"
+        ]
+      },
+      {
+        "judul": "Review & Proyek Spasial",
+        "tujuan": "Anak mampu menerapkan seluruh kemampuan spasial dalam satu proyek.",
+        "kegiatan": [
+          {
+            "nama": "Membuat miniatur rumah atau kota dari kardus dan balok",
+            "diajarkan": "Sintesis seluruh kemampuan spasial dalam proyek nyata berskala lebih besar.",
+            "contoh": "Gunakan kardus bekas dan balok untuk membangun miniatur \"kota kecil\" dengan jalan dan rumah-rumah.",
+            "alat": [
+              "Kardus bekas berbagai ukuran",
+              "Balok/lego",
+              "Gunting",
+              "Selotip"
+            ]
+          },
+          {
+            "nama": "Pameran kecil hasil karya",
+            "diajarkan": "Presentasi hasil karya untuk melatih kepercayaan diri dan komunikasi.",
+            "contoh": "Tata hasil miniatur di meja, undang keluarga untuk melihat sambil anak menjelaskan bagian-bagiannya.",
+            "alat": [
+              "Hasil karya miniatur",
+              "Meja pajangan"
+            ]
+          },
+          {
+            "nama": "Permainan estafet spasial antar kelompok",
+            "diajarkan": "Penerapan konsep arah dan posisi dalam permainan fisik berkelompok.",
+            "contoh": "Bagi anak menjadi 2 tim, masing-masing bergiliran memindahkan benda melewati rintangan sesuai instruksi arah.",
+            "alat": [
+              "Rintangan sederhana (kursi, kotak)",
+              "Benda untuk dipindahkan"
+            ]
+          },
+          {
+            "nama": "Cerita tentang miniatur yang telah dibuat",
+            "diajarkan": "Refleksi verbal atas proses berpikir spasial yang sudah dilalui.",
+            "contoh": "Minta anak menceritakan bagian mana dari miniaturnya yang paling ia sukai dan mengapa.",
+            "alat": [
+              "Hasil karya miniatur yang sudah dibuat"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu membuat miniatur sederhana dari kardus/balok",
+          "Anak mampu menceritakan hasil karya spasial yang dibuatnya",
+          "Anak mampu mengikuti permainan estafet spasial secara berkelompok"
+        ]
+      }
     ]
   },
-  logika: {
-    emoji: "💡",
-    title: "Kecerdasan Logika",
-    desc: "Mengembangkan kemampuan berpikir kritis: mengelompokkan, mengenali pola, memahami sebab-akibat, hingga memecahkan masalah sederhana sehari-hari.",
-    months: [
-      { judul:"Mengelompokkan Berdasarkan Warna", tujuan:"Anak mampu mengelompokkan benda berdasarkan warna.", kegiatan:["Menyortir manik atau mainan berdasarkan warna","Lomba kelompok warna antar teman","Bernyanyi lagu warna sambil menunjuk benda","Mengurutkan warna pelangi sederhana"]},
-      { judul:"Mengelompokkan Berdasarkan Bentuk & Ukuran", tujuan:"Anak mampu mengelompokkan benda berdasarkan bentuk dan ukuran.", kegiatan:["Menyortir kancing berdasarkan bentuk","Permainan tebak kelompok benda","Menyusun benda dari kecil ke besar dalam kelompok","Diskusi alasan pengelompokan yang dipilih"]},
-      { judul:"Pola Sederhana AB-AB", tujuan:"Anak mampu mengenali dan melanjutkan pola dua elemen.", kegiatan:["Menyusun manik dengan pola warna AB-AB","Menebak pola lanjutan pada barisan benda","Permainan tepuk tangan berpola","Menggambar pola sederhana di kertas"]},
-      { judul:"Pola Lanjutan ABC-ABC", tujuan:"Anak mampu mengenali dan melanjutkan pola tiga elemen.", kegiatan:["Menyusun balok dengan pola tiga warna","Permainan kartu pola berurutan","Menebak benda yang hilang dalam pola","Membuat pola sendiri lalu diminta teman menebak"]},
-      { judul:"Sebab Akibat Sederhana", tujuan:"Anak memahami hubungan sebab dan akibat dalam kehidupan sehari-hari.", kegiatan:["Diskusi cerita \\"kalau hujan, maka...\\"","Eksperimen sederhana air dan pasir","Diskusi gambar sebab-akibat","Permainan tebak akibat dari suatu kejadian"]},
-      { judul:"Mencari Benda yang Berbeda (Ganjil Satu)", tujuan:"Anak mampu mengidentifikasi benda yang berbeda dari kelompoknya.", kegiatan:["Permainan \\"yang beda sendiri\\" dari benda nyata","Mengerjakan lembar kerja gambar","Kuis kelompok mencari perbedaan","Diskusi alasan memilih benda yang berbeda"]},
-      { judul:"Sortir Berdasarkan Kategori", tujuan:"Anak mampu mengelompokkan benda berdasarkan kategori umum.", kegiatan:["Mengelompokkan gambar hewan, buah, dan kendaraan","Permainan memori berbasis kategori","Bermain peran di pasar mengelompokkan barang","Menyusun kartu kategori bersama"]},
-      { judul:"Tebak-tebakan Sederhana", tujuan:"Anak mampu menebak benda dari ciri-ciri yang diberikan.", kegiatan:["Teka-teki ciri-ciri hewan atau benda","Permainan tanya-jawab sederhana untuk menebak","Menggambar jawaban tebakan","Bergantian menjadi pemberi dan penebak"]},
-      { judul:"Menyusun Cerita dari Urutan Gambar", tujuan:"Anak mampu menyusun urutan kejadian dari gambar acak.", kegiatan:["Menyusun kartu cerita menjadi urutan yang benar","Menceritakan ulang urutan kejadian","Drama sederhana berdasarkan cerita gambar","Diskusi \\"apa yang terjadi selanjutnya?\\""]},
-      { judul:"Memecahkan Masalah Sehari-hari", tujuan:"Anak mampu memikirkan solusi sederhana atas suatu masalah.", kegiatan:["Diskusi skenario sederhana (mainan hilang, dll)","Bermain simulasi mencari solusi bersama","Cerita tentang tokoh yang memecahkan masalah","Latihan bertanya \\"bagaimana caranya?\\""]},
-      { judul:"Permainan Strategi Sederhana", tujuan:"Anak mampu memahami aturan dan giliran dalam permainan strategi.", kegiatan:["Bermain congklak mini","Bermain ular tangga bersama","Latihan mengikuti aturan dan menunggu giliran","Diskusi strategi sederhana yang digunakan"]},
-      { judul:"Review & Tantangan Logika Gabungan", tujuan:"Anak mampu menggabungkan seluruh kemampuan logika yang telah dipelajari.", kegiatan:["Lomba logika antar kelompok kecil","Kuis besar akhir tahun bertema logika","Membuat permainan logika sederhana sendiri","Pameran hasil karya berpikir anak selama setahun"]}
+  "logika": {
+    "emoji": "💡",
+    "title": "Kecerdasan Logika",
+    "desc": "Mengembangkan kemampuan berpikir kritis: mengelompokkan, mengenali pola, memahami sebab-akibat, hingga memecahkan masalah sederhana sehari-hari.",
+    "months": [
+      {
+        "judul": "Mengelompokkan Berdasarkan Warna",
+        "tujuan": "Anak mampu mengelompokkan benda berdasarkan warna.",
+        "kegiatan": [
+          {
+            "nama": "Menyortir manik atau mainan berdasarkan warna",
+            "diajarkan": "Klasifikasi dasar berdasarkan satu atribut (warna) sebagai fondasi berpikir logis.",
+            "contoh": "Campur manik merah, kuning, biru dalam satu wadah, minta anak memisahkan ke mangkuk sesuai warnanya.",
+            "alat": [
+              "Manik-manik/kancing 3 warna",
+              "3 mangkuk kecil"
+            ]
+          },
+          {
+            "nama": "Lomba kelompok warna antar teman",
+            "diajarkan": "Kecepatan mengelompokkan lewat kompetisi ringan yang memacu semangat.",
+            "contoh": "Bagi mainan warna-warni ke dua tim, masing-masing berlomba mengumpulkan satu warna tercepat.",
+            "alat": [
+              "Mainan/benda warna-warni jumlah banyak"
+            ]
+          },
+          {
+            "nama": "Bernyanyi lagu warna sambil menunjuk benda",
+            "diajarkan": "Penguatan nama warna lewat gerakan menunjuk yang melibatkan seluruh tubuh.",
+            "contoh": "Nyanyikan lagu warna, tiap kali nama warna disebut, anak menunjuk benda berwarna itu di ruangan.",
+            "alat": [
+              "Lirik lagu warna"
+            ]
+          },
+          {
+            "nama": "Mengurutkan warna pelangi sederhana",
+            "diajarkan": "Urutan warna sebagai pengenalan pola tetap yang ada di alam.",
+            "contoh": "Tunjukkan kartu warna pelangi, minta anak menyusunnya sesuai urutan merah-jingga-kuning-hijau-biru.",
+            "alat": [
+              "Kartu/kain 6 warna pelangi"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengelompokkan benda berdasarkan warna",
+          "Anak mampu menyebutkan alasan pengelompokan yang dipilih",
+          "Anak mampu mengurutkan warna pelangi secara sederhana"
+        ]
+      },
+      {
+        "judul": "Mengelompokkan Bentuk & Ukuran",
+        "tujuan": "Anak mampu mengelompokkan benda berdasarkan bentuk dan ukuran.",
+        "kegiatan": [
+          {
+            "nama": "Menyortir kancing berdasarkan bentuk",
+            "diajarkan": "Klasifikasi berdasarkan atribut bentuk sebagai lanjutan dari klasifikasi warna.",
+            "contoh": "Campur kancing bulat dan kotak, minta anak memisahkannya ke dua wadah sesuai bentuknya.",
+            "alat": [
+              "Kancing bentuk bulat & kotak",
+              "2 wadah kecil"
+            ]
+          },
+          {
+            "nama": "Permainan tebak kelompok benda",
+            "diajarkan": "Latihan menebak kategori sebagai bentuk penalaran induktif sederhana.",
+            "contoh": "Tunjukkan 3 benda dari satu kategori (semua besar), minta anak menebak benda ke-4 yang cocok masuk kelompok itu.",
+            "alat": [
+              "Kumpulan benda campur ukuran"
+            ]
+          },
+          {
+            "nama": "Menyusun benda dari kecil ke besar dalam kelompok",
+            "diajarkan": "Pengurutan berdasarkan ukuran sebagai latihan seriasi (urutan bertingkat).",
+            "contoh": "Beri 5 balok berbeda ukuran, minta anak menyusunnya berjajar dari terkecil ke terbesar.",
+            "alat": [
+              "5 balok/benda berbeda ukuran"
+            ]
+          },
+          {
+            "nama": "Diskusi alasan pengelompokan yang dipilih",
+            "diajarkan": "Verbalisasi alasan sebagai latihan menjelaskan proses berpikir, bukan hanya hasil.",
+            "contoh": "Setelah anak mengelompokkan benda, tanyakan \"kenapa kamu taruh yang ini di sini?\"",
+            "alat": [
+              "Hasil pengelompokan yang sudah dibuat"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengelompokkan benda berdasarkan bentuk dan ukuran",
+          "Anak mampu mengurutkan benda dari kecil ke besar",
+          "Anak mampu menjelaskan dasar pengelompokan yang digunakan"
+        ]
+      },
+      {
+        "judul": "Pola Sederhana AB-AB",
+        "tujuan": "Anak mampu mengenali dan melanjutkan pola dua elemen.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun manik dengan pola warna AB-AB",
+            "diajarkan": "Pengenalan pola berulang dua elemen sebagai dasar pemikiran matematis.",
+            "contoh": "Susun manik merah-biru-merah-biru, lalu berhenti dan minta anak melanjutkan pola tersebut.",
+            "alat": [
+              "Manik-manik 2 warna",
+              "Tali/senar (opsional)"
+            ]
+          },
+          {
+            "nama": "Menebak pola lanjutan pada barisan benda",
+            "diajarkan": "Prediksi pola sebagai latihan mengenali keteraturan pada barisan benda.",
+            "contoh": "Susun barisan kancing-daun-kancing-daun, tutup bagian akhir, minta anak menebak benda selanjutnya.",
+            "alat": [
+              "2 jenis benda kecil berbeda"
+            ]
+          },
+          {
+            "nama": "Permainan tepuk tangan berpola",
+            "diajarkan": "Internalisasi pola lewat gerak tubuh dan suara berirama.",
+            "contoh": "Buat pola tepuk-tepuk-hentak-tepuk-tepuk-hentak, minta anak menirukan dan melanjutkannya.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menggambar pola sederhana di kertas",
+            "diajarkan": "Transfer pola dari benda konkret ke representasi gambar di atas kertas.",
+            "contoh": "Minta anak menggambar pola lingkaran-kotak berulang sepanjang selembar kertas.",
+            "alat": [
+              "Kertas",
+              "Pensil/krayon"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu melanjutkan pola dua elemen (AB-AB)",
+          "Anak mampu menyusun pola sederhana secara mandiri",
+          "Anak mampu menebak pola yang dibuat oleh temannya"
+        ]
+      },
+      {
+        "judul": "Pola Lanjutan ABC-ABC",
+        "tujuan": "Anak mampu mengenali dan melanjutkan pola tiga elemen.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun balok dengan pola tiga warna",
+            "diajarkan": "Peningkatan kompleksitas pola menjadi tiga elemen berulang.",
+            "contoh": "Susun balok merah-kuning-hijau-merah-kuning-hijau, minta anak melanjutkan susunan tersebut.",
+            "alat": [
+              "Balok/kancing 3 warna"
+            ]
+          },
+          {
+            "nama": "Permainan kartu pola berurutan",
+            "diajarkan": "Pola dalam bentuk kartu untuk melatih pengenalan visual berurutan.",
+            "contoh": "Susun kartu bergambar matahari-bulan-bintang berulang, minta anak menyusun kartu lanjutannya.",
+            "alat": [
+              "Kartu bergambar 3 simbol berbeda"
+            ]
+          },
+          {
+            "nama": "Menebak benda yang hilang dalam pola",
+            "diajarkan": "Analisis pola untuk menemukan bagian yang hilang, melatih ketelitian.",
+            "contoh": "Susun pola ABC-ABC namun sengaja hilangkan satu bagian, minta anak menebak benda yang seharusnya ada di sana.",
+            "alat": [
+              "3 jenis benda kecil berbeda"
+            ]
+          },
+          {
+            "nama": "Membuat pola sendiri lalu diminta teman menebak",
+            "diajarkan": "Kreativitas membuat pola sendiri sebagai bukti pemahaman konsep, bukan sekadar mengikuti.",
+            "contoh": "Minta anak menyusun pola miliknya sendiri dengan 3 benda, lalu teman/orang tua menebak lanjutannya.",
+            "alat": [
+              "Beragam benda kecil untuk membuat pola"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu melanjutkan pola tiga elemen (ABC-ABC)",
+          "Anak mampu menemukan benda yang hilang dalam suatu pola",
+          "Anak mampu membuat pola baru secara mandiri"
+        ]
+      },
+      {
+        "judul": "Sebab Akibat Sederhana",
+        "tujuan": "Anak memahami hubungan sebab dan akibat dalam kehidupan sehari-hari.",
+        "kegiatan": [
+          {
+            "nama": "Diskusi cerita \"kalau hujan, maka...\"",
+            "diajarkan": "Pengenalan hubungan kondisional (\"kalau...maka...\") lewat situasi yang familiar.",
+            "contoh": "Diskusikan \"kalau hujan turun, apa yang akan terjadi di jalan? apa yang perlu kita bawa?\"",
+            "alat": [
+              "Tidak perlu alat khusus (opsional gambar hujan)"
+            ]
+          },
+          {
+            "nama": "Eksperimen sederhana air dan pasir",
+            "diajarkan": "Observasi sebab-akibat langsung lewat eksperimen sensorik sederhana.",
+            "contoh": "Tuang air ke gundukan pasir kering, amati bersama bagaimana pasir berubah bentuk dan warnanya.",
+            "alat": [
+              "Pasir",
+              "Air",
+              "Wadah/baskom"
+            ]
+          },
+          {
+            "nama": "Diskusi gambar sebab-akibat",
+            "diajarkan": "Analisis sebab-akibat lewat gambar berpasangan yang menunjukkan proses.",
+            "contoh": "Tunjukkan gambar balon ditusuk lalu gambar balon pecah, minta anak menjelaskan hubungannya.",
+            "alat": [
+              "Kartu gambar berpasangan sebab-akibat"
+            ]
+          },
+          {
+            "nama": "Permainan tebak akibat dari suatu kejadian",
+            "diajarkan": "Prediksi akibat sebagai latihan berpikir ke depan (forward reasoning).",
+            "contoh": "Ceritakan \"kalau gelas ini terjatuh dari meja, apa yang akan terjadi?\" sebelum benar-benar mempraktikkannya (dengan aman).",
+            "alat": [
+              "Benda aman untuk simulasi (misal bola, bukan kaca)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menjelaskan hubungan sebab-akibat sederhana dari cerita/gambar",
+          "Anak mampu memprediksi akibat dari suatu kejadian",
+          "Anak mampu mengikuti eksperimen sederhana dengan penuh perhatian"
+        ]
+      },
+      {
+        "judul": "Mencari Benda yang Berbeda (Ganjil Satu)",
+        "tujuan": "Anak mampu mengidentifikasi benda yang berbeda dari kelompoknya.",
+        "kegiatan": [
+          {
+            "nama": "Permainan \"yang beda sendiri\" dari benda nyata",
+            "diajarkan": "Identifikasi anomali dalam kelompok sebagai latihan analisis perbandingan.",
+            "contoh": "Susun 4 benda: 3 bulat dan 1 kotak, minta anak menunjuk mana yang \"beda sendiri\".",
+            "alat": [
+              "4–5 benda kecil, salah satu berbeda kategori"
+            ]
+          },
+          {
+            "nama": "Mengerjakan lembar kerja gambar",
+            "diajarkan": "Latihan identifikasi visual lewat lembar kerja terstruktur.",
+            "contoh": "Isi lembar kerja bergambar 4 buah sejenis dan 1 buah berbeda, anak melingkari yang berbeda.",
+            "alat": [
+              "Lembar kerja \"cari yang beda\"",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Kuis kelompok mencari perbedaan",
+            "diajarkan": "Kompetisi kelompok untuk melatih ketelitian di bawah sedikit tekanan waktu.",
+            "contoh": "Bagi anak jadi 2 kelompok, tunjukkan gambar berisi 5 benda, kelompok tercepat menyebut yang beda menang poin.",
+            "alat": [
+              "Kartu/gambar berisi kelompok benda"
+            ]
+          },
+          {
+            "nama": "Diskusi alasan memilih benda yang berbeda",
+            "diajarkan": "Verbalisasi alasan pemilihan untuk memperkuat penalaran, bukan sekadar menjawab benar/salah.",
+            "contoh": "Setelah anak menjawab, tanyakan \"kenapa menurutmu ini yang beda?\"",
+            "alat": [
+              "Hasil kegiatan sebelumnya"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menemukan benda yang berbeda dari kelompoknya",
+          "Anak mampu menjelaskan alasan perbedaan yang ditemukan",
+          "Anak mampu menyelesaikan kuis \"yang beda sendiri\" secara mandiri"
+        ]
+      },
+      {
+        "judul": "Sortir Berdasarkan Kategori",
+        "tujuan": "Anak mampu mengelompokkan benda berdasarkan kategori umum.",
+        "kegiatan": [
+          {
+            "nama": "Mengelompokkan gambar hewan, buah, dan kendaraan",
+            "diajarkan": "Klasifikasi berdasarkan kategori konseptual (bukan hanya fisik seperti warna/bentuk).",
+            "contoh": "Campur kartu bergambar hewan, buah, dan kendaraan, minta anak mengelompokkannya ke 3 kelompok.",
+            "alat": [
+              "Kartu bergambar hewan, buah, kendaraan"
+            ]
+          },
+          {
+            "nama": "Permainan memori berbasis kategori",
+            "diajarkan": "Penguatan kategori lewat permainan memori yang membutuhkan fokus dan klasifikasi sekaligus.",
+            "contoh": "Balik kartu bergambar kategori sama secara berpasangan, tapi kelompokkan dulu sebelum bermain memori.",
+            "alat": [
+              "Set kartu memori bertema kategori"
+            ]
+          },
+          {
+            "nama": "Bermain peran di pasar mengelompokkan barang",
+            "diajarkan": "Penerapan kategori dalam skenario bermain peran yang realistis.",
+            "contoh": "Buat \"pasar\" mini dengan barang campur, anak berperan sebagai penjual yang menata barang per kategori.",
+            "alat": [
+              "Mainan/barang berbagai kategori",
+              "Meja kecil sebagai \"lapak\""
+            ]
+          },
+          {
+            "nama": "Menyusun kartu kategori bersama",
+            "diajarkan": "Kerja sama menyusun sistem kategori sebagai latihan sosial dan logika bersamaan.",
+            "contoh": "Bersama teman, anak menyusun kartu-kartu ke dalam kelompok kategori yang disepakati bersama.",
+            "alat": [
+              "Kumpulan kartu bergambar campuran"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengelompokkan benda berdasarkan kategori umum (hewan/buah/kendaraan)",
+          "Anak mampu bermain peran sesuai kategori yang ditentukan",
+          "Anak mampu menjelaskan ciri-ciri tiap kategori"
+        ]
+      },
+      {
+        "judul": "Tebak-tebakan Sederhana",
+        "tujuan": "Anak mampu menebak benda dari ciri-ciri yang diberikan.",
+        "kegiatan": [
+          {
+            "nama": "Teka-teki ciri-ciri hewan atau benda",
+            "diajarkan": "Penalaran deduktif sederhana dari ciri-ciri menuju jawaban spesifik.",
+            "contoh": "Berikan ciri \"aku besar, punya belalai panjang, suka air\", minta anak menebak (gajah).",
+            "alat": [
+              "Tidak perlu alat khusus (opsional kartu gambar jawaban)"
+            ]
+          },
+          {
+            "nama": "Permainan tanya-jawab sederhana untuk menebak",
+            "diajarkan": "Latihan tanya-jawab terstruktur untuk mempersempit kemungkinan jawaban.",
+            "contoh": "Anak boleh bertanya \"apakah hewan ini besar?\" sebelum menebak nama hewan yang dipikirkan orang tua.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menggambar jawaban tebakan",
+            "diajarkan": "Transfer jawaban verbal ke representasi visual untuk mengecek pemahaman.",
+            "contoh": "Setelah menjawab teka-teki, minta anak menggambar benda yang ia sebutkan sebagai jawaban.",
+            "alat": [
+              "Kertas",
+              "Krayon/pensil"
+            ]
+          },
+          {
+            "nama": "Bergantian menjadi pemberi dan penebak",
+            "diajarkan": "Latihan menyusun ciri-ciri sendiri, melatih perspektif dari sisi pembuat soal.",
+            "contoh": "Biarkan anak memikirkan satu benda dan memberi 2-3 ciri agar orang tua menebaknya.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menebak benda dari ciri-ciri yang diberikan",
+          "Anak mampu memberikan ciri-ciri benda untuk ditebak temannya",
+          "Anak mampu menjawab teka-teki sederhana dengan tepat"
+        ]
+      },
+      {
+        "judul": "Menyusun Cerita dari Urutan Gambar",
+        "tujuan": "Anak mampu menyusun urutan kejadian dari gambar acak.",
+        "kegiatan": [
+          {
+            "nama": "Menyusun kartu cerita menjadi urutan yang benar",
+            "diajarkan": "Pemahaman urutan naratif (awal-tengah-akhir) sebagai dasar logika sekuensial.",
+            "contoh": "Beri 4 kartu acak menunjukkan proses \"menggosok gigi\", minta anak menyusunnya jadi urutan benar.",
+            "alat": [
+              "Set kartu urutan cerita (4 langkah)"
+            ]
+          },
+          {
+            "nama": "Menceritakan ulang urutan kejadian",
+            "diajarkan": "Verbalisasi urutan kejadian untuk melatih bahasa naratif.",
+            "contoh": "Setelah kartu tersusun benar, minta anak menceritakan ulang urutannya dengan kalimat sendiri.",
+            "alat": [
+              "Kartu urutan yang sudah disusun"
+            ]
+          },
+          {
+            "nama": "Drama sederhana berdasarkan cerita gambar",
+            "diajarkan": "Penerapan cerita ke dalam permainan peran untuk memperkuat pemahaman.",
+            "contoh": "Perankan urutan \"bangun-mandi-sarapan\" secara langsung bersama anak, gunakan properti sederhana.",
+            "alat": [
+              "Properti sederhana (sikat gigi mainan, dll)"
+            ]
+          },
+          {
+            "nama": "Diskusi \"apa yang terjadi selanjutnya?\"",
+            "diajarkan": "Prediksi kelanjutan cerita, melatih penalaran terhadap kemungkinan berikutnya.",
+            "contoh": "Hentikan cerita di tengah, tanyakan \"menurutmu, apa yang terjadi selanjutnya?\"",
+            "alat": [
+              "Buku cerita bergambar sederhana"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyusun kartu cerita menjadi urutan yang benar",
+          "Anak mampu menceritakan ulang urutan kejadian dengan kata sendiri",
+          "Anak mampu memprediksi kejadian selanjutnya dalam cerita"
+        ]
+      },
+      {
+        "judul": "Memecahkan Masalah Sehari-hari",
+        "tujuan": "Anak mampu memikirkan solusi sederhana atas suatu masalah.",
+        "kegiatan": [
+          {
+            "nama": "Diskusi skenario sederhana (mainan hilang, dll)",
+            "diajarkan": "Latihan mengidentifikasi masalah sederhana dan mendiskusikan solusinya bersama.",
+            "contoh": "Ceritakan \"mainan favoritmu hilang, apa yang bisa kita lakukan untuk mencarinya?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Bermain simulasi mencari solusi bersama",
+            "diajarkan": "Praktik langsung solusi lewat simulasi yang realistis dan aman.",
+            "contoh": "Sembunyikan benda dan biarkan anak mempraktikkan langkah-langkah mencarinya secara sistematis (dari satu ruangan ke ruangan lain).",
+            "alat": [
+              "Benda untuk disembunyikan"
+            ]
+          },
+          {
+            "nama": "Cerita tentang tokoh yang memecahkan masalah",
+            "diajarkan": "Belajar dari model/tokoh sebagai cara tidak langsung memahami pemecahan masalah.",
+            "contoh": "Bacakan cerita pendek tentang tokoh yang menghadapi masalah lalu menemukan solusinya.",
+            "alat": [
+              "Buku cerita bertema pemecahan masalah"
+            ]
+          },
+          {
+            "nama": "Latihan bertanya \"bagaimana caranya?\"",
+            "diajarkan": "Membiasakan pola pikir bertanya \"bagaimana caranya\" sebagai kebiasaan berpikir solutif.",
+            "contoh": "Setiap kali muncul kendala kecil sehari-hari, arahkan anak bertanya \"bagaimana caranya ya?\" sebelum dibantu.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu memberikan usulan solusi sederhana atas suatu masalah",
+          "Anak mampu mengikuti simulasi pemecahan masalah bersama",
+          "Anak mampu menjelaskan langkah penyelesaian dengan kata sendiri"
+        ]
+      },
+      {
+        "judul": "Permainan Strategi Sederhana",
+        "tujuan": "Anak mampu memahami aturan dan giliran dalam permainan strategi.",
+        "kegiatan": [
+          {
+            "nama": "Bermain congklak mini",
+            "diajarkan": "Pengenalan permainan strategi tradisional yang melatih perencanaan langkah.",
+            "contoh": "Mainkan congklak versi mini (4 lubang per sisi) dengan biji-bijian, jelaskan aturan sederhananya.",
+            "alat": [
+              "Papan congklak mini/wadah telur",
+              "Biji-bijian/kelereng kecil"
+            ]
+          },
+          {
+            "nama": "Bermain ular tangga bersama",
+            "diajarkan": "Latihan strategi lewat permainan berbasis keberuntungan dan keputusan sederhana.",
+            "contoh": "Mainkan ular tangga bersama, diskusikan sebelum melempar dadu \"menurutmu enaknya di kotak berapa?\"",
+            "alat": [
+              "Papan ular tangga",
+              "Dadu",
+              "Bidak"
+            ]
+          },
+          {
+            "nama": "Latihan mengikuti aturan dan menunggu giliran",
+            "diajarkan": "Kedisiplinan mengikuti aturan sebagai fondasi berpikir sistematis.",
+            "contoh": "Sebelum bermain, tetapkan 2-3 aturan sederhana bersama anak dan konsisten menerapkannya sepanjang permainan.",
+            "alat": [
+              "Permainan papan pilihan"
+            ]
+          },
+          {
+            "nama": "Diskusi strategi sederhana yang digunakan",
+            "diajarkan": "Refleksi strategi untuk melatih anak menyadari proses berpikirnya sendiri (metakognisi awal).",
+            "contoh": "Setelah bermain, tanyakan \"kenapa kamu pilih langkah itu tadi?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti aturan permainan strategi sederhana",
+          "Anak mampu menunggu giliran dengan baik",
+          "Anak mampu menjelaskan strategi yang digunakannya"
+        ]
+      },
+      {
+        "judul": "Review & Tantangan Logika Gabungan",
+        "tujuan": "Anak mampu menggabungkan seluruh kemampuan logika yang telah dipelajari.",
+        "kegiatan": [
+          {
+            "nama": "Lomba logika antar kelompok kecil",
+            "diajarkan": "Sintesis seluruh keterampilan logika dalam kompetisi kelompok yang menyenangkan.",
+            "contoh": "Bagi anak-anak jadi kelompok kecil, adakan pos-pos tantangan (pola, sebab-akibat, kategori) di tiap pos.",
+            "alat": [
+              "Kartu/materi dari kegiatan sepanjang tahun"
+            ]
+          },
+          {
+            "nama": "Kuis besar akhir tahun bertema logika",
+            "diajarkan": "Evaluasi komprehensif lewat kuis bertema logika sebagai penutup pembelajaran tahunan.",
+            "contoh": "Siapkan 10 soal campuran (pola, ganjil-genap, sebab-akibat) sebagai kuis akhir tahun.",
+            "alat": [
+              "Lembar kuis campuran",
+              "Alat tulis"
+            ]
+          },
+          {
+            "nama": "Membuat permainan logika sederhana sendiri",
+            "diajarkan": "Kreativitas menciptakan permainan sendiri sebagai bukti pemahaman konsep logika secara utuh.",
+            "contoh": "Bantu anak merancang permainan pola/tebak-tebakan sederhana miliknya sendiri untuk dimainkan keluarga.",
+            "alat": [
+              "Bahan bebas sesuai ide anak (kertas, kotak, dll)"
+            ]
+          },
+          {
+            "nama": "Pameran hasil karya berpikir anak selama setahun",
+            "diajarkan": "Apresiasi proses belajar setahun lewat pameran karya yang membangun rasa percaya diri.",
+            "contoh": "Pajang hasil-hasil karya logika anak (gambar pola, hasil kuis, dll) dan undang keluarga untuk melihat.",
+            "alat": [
+              "Kumpulan hasil karya sepanjang tahun"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti tantangan logika gabungan dengan percaya diri",
+          "Anak mampu menjelaskan proses berpikirnya dalam menyelesaikan tantangan",
+          "Anak mampu bekerja sama dalam lomba logika berkelompok"
+        ]
+      }
     ]
   },
-  memori: {
-    emoji: "🧠",
-    title: "Kecerdasan Memori",
-    desc: "Melatih daya ingat anak melalui permainan mencocokkan, mengingat urutan, menghafal, dan mengenali detail — bertahap sesuai kemampuan usia.",
-    months: [
-      { judul:"Mengingat 2–3 Benda", tujuan:"Anak mampu mengingat 2 sampai 3 benda yang ditunjukkan.", kegiatan:["Permainan \\"apa yang hilang?\\"","Menunjukkan beberapa benda lalu ditutup kain","Menebak benda yang disembunyikan","Mengulang menyebutkan nama benda yang diingat"]},
-      { judul:"Kartu Memori (Matching) 4 Pasang", tujuan:"Anak mampu mencocokkan pasangan kartu bergambar sederhana.", kegiatan:["Bermain kartu memori 4 pasang","Mencari pasangan gambar yang sama","Permainan berkelompok bergantian giliran","Diskusi gambar pada kartu yang ditemukan"]},
-      { judul:"Mengingat Urutan 2 Langkah Instruksi", tujuan:"Anak mampu mengikuti dan mengingat instruksi dua langkah.", kegiatan:["Permainan \\"ambil bola lalu taruh di keranjang\\"","Latihan instruksi sehari-hari dua tahap","Permainan estafet instruksi sederhana","Mengulang instruksi sebelum melaksanakan"]},
-      { judul:"Mengulang Cerita Pendek", tujuan:"Anak mampu mengingat dan menceritakan ulang cerita pendek.", kegiatan:["Mendengarkan cerita pendek bergambar","Menceritakan ulang dengan kata-kata sendiri","Tanya jawab seputar isi cerita","Menggambar adegan yang paling diingat"]},
-      { judul:"Menghafal Nama Anggota Keluarga", tujuan:"Anak mampu menyebutkan nama-nama anggota keluarga inti.", kegiatan:["Bermain dengan foto keluarga","Menyanyikan lagu nama anggota keluarga","Membuat silsilah keluarga sederhana bergambar","Tanya jawab seputar anggota keluarga"]},
-      { judul:"Kartu Memori 6 Pasang", tujuan:"Anak mampu bermain memori dengan jumlah kartu lebih banyak.", kegiatan:["Bermain kartu memori 6 pasang","Permainan berkelompok dengan waktu terbatas","Mencatat berapa kali percobaan hingga berhasil","Bermain ulang untuk melihat peningkatan"]},
-      { judul:"Mengingat Urutan 3 Langkah Instruksi", tujuan:"Anak mampu mengikuti dan mengingat instruksi tiga langkah.", kegiatan:["Permainan Simon Says versi lanjutan","Instruksi harian tiga tahap (ambil, bawa, letakkan)","Permainan estafet instruksi berkelompok","Mengulang instruksi dengan suara lantang"]},
-      { judul:"Menghafal Lagu Anak Pendek", tujuan:"Anak mampu menghafal lagu anak sederhana empat baris.", kegiatan:["Belajar lagu anak baris demi baris","Gerak dan lagu bersama","Tepuk tangan mengikuti irama hafalan","Tampil menyanyikan lagu di depan keluarga"]},
-      { judul:"Mengingat Detail Gambar (Spot the Difference)", tujuan:"Anak mampu mengenali perbedaan detail pada dua gambar mirip.", kegiatan:["Permainan mencari perbedaan gambar","Latihan pengamatan pada benda sehari-hari","Diskusi detail yang berhasil ditemukan","Membuat gambar sendiri dengan sedikit perbedaan"]},
-      { judul:"Menghafal Alamat Rumah & Nama Orang Tua", tujuan:"Anak mampu menyebutkan alamat rumah dan nama orang tua sebagai bekal keamanan diri.", kegiatan:["Latihan tanya jawab alamat rumah","Menghafal nama lengkap ayah dan ibu","Lagu sederhana tentang alamat rumah","Bermain peran situasi bertanya arah pulang"]},
-      { judul:"Kartu Memori 8 Pasang", tujuan:"Anak mampu bermain memori pada tingkat yang lebih menantang.", kegiatan:["Bermain kartu memori 8 pasang","Kompetisi memori antar teman","Mencatat waktu dan jumlah percobaan","Refleksi strategi mengingat yang digunakan"]},
-      { judul:"Review & Tantangan Memori Gabungan", tujuan:"Anak mampu menggabungkan seluruh kemampuan memori yang telah dilatih.", kegiatan:["Lomba memori antar anak","Kuis akhir tahun bertema daya ingat","Permainan estafet ingatan berkelompok","Perayaan kecil pencapaian belajar setahun"]}
+  "memori": {
+    "emoji": "🧠",
+    "title": "Kecerdasan Memori",
+    "desc": "Melatih daya ingat anak melalui permainan mencocokkan, mengingat urutan, menghafal, dan mengenali detail — bertahap sesuai kemampuan usia.",
+    "months": [
+      {
+        "judul": "Mengingat 2–3 Benda",
+        "tujuan": "Anak mampu mengingat 2 sampai 3 benda yang ditunjukkan.",
+        "kegiatan": [
+          {
+            "nama": "Permainan \"apa yang hilang?\"",
+            "diajarkan": "Latihan memori jangka pendek dengan mendeteksi benda yang hilang dari kelompok.",
+            "contoh": "Tunjukkan 3 mainan di meja, minta anak menutup mata, ambil satu, lalu tanya \"mana yang hilang?\"",
+            "alat": [
+              "3 mainan/benda kecil berbeda"
+            ]
+          },
+          {
+            "nama": "Menunjukkan beberapa benda lalu ditutup kain",
+            "diajarkan": "Latihan konsentrasi visual sebelum informasi disembunyikan dari pandangan.",
+            "contoh": "Tunjukkan 2-3 benda selama 10 detik, tutup dengan kain, minta anak menyebutkan kembali semua benda tadi.",
+            "alat": [
+              "2–3 benda kecil",
+              "Kain/serbet penutup"
+            ]
+          },
+          {
+            "nama": "Menebak benda yang disembunyikan",
+            "diajarkan": "Latihan mengingat lokasi benda yang disembunyikan sebagai bentuk memori spasial.",
+            "contoh": "Sembunyikan benda kecil di bawah salah satu dari 3 gelas terbalik, minta anak menebak yang mana.",
+            "alat": [
+              "3 gelas plastik/cangkir",
+              "1 benda kecil"
+            ]
+          },
+          {
+            "nama": "Mengulang menyebutkan nama benda yang diingat",
+            "diajarkan": "Pengulangan verbal untuk memperkuat penyimpanan informasi di memori jangka pendek.",
+            "contoh": "Setelah permainan, minta anak menyebutkan ulang semua nama benda yang tadi diingatnya secara berurutan.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengingat 2–3 benda yang ditunjukkan",
+          "Anak mampu menyebutkan benda yang hilang dari kelompoknya",
+          "Anak mampu berkonsentrasi selama permainan berlangsung"
+        ]
+      },
+      {
+        "judul": "Kartu Memori (Matching) 4 Pasang",
+        "tujuan": "Anak mampu mencocokkan pasangan kartu bergambar sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Bermain kartu memori 4 pasang",
+            "diajarkan": "Pengenalan permainan mencocokkan (matching) sebagai latihan memori visual dasar.",
+            "contoh": "Susun 8 kartu (4 pasang) tertutup, bolak-balik 2 kartu tiap giliran mencari pasangan yang sama.",
+            "alat": [
+              "1 set kartu memori 4 pasang (8 kartu)"
+            ]
+          },
+          {
+            "nama": "Mencari pasangan gambar yang sama",
+            "diajarkan": "Latihan mengingat posisi kartu yang sudah pernah dibuka sebelumnya.",
+            "contoh": "Setelah membuka 2 kartu tidak berpasangan, minta anak mencoba mengingat posisi salah satunya untuk giliran berikutnya.",
+            "alat": [
+              "Set kartu memori yang sedang dimainkan"
+            ]
+          },
+          {
+            "nama": "Permainan berkelompok bergantian giliran",
+            "diajarkan": "Latihan sosial menunggu giliran sambil tetap mengingat posisi kartu lawan.",
+            "contoh": "Mainkan bergiliran dengan saudara/teman, masing-masing memperhatikan kartu yang dibuka pemain lain.",
+            "alat": [
+              "1 set kartu memori",
+              "Minimal 2 pemain"
+            ]
+          },
+          {
+            "nama": "Diskusi gambar pada kartu yang ditemukan",
+            "diajarkan": "Verbalisasi hasil temuan untuk memperkuat pengenalan gambar pada kartu.",
+            "contoh": "Setiap kali menemukan pasangan, minta anak menyebutkan nama gambar pada kartu tersebut.",
+            "alat": [
+              "Kartu memori yang sudah berpasangan"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mencocokkan 4 pasang kartu memori",
+          "Anak mampu menunggu giliran dalam permainan kelompok",
+          "Anak mampu menyebutkan gambar pada kartu yang ditemukan"
+        ]
+      },
+      {
+        "judul": "Mengingat Urutan 2 Langkah Instruksi",
+        "tujuan": "Anak mampu mengikuti dan mengingat instruksi dua langkah.",
+        "kegiatan": [
+          {
+            "nama": "Permainan \"ambil bola lalu taruh di keranjang\"",
+            "diajarkan": "Latihan mengikuti instruksi berurutan yang melibatkan dua tindakan berbeda.",
+            "contoh": "Instruksikan \"ambil bola merah, lalu taruh di keranjang biru\", amati apakah urutan dilakukan benar.",
+            "alat": [
+              "Bola/benda kecil",
+              "Keranjang/kotak"
+            ]
+          },
+          {
+            "nama": "Latihan instruksi sehari-hari dua tahap",
+            "diajarkan": "Penerapan instruksi dua langkah dalam rutinitas nyata sehari-hari.",
+            "contoh": "Minta anak \"ambil sepatu, lalu simpan di rak\" saat pulang bermain, amati urutannya.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Permainan estafet instruksi sederhana",
+            "diajarkan": "Latihan instruksi berantai dalam kelompok untuk melatih memori sekaligus kerja sama.",
+            "contoh": "Bagi anak dalam antrean, instruksi diberikan ke anak pertama, ia harus meneruskan tindakan (bukan hanya ucapan) ke teman berikutnya.",
+            "alat": [
+              "Benda untuk dipindahkan berantai"
+            ]
+          },
+          {
+            "nama": "Mengulang instruksi sebelum melaksanakan",
+            "diajarkan": "Latihan pengulangan instruksi sebelum bertindak untuk memperkuat penyimpanan di memori kerja.",
+            "contoh": "Sebelum bergerak, minta anak mengulang instruksi dengan kata-katanya sendiri: \"ambil bola, taruh di keranjang, ya kan?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti instruksi dua langkah dengan benar",
+          "Anak mampu mengulang instruksi sebelum melaksanakannya",
+          "Anak mampu menyelesaikan tugas sesuai urutan yang diminta"
+        ]
+      },
+      {
+        "judul": "Mengulang Cerita Pendek",
+        "tujuan": "Anak mampu mengingat dan menceritakan ulang cerita pendek.",
+        "kegiatan": [
+          {
+            "nama": "Mendengarkan cerita pendek bergambar",
+            "diajarkan": "Latihan menyimak aktif sebagai fondasi kemampuan mengingat isi cerita.",
+            "contoh": "Bacakan cerita pendek bergambar 4-5 kalimat tentang hewan yang mencari makan.",
+            "alat": [
+              "Buku cerita pendek bergambar"
+            ]
+          },
+          {
+            "nama": "Menceritakan ulang dengan kata-kata sendiri",
+            "diajarkan": "Latihan mengekspresikan kembali informasi dengan kata-kata sendiri (paraphrasing).",
+            "contoh": "Setelah cerita dibacakan, minta anak menceritakannya ulang tanpa melihat buku.",
+            "alat": [
+              "Buku cerita yang sama"
+            ]
+          },
+          {
+            "nama": "Tanya jawab seputar isi cerita",
+            "diajarkan": "Latihan mengingat detail spesifik lewat pertanyaan terarah.",
+            "contoh": "Tanyakan \"siapa nama tokohnya?\" atau \"apa yang dicari tokoh itu?\" setelah cerita selesai.",
+            "alat": [
+              "Buku cerita yang sama"
+            ]
+          },
+          {
+            "nama": "Menggambar adegan yang paling diingat",
+            "diajarkan": "Transfer memori verbal ke bentuk visual untuk memperkuat ingatan jangka menengah.",
+            "contoh": "Minta anak menggambar bagian cerita yang paling ia ingat atau sukai.",
+            "alat": [
+              "Kertas",
+              "Krayon"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menceritakan ulang cerita pendek dengan kata sendiri",
+          "Anak mampu menjawab pertanyaan seputar isi cerita",
+          "Anak mampu menggambar adegan yang paling diingat"
+        ]
+      },
+      {
+        "judul": "Menghafal Nama Anggota Keluarga",
+        "tujuan": "Anak mampu menyebutkan nama-nama anggota keluarga inti.",
+        "kegiatan": [
+          {
+            "nama": "Bermain dengan foto keluarga",
+            "diajarkan": "Mengaitkan nama dengan wajah sebagai bentuk memori asosiatif penting untuk keamanan diri.",
+            "contoh": "Tunjukkan foto ayah, ibu, kakak, minta anak menyebutkan nama masing-masing.",
+            "alat": [
+              "Foto-foto anggota keluarga"
+            ]
+          },
+          {
+            "nama": "Menyanyikan lagu nama anggota keluarga",
+            "diajarkan": "Penguatan hafalan nama lewat lagu yang mudah diingat dan menyenangkan.",
+            "contoh": "Buat lagu sederhana bernada familiar yang menyebut nama tiap anggota keluarga secara berurutan.",
+            "alat": [
+              "Lirik lagu keluarga (dibuat sendiri)"
+            ]
+          },
+          {
+            "nama": "Membuat silsilah keluarga sederhana bergambar",
+            "diajarkan": "Representasi visual hubungan keluarga untuk memperkuat pemahaman posisi tiap anggota.",
+            "contoh": "Bantu anak menggambar/menempel foto ayah-ibu-anak dalam bentuk pohon keluarga sederhana.",
+            "alat": [
+              "Kertas besar",
+              "Foto keluarga/gambar",
+              "Lem"
+            ]
+          },
+          {
+            "nama": "Tanya jawab seputar anggota keluarga",
+            "diajarkan": "Latihan recall aktif lewat sesi tanya jawab santai.",
+            "contoh": "Tanyakan \"siapa nama ayahmu?\", \"siapa nama ibumu?\" di waktu santai seperti sebelum tidur.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan nama-nama anggota keluarga inti",
+          "Anak mampu menjelaskan hubungan keluarga secara sederhana",
+          "Anak mampu menyanyikan lagu nama anggota keluarga"
+        ]
+      },
+      {
+        "judul": "Kartu Memori 6 Pasang",
+        "tujuan": "Anak mampu bermain memori dengan jumlah kartu lebih banyak.",
+        "kegiatan": [
+          {
+            "nama": "Bermain kartu memori 6 pasang",
+            "diajarkan": "Peningkatan kapasitas memori visual dari 4 ke 6 pasang kartu.",
+            "contoh": "Susun 12 kartu (6 pasang) tertutup, mainkan dengan aturan sama seperti sebelumnya namun lebih banyak kartu.",
+            "alat": [
+              "1 set kartu memori 6 pasang (12 kartu)"
+            ]
+          },
+          {
+            "nama": "Permainan berkelompok dengan waktu terbatas",
+            "diajarkan": "Latihan memori di bawah tekanan waktu ringan untuk melatih fokus.",
+            "contoh": "Beri batas waktu 3 menit menggunakan timer, hitung berapa pasang yang berhasil ditemukan.",
+            "alat": [
+              "Kartu memori",
+              "Timer/jam"
+            ]
+          },
+          {
+            "nama": "Mencatat berapa kali percobaan hingga berhasil",
+            "diajarkan": "Pencatatan kemajuan sebagai cara konkret melihat perkembangan memori dari waktu ke waktu.",
+            "contoh": "Tulis di kertas kecil berapa kali percobaan dibutuhkan anak untuk menyelesaikan permainan hari itu.",
+            "alat": [
+              "Kertas catatan",
+              "Pensil"
+            ]
+          },
+          {
+            "nama": "Bermain ulang untuk melihat peningkatan",
+            "diajarkan": "Latihan berulang untuk membuktikan bahwa memori bisa dilatih dan meningkat.",
+            "contoh": "Mainkan kartu yang sama 2-3 hari berturut-turut, bandingkan jumlah percobaan dengan hari sebelumnya.",
+            "alat": [
+              "Kartu memori yang sama",
+              "Catatan hasil sebelumnya"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mencocokkan 6 pasang kartu memori",
+          "Anak mampu menyelesaikan permainan dalam waktu yang semakin singkat",
+          "Anak mampu menggunakan strategi mengingat posisi kartu"
+        ]
+      },
+      {
+        "judul": "Mengingat Urutan 3 Langkah Instruksi",
+        "tujuan": "Anak mampu mengikuti dan mengingat instruksi tiga langkah.",
+        "kegiatan": [
+          {
+            "nama": "Permainan Simon Says versi lanjutan",
+            "diajarkan": "Peningkatan kompleksitas instruksi menjadi tiga langkah berurutan.",
+            "contoh": "Mainkan Simon Says dengan instruksi 3 gerakan sekaligus: \"sentuh kepala, lalu lompat, lalu duduk\".",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Instruksi harian tiga tahap (ambil, bawa, letakkan)",
+            "diajarkan": "Penerapan instruksi tiga langkah dalam tugas rumah tangga sederhana.",
+            "contoh": "Instruksikan \"ambil baju kotor, bawa ke kamar mandi, letakkan di keranjang cucian\".",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Permainan estafet instruksi berkelompok",
+            "diajarkan": "Latihan kelompok dengan instruksi berantai yang lebih panjang.",
+            "contoh": "Estafet instruksi 3 tahap antar beberapa anak, tiap anak melakukan satu bagian secara berurutan.",
+            "alat": [
+              "Benda untuk dipindahkan berantai"
+            ]
+          },
+          {
+            "nama": "Mengulang instruksi dengan suara lantang",
+            "diajarkan": "Latihan artikulasi instruksi dengan suara jelas untuk memperkuat penyimpanan di memori kerja.",
+            "contoh": "Sebelum bertindak, minta anak mengulang ketiga langkah instruksi dengan suara lantang dan jelas.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti instruksi tiga langkah dengan benar",
+          "Anak mampu mengulang instruksi dengan lantang sebelum bertindak",
+          "Anak mampu menyelesaikan tugas tiga tahap secara berurutan"
+        ]
+      },
+      {
+        "judul": "Menghafal Lagu Anak Pendek",
+        "tujuan": "Anak mampu menghafal lagu anak sederhana empat baris.",
+        "kegiatan": [
+          {
+            "nama": "Belajar lagu anak baris demi baris",
+            "diajarkan": "Menghafal lirik secara bertahap untuk melatih memori sekuensial verbal.",
+            "contoh": "Ajarkan lagu 4 baris satu baris per hari, ulangi baris sebelumnya sebelum menambah baris baru.",
+            "alat": [
+              "Lirik lagu anak sederhana"
+            ]
+          },
+          {
+            "nama": "Gerak dan lagu bersama",
+            "diajarkan": "Mengaitkan gerakan tubuh dengan lirik untuk memperkuat ingatan lewat memori motorik.",
+            "contoh": "Tambahkan gerakan tangan/tubuh sederhana yang sesuai makna tiap baris lagu.",
+            "alat": [
+              "Lirik lagu yang sudah dihafal sebagian"
+            ]
+          },
+          {
+            "nama": "Tepuk tangan mengikuti irama hafalan",
+            "diajarkan": "Penguatan ritme sebagai alat bantu mengingat urutan kata dalam lagu.",
+            "contoh": "Ajak anak bertepuk tangan mengikuti irama sambil menyanyikan lagu yang sedang dihafal.",
+            "alat": [
+              "Lirik lagu"
+            ]
+          },
+          {
+            "nama": "Tampil menyanyikan lagu di depan keluarga",
+            "diajarkan": "Latihan tampil di depan orang lain untuk menguji kepercayaan diri sekaligus kekuatan hafalan.",
+            "contoh": "Minta anak menyanyikan lagu yang sudah dihafal penuh di depan anggota keluarga saat berkumpul.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menghafal lagu anak 4 baris",
+          "Anak mampu menyanyikan lagu dengan gerakan yang sesuai",
+          "Anak mampu tampil menyanyi di depan orang lain"
+        ]
+      },
+      {
+        "judul": "Mengingat Detail Gambar (Spot the Difference)",
+        "tujuan": "Anak mampu mengenali perbedaan detail pada dua gambar mirip.",
+        "kegiatan": [
+          {
+            "nama": "Permainan mencari perbedaan gambar",
+            "diajarkan": "Latihan ketelitian visual dengan membandingkan dua gambar yang hampir identik.",
+            "contoh": "Tunjukkan dua gambar taman yang mirip namun ada 3 perbedaan kecil, minta anak menemukannya.",
+            "alat": [
+              "2 lembar gambar \"spot the difference\" (bisa cetak dari internet/buat sendiri)"
+            ]
+          },
+          {
+            "nama": "Latihan pengamatan pada benda sehari-hari",
+            "diajarkan": "Latihan observasi pada objek nyata sebagai penerapan ketelitian dalam kehidupan sehari-hari.",
+            "contoh": "Minta anak mengamati susunan meja makan, lalu ubah 1-2 posisi barang saat ia tidak melihat, tanyakan apa yang berubah.",
+            "alat": [
+              "Benda-benda di meja/rak yang aman dipindah"
+            ]
+          },
+          {
+            "nama": "Diskusi detail yang berhasil ditemukan",
+            "diajarkan": "Verbalisasi hasil pengamatan untuk memperkuat kesadaran terhadap detail.",
+            "contoh": "Setelah menemukan perbedaan, minta anak menjelaskan dengan kata-kata apa saja yang berbeda.",
+            "alat": [
+              "Hasil gambar yang sudah diamati"
+            ]
+          },
+          {
+            "nama": "Membuat gambar sendiri dengan sedikit perbedaan",
+            "diajarkan": "Latihan dari sisi pembuat soal untuk memperdalam pemahaman tentang detail visual.",
+            "contoh": "Minta anak menggambar dua gambar hampir sama dengan sengaja mengubah 1-2 detail untuk ditebak orang tua.",
+            "alat": [
+              "Kertas",
+              "Krayon/pensil"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menemukan perbedaan pada dua gambar yang mirip",
+          "Anak mampu menjelaskan detail perbedaan yang ditemukan",
+          "Anak mampu berkonsentrasi mengamati gambar dengan teliti"
+        ]
+      },
+      {
+        "judul": "Menghafal Alamat Rumah & Nama Orang Tua",
+        "tujuan": "Anak mampu menyebutkan alamat rumah dan nama orang tua sebagai bekal keamanan diri.",
+        "kegiatan": [
+          {
+            "nama": "Latihan tanya jawab alamat rumah",
+            "diajarkan": "Latihan informasi keamanan diri yang penting lewat tanya-jawab berulang.",
+            "contoh": "Tanyakan secara rutin \"di mana rumah kita? nama jalan/kompleknya apa?\" hingga anak lancar menjawab.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Menghafal nama lengkap ayah dan ibu",
+            "diajarkan": "Menghafal nama lengkap orang tua sebagai bekal informasi penting saat darurat.",
+            "contoh": "Latih anak menyebutkan nama lengkap ayah dan ibu, ulangi beberapa kali dalam suasana santai.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Lagu sederhana tentang alamat rumah",
+            "diajarkan": "Penguatan hafalan alamat lewat lagu yang mudah diingat dalam jangka panjang.",
+            "contoh": "Buat lagu pendek bernada familiar yang menyebutkan nama jalan/nomor rumah anak.",
+            "alat": [
+              "Lirik lagu alamat (dibuat sendiri)"
+            ]
+          },
+          {
+            "nama": "Bermain peran situasi bertanya arah pulang",
+            "diajarkan": "Simulasi situasi nyata untuk melatih kesiapan anak menyampaikan informasi saat dibutuhkan.",
+            "contoh": "Perankan situasi \"kalau ada orang baik yang tanya rumahmu di mana, kamu jawab apa?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan alamat rumah dengan benar",
+          "Anak mampu menyebutkan nama lengkap ayah dan ibu",
+          "Anak mampu mempraktikkan situasi bertanya arah pulang"
+        ]
+      },
+      {
+        "judul": "Kartu Memori 8 Pasang",
+        "tujuan": "Anak mampu bermain memori pada tingkat yang lebih menantang.",
+        "kegiatan": [
+          {
+            "nama": "Bermain kartu memori 8 pasang",
+            "diajarkan": "Tantangan memori tingkat lanjut dengan jumlah kartu terbanyak dalam kurikulum ini.",
+            "contoh": "Susun 16 kartu (8 pasang) tertutup, mainkan dengan aturan yang sama seperti level sebelumnya.",
+            "alat": [
+              "1 set kartu memori 8 pasang (16 kartu)"
+            ]
+          },
+          {
+            "nama": "Kompetisi memori antar teman",
+            "diajarkan": "Latihan kompetisi sehat untuk memacu motivasi dalam permainan memori.",
+            "contoh": "Adakan kompetisi kecil antar 2-3 anak, siapa yang menemukan pasangan terbanyak dalam waktu tertentu menang.",
+            "alat": [
+              "Set kartu memori",
+              "Beberapa pemain"
+            ]
+          },
+          {
+            "nama": "Mencatat waktu dan jumlah percobaan",
+            "diajarkan": "Pencatatan hasil sebagai bukti konkret perkembangan kapasitas memori.",
+            "contoh": "Catat waktu dan jumlah percobaan yang dibutuhkan, bandingkan dengan sesi bermain sebelumnya.",
+            "alat": [
+              "Kertas catatan",
+              "Timer/jam"
+            ]
+          },
+          {
+            "nama": "Refleksi strategi mengingat yang digunakan",
+            "diajarkan": "Refleksi metakognitif atas strategi mengingat yang digunakan anak sendiri.",
+            "contoh": "Tanyakan \"bagaimana caramu mengingat letak kartu-kartu itu tadi?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mencocokkan 8 pasang kartu memori",
+          "Anak mampu menjelaskan strategi mengingat yang digunakan",
+          "Anak mampu bermain kompetisi memori dengan sportif"
+        ]
+      },
+      {
+        "judul": "Review & Tantangan Memori Gabungan",
+        "tujuan": "Anak mampu menggabungkan seluruh kemampuan memori yang telah dilatih.",
+        "kegiatan": [
+          {
+            "nama": "Lomba memori antar anak",
+            "diajarkan": "Evaluasi menyeluruh kemampuan memori lewat kompetisi ringan antar anak.",
+            "contoh": "Gabungkan beberapa jenis permainan memori (kartu, urutan instruksi) dalam satu sesi lomba kecil.",
+            "alat": [
+              "Kumpulan alat permainan memori sepanjang tahun"
+            ]
+          },
+          {
+            "nama": "Kuis akhir tahun bertema daya ingat",
+            "diajarkan": "Uji komprehensif daya ingat sebagai penutup pembelajaran memori tahunan.",
+            "contoh": "Siapkan kuis campuran: sebutkan nama keluarga, temukan pasangan kartu, ulangi instruksi 3 langkah.",
+            "alat": [
+              "Materi kuis campuran dari kegiatan sepanjang tahun"
+            ]
+          },
+          {
+            "nama": "Permainan estafet ingatan berkelompok",
+            "diajarkan": "Kerja sama kelompok yang tetap mengandalkan daya ingat individu.",
+            "contoh": "Bagi anak dalam tim estafet, tiap anggota harus mengingat dan meneruskan instruksi ke anggota berikutnya.",
+            "alat": [
+              "Instruksi/benda untuk estafet"
+            ]
+          },
+          {
+            "nama": "Perayaan kecil pencapaian belajar setahun",
+            "diajarkan": "Apresiasi perkembangan diri sebagai penguat motivasi belajar berkelanjutan.",
+            "contoh": "Adakan perayaan kecil, tunjukkan pada anak perbandingan kemampuannya di awal dan akhir tahun.",
+            "alat": [
+              "Catatan perkembangan sepanjang tahun (jika ada)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengikuti tantangan memori gabungan dengan percaya diri",
+          "Anak mampu menunjukkan peningkatan daya ingat dibanding awal tahun",
+          "Anak mampu bekerja sama dalam permainan estafet ingatan"
+        ]
+      }
     ]
   },
-  keimanan: {
-    emoji: "🌙",
-    title: "Keimanan ala Nahdlatul Ulama",
-    desc: "Menanamkan dasar-dasar akidah, ibadah, dan akhlak dengan cara yang lembut dan menyenangkan, berlandaskan nilai-nilai ke-NU-an: tawasuth (moderat), tasamuh (toleran), dan tawazun (seimbang).",
-    months: [
-      { judul:"Kalimat Thayyibah", tujuan:"Anak terbiasa mengucapkan kalimat thayyibah dalam kegiatan sehari-hari.", kegiatan:["Mengenal ucapan Bismillah, Alhamdulillah, Masyaallah, InsyaAllah","Lagu kalimat thayyibah bersama","Kartu bergambar makna setiap kalimat","Membiasakan ucapan sesuai konteks kegiatan"]},
-      { judul:"Rukun Islam", tujuan:"Anak mengenal lima rukun Islam secara sederhana.", kegiatan:["Lagu rukun Islam dengan gerakan jari","Cerita bergambar setiap rukun","Bermain kartu urutan rukun Islam","Diskusi sederhana makna masing-masing rukun"]},
-      { judul:"Rukun Iman", tujuan:"Anak mengenal enam rukun iman secara sederhana.", kegiatan:["Lagu rukun iman yang mudah diingat","Cerita tentang ciptaan Allah di sekitar anak","Mengenal malaikat lewat kisah sederhana","Diskusi ringan tentang kitab dan rasul Allah"]},
-      { judul:"Doa Harian Sederhana", tujuan:"Anak hafal dan terbiasa membaca doa harian sederhana.", kegiatan:["Doa sebelum dan sesudah makan","Doa sebelum tidur dan bangun tidur","Kartu doa bergambar untuk ditempel di kamar","Pembiasaan doa setiap hari bersama orang tua"]},
-      { judul:"Adab Sehari-hari", tujuan:"Anak memahami dan mempraktikkan adab dasar dalam keseharian.", kegiatan:["Adab makan dan minum sesuai contoh","Membiasakan mengucap salam saat bertemu","Adab kepada orang tua dan guru","Permainan peran mempraktikkan adab"]},
-      { judul:"Mengenal Shalawat & Cinta Nabi", tujuan:"Anak mengenal shalawat pendek dan kisah teladan Nabi Muhammad.", kegiatan:["Menghafal shalawat pendek bersama","Kisah teladan Nabi untuk anak-anak","Lagu shalawat anak yang ceria","Diskusi sifat baik yang bisa dicontoh"]},
-      { judul:"Mengenal Huruf Hijaiyah (Tahap Awal)", tujuan:"Anak mengenal huruf hijaiyah dari alif hingga bertahap.", kegiatan:["Lagu huruf hijaiyah tahap awal","Kartu huruf hijaiyah bergambar","Menjiplak dan mewarnai huruf hijaiyah","Permainan tebak huruf hijaiyah"]},
-      { judul:"Praktik Wudhu & Pengenalan Gerakan Sholat", tujuan:"Anak mengenal tahapan wudhu sederhana dan gerakan sholat dasar.", kegiatan:["Mengenal langkah-langkah wudhu sederhana","Lagu tata cara wudhu","Meniru gerakan sholat bersama","Praktik sederhana didampingi orang tua"]},
-      { judul:"Mengenal Asmaul Husna (5 Nama Pertama)", tujuan:"Anak mengenal lima Asmaul Husna pertama beserta makna sederhananya.", kegiatan:["Lagu Asmaul Husna: Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus, As-Salam","Cerita makna sederhana setiap nama","Kartu bergambar Asmaul Husna","Diskusi rasa syukur atas kasih sayang Allah"]},
-      { judul:"Nilai-nilai Ke-NU-an: Tasamuh & Ta'awun", tujuan:"Anak mengenal sikap toleransi dan tolong-menolong sejak dini.", kegiatan:["Cerita tentang sikap saling menghargai teman","Praktik berbagi mainan dan makanan","Permainan kerja sama kelompok","Diskusi sederhana tentang hidup rukun"]},
-      { judul:"Mengenal Hari Besar & Tradisi Keluarga", tujuan:"Anak mengenal Idul Fitri, silaturahmi, dan doa untuk keluarga sesuai usia.", kegiatan:["Mengenal makna Idul Fitri dan silaturahmi","Praktik bersalaman dan meminta maaf","Doa sederhana untuk kakek, nenek, dan keluarga","Cerita tentang menghormati orang tua dan leluhur"]},
-      { judul:"Review & Pembiasaan Akhlak Mulia", tujuan:"Anak konsisten mempraktikkan doa, adab, dan kalimat thayyibah sehari-hari.", kegiatan:["Pembiasaan doa harian secara mandiri","Praktik adab dan kalimat thayyibah dalam keseharian","Pentas kecil hafalan doa dan shalawat","Perayaan pencapaian belajar keimanan setahun"]}
+  "keimanan": {
+    "emoji": "🌙",
+    "title": "Keimanan ala Nahdlatul Ulama",
+    "desc": "Menanamkan dasar-dasar akidah, ibadah, dan akhlak dengan cara yang lembut dan menyenangkan, berlandaskan nilai-nilai ke-NU-an: tawasuth (moderat), tasamuh (toleran), dan tawazun (seimbang).",
+    "months": [
+      {
+        "judul": "Kalimat Thayyibah",
+        "tujuan": "Anak terbiasa mengucapkan kalimat thayyibah dalam kegiatan sehari-hari.",
+        "kegiatan": [
+          {
+            "nama": "Mengenal ucapan Bismillah, Alhamdulillah, Masyaallah, InsyaAllah",
+            "diajarkan": "Pengenalan makna dan waktu penggunaan tiap kalimat thayyibah secara sederhana.",
+            "contoh": "Jelaskan \"Bismillah diucapkan sebelum memulai kegiatan, Alhamdulillah setelah selesai\" sambil dipraktikkan langsung.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Lagu kalimat thayyibah bersama",
+            "diajarkan": "Penguatan hafalan lewat lagu yang membuat kalimat thayyibah mudah diingat.",
+            "contoh": "Nyanyikan lagu sederhana yang menyebutkan Bismillah-Alhamdulillah-Masyaallah-InsyaAllah secara berurutan.",
+            "alat": [
+              "Lirik lagu kalimat thayyibah"
+            ]
+          },
+          {
+            "nama": "Kartu bergambar makna setiap kalimat",
+            "diajarkan": "Asosiasi visual antara kalimat dan situasi penggunaannya.",
+            "contoh": "Tunjukkan kartu bergambar (makan, melihat hal indah, berencana pergi) berpasangan dengan kalimat yang sesuai.",
+            "alat": [
+              "Kartu bergambar kalimat thayyibah"
+            ]
+          },
+          {
+            "nama": "Membiasakan ucapan sesuai konteks kegiatan",
+            "diajarkan": "Pembiasaan penggunaan kalimat secara natural dalam rutinitas harian, bukan hafalan hafalan saja.",
+            "contoh": "Ingatkan dengan lembut setiap kali momen yang tepat muncul, misalnya sebelum makan atau saat melihat pemandangan indah.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mengucapkan kalimat thayyibah sesuai konteks kegiatan",
+          "Anak mampu menjelaskan arti sederhana dari tiap kalimat",
+          "Anak mampu membiasakan ucapan tersebut tanpa diingatkan"
+        ]
+      },
+      {
+        "judul": "Rukun Islam",
+        "tujuan": "Anak mengenal lima rukun Islam secara sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Lagu rukun Islam dengan gerakan jari",
+            "diajarkan": "Menghafal urutan lima rukun Islam lewat gerakan jari yang konkret.",
+            "contoh": "Angkat satu jari untuk tiap rukun sambil menyanyikan namanya: syahadat, sholat, zakat, puasa, haji.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Cerita bergambar setiap rukun",
+            "diajarkan": "Pemahaman makna tiap rukun lewat ilustrasi yang mudah dibayangkan anak.",
+            "contoh": "Tunjukkan gambar orang sholat, gambar orang berpuasa, gambar Ka'bah, sambil menjelaskan masing-masing secara singkat.",
+            "alat": [
+              "Kartu/gambar bertema 5 rukun Islam"
+            ]
+          },
+          {
+            "nama": "Bermain kartu urutan rukun Islam",
+            "diajarkan": "Latihan urutan lewat manipulasi kartu yang melatih memori sekaligus pemahaman agama.",
+            "contoh": "Acak kartu bergambar 5 rukun Islam, minta anak menyusunnya kembali sesuai urutan yang benar.",
+            "alat": [
+              "Set kartu 5 rukun Islam"
+            ]
+          },
+          {
+            "nama": "Diskusi sederhana makna masing-masing rukun",
+            "diajarkan": "Diskusi ringan untuk memastikan anak memahami, bukan hanya menghafal urutan.",
+            "contoh": "Tanyakan dengan bahasa sederhana \"kenapa ya kita perlu sholat?\" dan dengarkan jawaban polos anak.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan lima rukun Islam secara berurutan",
+          "Anak mampu menjelaskan makna sederhana tiap rukun",
+          "Anak mampu menyanyikan lagu rukun Islam"
+        ]
+      },
+      {
+        "judul": "Rukun Iman",
+        "tujuan": "Anak mengenal enam rukun iman secara sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Lagu rukun iman yang mudah diingat",
+            "diajarkan": "Menghafal urutan enam rukun iman lewat lagu yang mudah diingat.",
+            "contoh": "Nyanyikan lagu sederhana yang menyebut iman kepada Allah, malaikat, kitab, rasul, hari akhir, qada-qadar.",
+            "alat": [
+              "Lirik lagu rukun iman"
+            ]
+          },
+          {
+            "nama": "Cerita tentang ciptaan Allah di sekitar anak",
+            "diajarkan": "Pengenalan konsep Allah sebagai pencipta lewat pengamatan alam sekitar yang konkret.",
+            "contoh": "Ajak anak mengamati bunga, awan, atau hewan peliharaan sambil membahas \"siapa yang menciptakan ini?\"",
+            "alat": [
+              "Lingkungan sekitar (taman/halaman)"
+            ]
+          },
+          {
+            "nama": "Mengenal malaikat lewat kisah sederhana",
+            "diajarkan": "Pengenalan konsep malaikat sebagai makhluk Allah yang tidak terlihat, lewat cerita ringan.",
+            "contoh": "Ceritakan kisah singkat tentang malaikat yang selalu mencatat kebaikan, dengan bahasa yang lembut dan tidak menakutkan.",
+            "alat": [
+              "Buku cerita anak bertema malaikat (jika ada)"
+            ]
+          },
+          {
+            "nama": "Diskusi ringan tentang kitab dan rasul Allah",
+            "diajarkan": "Pengenalan awal konsep kitab dan rasul Allah secara sangat sederhana.",
+            "contoh": "Diskusikan singkat bahwa Al-Qur'an adalah kitab suci dan Nabi Muhammad adalah rasul yang menyampaikannya.",
+            "alat": [
+              "Al-Qur'an kecil/gambar Al-Qur'an"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan enam rukun iman secara berurutan",
+          "Anak mampu menceritakan salah satu ciptaan Allah yang diketahuinya",
+          "Anak mampu menjelaskan siapa malaikat secara sederhana"
+        ]
+      },
+      {
+        "judul": "Doa Harian Sederhana",
+        "tujuan": "Anak hafal dan terbiasa membaca doa harian sederhana.",
+        "kegiatan": [
+          {
+            "nama": "Doa sebelum dan sesudah makan",
+            "diajarkan": "Pembiasaan doa singkat pada momen makan sebagai rutinitas sehari-hari.",
+            "contoh": "Ucapkan bersama doa sebelum makan sebelum menyantap makanan, dan doa sesudah makan setelah selesai.",
+            "alat": [
+              "Teks doa sebelum/sesudah makan"
+            ]
+          },
+          {
+            "nama": "Doa sebelum tidur dan bangun tidur",
+            "diajarkan": "Pembiasaan doa pada momen tidur untuk membangun kelekatan spiritual harian.",
+            "contoh": "Ucapkan doa sebelum tidur bersama sebelum memejamkan mata, dan doa bangun tidur begitu terbangun.",
+            "alat": [
+              "Teks doa sebelum/bangun tidur"
+            ]
+          },
+          {
+            "nama": "Kartu doa bergambar untuk ditempel di kamar",
+            "diajarkan": "Media visual sebagai pengingat pasif yang membantu anak menghafal doa secara alami.",
+            "contoh": "Tempel kartu bergambar doa makan dan doa tidur di dinding kamar/ruang makan agar sering terlihat.",
+            "alat": [
+              "Kartu doa bergambar",
+              "Selotip/double tape"
+            ]
+          },
+          {
+            "nama": "Pembiasaan doa setiap hari bersama orang tua",
+            "diajarkan": "Konsistensi sebagai kunci pembiasaan; peran orang tua sebagai teladan langsung.",
+            "contoh": "Selalu ajak anak berdoa bersama, jangan hanya menyuruh, agar anak melihat contoh langsung dari orang tua.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu membaca doa sebelum dan sesudah makan",
+          "Anak mampu membaca doa sebelum tidur dan bangun tidur",
+          "Anak mampu membiasakan doa tanpa diingatkan"
+        ]
+      },
+      {
+        "judul": "Adab Sehari-hari",
+        "tujuan": "Anak memahami dan mempraktikkan adab dasar dalam keseharian.",
+        "kegiatan": [
+          {
+            "nama": "Adab makan dan minum sesuai contoh",
+            "diajarkan": "Pembiasaan adab makan sesuai contoh langsung, bukan hanya instruksi verbal.",
+            "contoh": "Tunjukkan cara makan menggunakan tangan kanan, duduk dengan baik, dan tidak berbicara saat mengunyah.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Membiasakan mengucap salam saat bertemu",
+            "diajarkan": "Pembiasaan salam sebagai adab sosial dasar dalam Islam.",
+            "contoh": "Latih anak mengucap \"Assalamualaikum\" setiap bertemu orang dan menjawab salam saat disapa.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Adab kepada orang tua dan guru",
+            "diajarkan": "Pembiasaan sikap hormat kepada yang lebih tua sebagai nilai akhlak penting.",
+            "contoh": "Latih anak mencium tangan atau menyapa sopan saat bertemu orang tua, kakek-nenek, atau guru.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Permainan peran mempraktikkan adab",
+            "diajarkan": "Internalisasi adab lewat simulasi peran yang konkret dan menyenangkan.",
+            "contoh": "Perankan situasi \"bertemu tetangga\" atau \"makan bersama keluarga\" untuk mempraktikkan adab yang sudah diajarkan.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mempraktikkan adab makan dan minum yang baik",
+          "Anak mampu mengucap salam saat bertemu orang lain",
+          "Anak mampu menunjukkan sikap sopan kepada orang tua dan guru"
+        ]
+      },
+      {
+        "judul": "Mengenal Shalawat & Cinta Nabi",
+        "tujuan": "Anak mengenal shalawat pendek dan kisah teladan Nabi Muhammad.",
+        "kegiatan": [
+          {
+            "nama": "Menghafal shalawat pendek bersama",
+            "diajarkan": "Menghafal shalawat pendek sebagai bentuk kecintaan kepada Nabi Muhammad.",
+            "contoh": "Ajarkan shalawat pendek (misal Shalawat Nariyah versi singkat) baris demi baris hingga hafal.",
+            "alat": [
+              "Teks/lirik shalawat pendek"
+            ]
+          },
+          {
+            "nama": "Kisah teladan Nabi untuk anak-anak",
+            "diajarkan": "Pengenalan keteladanan Nabi lewat kisah yang relevan dengan kehidupan anak.",
+            "contoh": "Ceritakan kisah Nabi Muhammad yang penyayang kepada anak-anak dengan bahasa sederhana.",
+            "alat": [
+              "Buku kisah Nabi untuk anak"
+            ]
+          },
+          {
+            "nama": "Lagu shalawat anak yang ceria",
+            "diajarkan": "Penguatan hafalan shalawat lewat lagu yang ceria dan mudah diikuti.",
+            "contoh": "Nyanyikan shalawat dengan nada ceria sambil bertepuk tangan mengikuti irama.",
+            "alat": [
+              "Lirik/rekaman shalawat anak"
+            ]
+          },
+          {
+            "nama": "Diskusi sifat baik yang bisa dicontoh",
+            "diajarkan": "Refleksi nilai teladan Nabi untuk diterapkan dalam sikap sehari-hari anak.",
+            "contoh": "Tanyakan \"Nabi itu penyayang ya, kita juga bisa sayang sama teman kan?\" setelah cerita.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menghafal shalawat pendek",
+          "Anak mampu menceritakan salah satu kisah teladan Nabi Muhammad",
+          "Anak mampu menyebutkan sifat baik yang bisa dicontoh dari Nabi"
+        ]
+      },
+      {
+        "judul": "Mengenal Huruf Hijaiyah (Tahap Awal)",
+        "tujuan": "Anak mengenal huruf hijaiyah dari alif hingga bertahap.",
+        "kegiatan": [
+          {
+            "nama": "Lagu huruf hijaiyah tahap awal",
+            "diajarkan": "Pengenalan huruf hijaiyah tahap awal lewat lagu yang familiar dan mudah diikuti.",
+            "contoh": "Nyanyikan lagu huruf hijaiyah alif-ba-ta-tsa dengan nada sederhana yang diulang-ulang.",
+            "alat": [
+              "Lirik/rekaman lagu hijaiyah"
+            ]
+          },
+          {
+            "nama": "Kartu huruf hijaiyah bergambar",
+            "diajarkan": "Asosiasi visual bentuk huruf hijaiyah lewat kartu bergambar.",
+            "contoh": "Tunjukkan kartu huruf alif dengan gambar pendukung, minta anak menyebut nama hurufnya.",
+            "alat": [
+              "Kartu huruf hijaiyah bergambar"
+            ]
+          },
+          {
+            "nama": "Menjiplak dan mewarnai huruf hijaiyah",
+            "diajarkan": "Latihan motorik halus mengenal bentuk huruf lewat menjiplak dan mewarnai.",
+            "contoh": "Beri lembar huruf hijaiyah putus-putus, minta anak menjiplak garisnya lalu mewarnai hurufnya.",
+            "alat": [
+              "Lembar huruf hijaiyah putus-putus",
+              "Krayon/pensil"
+            ]
+          },
+          {
+            "nama": "Permainan tebak huruf hijaiyah",
+            "diajarkan": "Penguatan pengenalan huruf lewat permainan tebak yang interaktif.",
+            "contoh": "Tunjukkan beberapa kartu huruf, sebutkan satu nama huruf, anak menunjuk kartu yang sesuai.",
+            "alat": [
+              "Kartu huruf hijaiyah"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan beberapa huruf hijaiyah tahap awal",
+          "Anak mampu menunjuk huruf hijaiyah yang disebutkan",
+          "Anak mampu menjiplak dan mewarnai huruf hijaiyah dengan rapi"
+        ]
+      },
+      {
+        "judul": "Praktik Wudhu & Pengenalan Gerakan Sholat",
+        "tujuan": "Anak mengenal tahapan wudhu sederhana dan gerakan sholat dasar.",
+        "kegiatan": [
+          {
+            "nama": "Mengenal langkah-langkah wudhu sederhana",
+            "diajarkan": "Pengenalan urutan wudhu secara sederhana dan bertahap.",
+            "contoh": "Jelaskan dan tunjukkan urutan wudhu (niat, cuci tangan, kumur, cuci muka, dst) secara perlahan.",
+            "alat": [
+              "Air bersih",
+              "Tempat wudhu/kran"
+            ]
+          },
+          {
+            "nama": "Lagu tata cara wudhu",
+            "diajarkan": "Penguatan hafalan urutan wudhu lewat lagu yang menyenangkan.",
+            "contoh": "Nyanyikan lagu urutan wudhu sambil memperagakan gerakannya secara bersamaan.",
+            "alat": [
+              "Lirik lagu tata cara wudhu"
+            ]
+          },
+          {
+            "nama": "Meniru gerakan sholat bersama",
+            "diajarkan": "Pengenalan gerakan dasar sholat lewat peniruan langsung bersama orang tua.",
+            "contoh": "Perlihatkan gerakan berdiri, rukuk, sujud secara perlahan, minta anak menirukannya bersama.",
+            "alat": [
+              "Sajadah kecil (opsional)"
+            ]
+          },
+          {
+            "nama": "Praktik sederhana didampingi orang tua",
+            "diajarkan": "Praktik langsung wudhu dan gerakan sholat sederhana dengan pendampingan penuh.",
+            "contoh": "Dampingi anak melakukan wudhu sungguhan lalu meniru beberapa gerakan sholat, tanpa target kesempurnaan.",
+            "alat": [
+              "Air",
+              "Sajadah kecil (opsional)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan urutan wudhu secara sederhana",
+          "Anak mampu meniru gerakan sholat dasar",
+          "Anak mampu mempraktikkan wudhu sederhana dengan bimbingan"
+        ]
+      },
+      {
+        "judul": "Mengenal Asmaul Husna (5 Nama Pertama)",
+        "tujuan": "Anak mengenal lima Asmaul Husna pertama beserta makna sederhananya.",
+        "kegiatan": [
+          {
+            "nama": "Lagu Asmaul Husna: Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus, As-Salam",
+            "diajarkan": "Menghafal 5 Asmaul Husna pertama lewat lagu yang mudah diikuti.",
+            "contoh": "Nyanyikan lagu yang menyebut Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus, As-Salam secara berurutan.",
+            "alat": [
+              "Lirik/rekaman lagu Asmaul Husna"
+            ]
+          },
+          {
+            "nama": "Cerita makna sederhana setiap nama",
+            "diajarkan": "Pemahaman makna sederhana tiap Asmaul Husna lewat cerita relevan.",
+            "contoh": "Ceritakan \"Ar-Rahman artinya Allah Maha Penyayang kepada semua makhluk\" dengan contoh konkret di sekitar anak.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Kartu bergambar Asmaul Husna",
+            "diajarkan": "Asosiasi visual nama-nama Allah lewat kartu bergambar yang menarik.",
+            "contoh": "Tunjukkan kartu bertuliskan Asmaul Husna dengan ilustrasi pendukung (misal matahari untuk kasih sayang).",
+            "alat": [
+              "Kartu bergambar Asmaul Husna"
+            ]
+          },
+          {
+            "nama": "Diskusi rasa syukur atas kasih sayang Allah",
+            "diajarkan": "Refleksi rasa syukur sebagai respons emosional terhadap pemahaman sifat Allah.",
+            "contoh": "Tanyakan \"apa yang membuatmu bersyukur hari ini karena kasih sayang Allah?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menyebutkan 5 Asmaul Husna pertama",
+          "Anak mampu menjelaskan makna sederhana salah satu nama",
+          "Anak mampu menunjukkan rasa syukur atas kasih sayang Allah"
+        ]
+      },
+      {
+        "judul": "Nilai-nilai Ke-NU-an: Tasamuh & Ta'awun",
+        "tujuan": "Anak mengenal sikap toleransi dan tolong-menolong sejak dini.",
+        "kegiatan": [
+          {
+            "nama": "Cerita tentang sikap saling menghargai teman",
+            "diajarkan": "Pengenalan sikap toleransi lewat cerita yang menggambarkan situasi sosial sederhana.",
+            "contoh": "Ceritakan kisah dua teman berbeda kesukaan yang tetap bermain rukun bersama.",
+            "alat": [
+              "Buku cerita bertema persahabatan (jika ada)"
+            ]
+          },
+          {
+            "nama": "Praktik berbagi mainan dan makanan",
+            "diajarkan": "Praktik langsung sikap berbagi sebagai penerapan nilai ta'awun (tolong-menolong).",
+            "contoh": "Ajak anak membagi camilan atau mainan dengan saudara/teman secara langsung, apresiasi saat ia melakukannya.",
+            "alat": [
+              "Camilan/mainan untuk dibagi"
+            ]
+          },
+          {
+            "nama": "Permainan kerja sama kelompok",
+            "diajarkan": "Penerapan kerja sama dalam permainan kelompok yang membutuhkan koordinasi.",
+            "contoh": "Mainkan permainan yang hanya bisa selesai jika anak-anak bekerja sama, misal membawa bola dengan kain bersama-sama.",
+            "alat": [
+              "Bola kecil",
+              "Kain/selendang"
+            ]
+          },
+          {
+            "nama": "Diskusi sederhana tentang hidup rukun",
+            "diajarkan": "Diskusi ringan untuk menanamkan nilai hidup rukun sebagai bagian ajaran ke-NU-an.",
+            "contoh": "Tanyakan \"kalau semua teman rukun dan saling bantu, rasanya bagaimana ya?\"",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menunjukkan sikap berbagi dengan teman",
+          "Anak mampu bekerja sama dalam permainan kelompok",
+          "Anak mampu menjelaskan pentingnya hidup rukun dengan kata sederhana"
+        ]
+      },
+      {
+        "judul": "Mengenal Hari Besar & Tradisi Keluarga",
+        "tujuan": "Anak mengenal Idul Fitri, silaturahmi, dan doa untuk keluarga sesuai usia.",
+        "kegiatan": [
+          {
+            "nama": "Mengenal makna Idul Fitri dan silaturahmi",
+            "diajarkan": "Pengenalan makna Idul Fitri sebagai hari kemenangan setelah berpuasa dan bersilaturahmi.",
+            "contoh": "Ceritakan sederhana \"Idul Fitri itu hari raya setelah puasa, kita saling memaafkan dan berkunjung ke saudara\".",
+            "alat": [
+              "Gambar/foto suasana lebaran (opsional)"
+            ]
+          },
+          {
+            "nama": "Praktik bersalaman dan meminta maaf",
+            "diajarkan": "Praktik langsung tradisi bersalaman dan meminta maaf sebagai nilai kerukunan keluarga.",
+            "contoh": "Latih anak bersalaman sambil mengucap \"mohon maaf ya\" kepada anggota keluarga, seperti tradisi lebaran.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Doa sederhana untuk kakek, nenek, dan keluarga",
+            "diajarkan": "Pengenalan doa sederhana untuk keluarga sebagai bentuk bakti dan penghormatan.",
+            "contoh": "Ajarkan doa singkat untuk kakek-nenek dan orang tua, ucapkan bersama sebelum tidur.",
+            "alat": [
+              "Teks doa untuk orang tua/keluarga"
+            ]
+          },
+          {
+            "nama": "Cerita tentang menghormati orang tua dan leluhur",
+            "diajarkan": "Penanaman nilai menghormati orang tua dan leluhur lewat cerita keteladanan keluarga.",
+            "contoh": "Ceritakan kebaikan kakek/nenek atau leluhur keluarga sebagai contoh untuk dihormati dan didoakan.",
+            "alat": [
+              "Foto keluarga/leluhur (jika ada)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu menjelaskan makna sederhana Idul Fitri",
+          "Anak mampu mempraktikkan bersalaman dan meminta maaf",
+          "Anak mampu membaca doa sederhana untuk keluarga"
+        ]
+      },
+      {
+        "judul": "Review & Pembiasaan Akhlak Mulia",
+        "tujuan": "Anak konsisten mempraktikkan doa, adab, dan kalimat thayyibah sehari-hari.",
+        "kegiatan": [
+          {
+            "nama": "Pembiasaan doa harian secara mandiri",
+            "diajarkan": "Evaluasi kemandirian anak dalam mempraktikkan doa harian tanpa diingatkan.",
+            "contoh": "Amati sepanjang hari apakah anak sudah mengucap doa makan dan tidur tanpa diminta terlebih dahulu.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Praktik adab dan kalimat thayyibah dalam keseharian",
+            "diajarkan": "Evaluasi konsistensi penerapan adab dan kalimat thayyibah dalam keseharian.",
+            "contoh": "Perhatikan apakah anak mengucap salam, kalimat thayyibah, dan adab makan secara alami sepanjang hari biasa.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Pentas kecil hafalan doa dan shalawat",
+            "diajarkan": "Apresiasi hafalan setahun lewat pertunjukan yang membangun kebanggaan dan motivasi.",
+            "contoh": "Adakan pentas kecil di rumah, anak menampilkan hafalan doa dan shalawat yang sudah dipelajari sepanjang tahun.",
+            "alat": [
+              "Tidak perlu alat khusus"
+            ]
+          },
+          {
+            "nama": "Perayaan pencapaian belajar keimanan setahun",
+            "diajarkan": "Perayaan pencapaian sebagai penguat semangat untuk melanjutkan pembelajaran keimanan.",
+            "contoh": "Berikan pujian tulus dan mungkin hadiah kecil sebagai bentuk syukur atas pencapaian belajar anak setahun ini.",
+            "alat": [
+              "Tidak perlu alat khusus (opsional hadiah kecil)"
+            ]
+          }
+        ],
+        "indikator": [
+          "Anak mampu mempraktikkan doa harian secara mandiri",
+          "Anak mampu menunjukkan adab dan kalimat thayyibah dalam keseharian",
+          "Anak mampu tampil dalam pentas hafalan doa/shalawat sederhana"
+        ]
+      }
     ]
   }
 };
 
-const BULAN_LABEL = ["Bulan 1","Bulan 2","Bulan 3","Bulan 4","Bulan 5","Bulan 6","Bulan 7","Bulan 8","Bulan 9","Bulan 10","Bulan 11","Bulan 12"];
 const ACCENT = {
   numerik: {c:"var(--numerik)", bg:"var(--numerik-bg)"},
   spasial: {c:"var(--spasial)", bg:"var(--spasial-bg)"},
@@ -374,37 +3369,176 @@ const ACCENT = {
   keimanan: {c:"var(--keimanan)", bg:"var(--keimanan-bg)"}
 };
 
+// Setiap topik berisi 4 kegiatan = 4 hari belajar (bisa diulang beberapa
+// hari untuk pemantapan sebelum lanjut ke hari berikutnya).
+const HARI_PER_TOPIK = 4;
+
+// Catatan penyesuaian level: ditampilkan di atas tab tertentu supaya
+// orang tua tahu bagian mana yang bisa dipercepat karena anak sudah
+// punya kemampuan awal.
+const CATATAN_LEVEL = {
+  numerik: "📝 <b>Catatan penyesuaian:</b> karena anak sudah bisa berhitung 1–20 memakai jari, jadikan <b>Hari 1–24 (Topik 1–6)</b> sebagai pemantapan cepat saja (1–2 hari per topik cukup, tidak perlu 4 hari penuh) — lalu percepat masuk ke <b>Hari 25 (Topik 7: Penjumlahan)</b> dan seterusnya yang levelnya lebih menantang.",
+  keimanan: "📝 <b>Catatan penyesuaian:</b> jika anak sudah mengenal beberapa huruf, pada <b>Topik 7 (Huruf Hijaiyah, Hari 25–28)</b> lewati huruf yang sudah dikuasai dan fokuskan waktu pada huruf yang belum dikenal."
+};
+
+const CPA_INFO = {
+  numerik: `
+    <div class="cpa-banner">
+      <b>🧱 Metode CPA (Concrete–Pictorial–Abstract)</b>
+      <p>Setiap topik numerik mengikuti urutan belajar matematika yang terbukti efektif untuk anak usia dini:</p>
+      <div class="cpa-steps">
+        <span class="cpa-step cpa-konkret">1️⃣ Konkret — pakai benda nyata</span>
+        <span class="cpa-arrow">→</span>
+        <span class="cpa-step cpa-piktorial">2️⃣ Piktorial — pakai gambar</span>
+        <span class="cpa-arrow">→</span>
+        <span class="cpa-step cpa-abstrak">3️⃣ Abstrak — pakai simbol angka</span>
+      </div>
+      <p>Jangan lompat ke tahap Abstrak sebelum anak benar-benar lancar di tahap Konkret dan Piktorial — urutan ini yang membuat pemahaman angka lebih kuat, bukan sekadar hafalan.</p>
+    </div>
+  `
+};
+
+function getSubjectStats(subject){
+  const months = DATA[subject].months;
+  let tercapai = 0;
+  months.forEach((m, idx) => {
+    const avg = getMonthAverage(subject, idx, m.indikator.length);
+    if(avg !== null && avg >= 3) tercapai++;
+  });
+  return { total: months.length, tercapai };
+}
+
+const STORAGE_KEY = "buku-ajar-si-kecil-progress-v1";
+
+function loadProgress(){
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  } catch(e) { return {}; }
+}
+function saveProgress(progress){
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch(e) {}
+}
+let PROGRESS = loadProgress();
+
+function scoreKey(subject, monthIdx, indIdx){
+  return subject + ":" + monthIdx + ":" + indIdx;
+}
+
+function getMonthAverage(subject, monthIdx, jumlahIndikator){
+  let total = 0, terisi = 0;
+  for(let i=0;i<jumlahIndikator;i++){
+    const val = PROGRESS[scoreKey(subject, monthIdx, i)];
+    if(val){ total += val; terisi++; }
+  }
+  if(terisi === 0) return null;
+  return total / jumlahIndikator;
+}
+
+// Rubrik penilaian PAUD: Belum Berkembang, Mulai Berkembang,
+// Berkembang Sesuai Harapan, Berkembang Sangat Baik
+const RUBRIK = [
+  { key:"BB",  label:"Belum Berkembang",          score:1 },
+  { key:"MB",  label:"Mulai Berkembang",          score:2 },
+  { key:"BSH", label:"Berkembang Sesuai Harapan", score:3 },
+  { key:"BSB", label:"Berkembang Sangat Baik",    score:4 }
+];
+
 function buildPanel(key){
   const d = DATA[key];
   const acc = ACCENT[key];
-  let months = d.months.map((m,i) => `
+  const stats = getSubjectStats(key);
+  const catatan = CATATAN_LEVEL[key] ? `<div class="catatan-level">${CATATAN_LEVEL[key]}</div>` : "";
+  const cpaInfo = CPA_INFO[key] || "";
+
+  let topikBlocks = d.months.map((m,i) => {
+    const hariAwal = i * HARI_PER_TOPIK + 1;
+    const hariAkhir = hariAwal + HARI_PER_TOPIK - 1;
+    const avg = getMonthAverage(key, i, m.indikator.length);
+    const badgeClass = avg === null ? "" : (avg >= 3 ? "badge-ok" : (avg >= 2 ? "badge-mid" : "badge-low"));
+    const badgeText = avg === null ? "Belum dinilai" : (avg >= 3 ? "Tercapai" : (avg >= 2 ? "Berkembang" : "Perlu latihan"));
+
+    const hariRows = m.kegiatan.map((k, ki) => {
+      const hariKe = hariAwal + ki;
+      const alatList = k.alat.map(a => `<li>${a}</li>`).join("");
+      const tahapChip = k.tahap ? `<span class="tahap-chip tahap-${k.tahap.toLowerCase()}">${k.tahap}</span>` : "";
+      return `
+        <li class="kegiatan-item">
+          <button type="button" class="kegiatan-head" onclick="this.parentElement.classList.toggle('open'); event.stopPropagation();">
+            <span class="hari-chip">Hari ${hariKe}</span>
+            ${tahapChip}
+            <span class="kegiatan-nama">${k.nama}</span>
+            <span class="kegiatan-chev">▾</span>
+          </button>
+          <div class="kegiatan-detail">
+            <p class="kegiatan-field"><b>🎓 Yang diajarkan:</b> ${k.diajarkan}</p>
+            <p class="kegiatan-field"><b>💬 Contoh:</b> ${k.contoh}</p>
+            <p class="kegiatan-field-label"><b>🧰 Yang diperlukan:</b></p>
+            <ul class="alat-list">${alatList}</ul>
+            <button type="button" class="print-btn" onclick="event.stopPropagation(); printWorksheet('${key}', ${i}, ${ki});">
+              🖨️ Cetak Lembar Kerja Hari ${hariKe}
+            </button>
+          </div>
+        </li>
+      `;
+    }).join("");
+
+    const indikatorRows = m.indikator.map((teks, ii) => {
+      const current = PROGRESS[scoreKey(key, i, ii)] || 0;
+      const pills = RUBRIK.map(r => `
+        <button type="button"
+          class="rubrik-pill${current === r.score ? ' selected' : ''}"
+          data-subject="${key}" data-month="${i}" data-ind="${ii}" data-score="${r.score}"
+          title="${r.label}">${r.key}</button>
+      `).join("");
+      return `
+        <li class="indikator-row">
+          <span class="indikator-teks">${teks}</span>
+          <span class="rubrik-group">${pills}</span>
+        </li>
+      `;
+    }).join("");
+
+    return `
     <div class="month-card" style="--c-accent:${acc.c}; --c-accent-bg:${acc.bg};">
       <div class="month-head" onclick="this.parentElement.classList.toggle('open')">
         <div class="month-num">${i+1}</div>
         <div class="month-titles">
-          <div class="bulan-label">${BULAN_LABEL[i]}</div>
+          <div class="bulan-label">Topik ${i+1} · Hari ${hariAwal}–${hariAkhir}</div>
           <h3>${m.judul}</h3>
         </div>
+        <span class="status-badge ${badgeClass}">${badgeText}</span>
         <div class="chev">▾</div>
       </div>
       <div class="month-body">
-        <p class="goal-line"><b>🎯 Tujuan:</b> ${m.tujuan}</p>
+        <p class="goal-line"><b>🎯 Tujuan Topik Ini:</b> ${m.tujuan}</p>
+        <p class="section-label">📅 Rencana Harian <span class="hint">(klik tiap hari untuk lihat detail + cetak)</span></p>
         <ul class="activities">
-          ${m.kegiatan.map(k => `<li><span class="dot">●</span><span>${k}</span></li>`).join("")}
+          ${hariRows}
+        </ul>
+        <p class="section-label">📋 Indikator Pencapaian &amp; Evaluasi (nilai di akhir topik / Hari ${hariAkhir})</p>
+        <ul class="indikator-list">
+          ${indikatorRows}
         </ul>
       </div>
     </div>
-  `).join("");
+  `;
+  }).join("");
 
   return `
     <div class="panel-intro">
       <div class="big-emo">${d.emoji}</div>
-      <div>
+      <div class="panel-intro-text">
         <h2>${d.title}</h2>
         <p>${d.desc}</p>
       </div>
+      <div class="panel-progress">
+        <div class="panel-progress-num">${stats.tercapai}/${stats.total}</div>
+        <div class="panel-progress-label">topik tercapai</div>
+      </div>
     </div>
-    ${months}
+    ${catatan}
+    ${cpaInfo}
+    ${topikBlocks}
   `;
 }
 
@@ -415,6 +3549,46 @@ function render(){
       ${buildPanel(key)}
     </section>
   `).join("");
+  attachRubrikHandlers();
+}
+
+function attachRubrikHandlers(){
+  document.querySelectorAll('.rubrik-pill').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const subject = btn.dataset.subject;
+      const monthIdx = parseInt(btn.dataset.month, 10);
+      const indIdx = parseInt(btn.dataset.ind, 10);
+      const score = parseInt(btn.dataset.score, 10);
+      const key = scoreKey(subject, monthIdx, indIdx);
+      if(PROGRESS[key] === score){
+        delete PROGRESS[key];
+      } else {
+        PROGRESS[key] = score;
+      }
+      saveProgress(PROGRESS);
+      const openMonths = new Set();
+      document.querySelectorAll('.panel.active .month-card.open').forEach(card => {
+        openMonths.add(card.querySelector('h3').textContent);
+      });
+      const openKegiatan = new Set();
+      document.querySelectorAll('.panel.active .kegiatan-item.open').forEach(item => {
+        openKegiatan.add(item.querySelector('.kegiatan-nama').textContent);
+      });
+      render();
+      const activeTab = document.querySelector('.tab-btn.active').dataset.c;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.c === activeTab));
+      document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.dataset.c === activeTab));
+      document.querySelectorAll('.month-card').forEach(card => {
+        const h3 = card.querySelector('h3');
+        if(h3 && openMonths.has(h3.textContent)) card.classList.add('open');
+      });
+      document.querySelectorAll('.kegiatan-item').forEach(item => {
+        const nm = item.querySelector('.kegiatan-nama');
+        if(nm && openKegiatan.has(nm.textContent)) item.classList.add('open');
+      });
+    });
+  });
 }
 
 function setupTabs(){
@@ -430,10 +3604,138 @@ function setupTabs(){
   });
 }
 
+function setupInfoToggle(){
+  const btn = document.getElementById('info-toggle');
+  const box = document.getElementById('info-box');
+  if(!btn || !box) return;
+  btn.addEventListener('click', () => {
+    box.classList.toggle('open');
+    btn.textContent = box.classList.contains('open') ? "Tutup panduan penilaian ▲" : "ℹ️ Cara menilai perkembangan anak ▼";
+  });
+}
+
+// ================= FITUR CETAK LEMBAR KERJA =================
+
+const SUBJECT_LABEL = {
+  numerik: "🔢 Numerik", spasial: "🧩 Spasial", logika: "💡 Logika",
+  memori: "🧠 Memori", keimanan: "🌙 Keimanan ala NU"
+};
+
+function workAreaNumerik(tahap){
+  if(tahap === "Konkret"){
+    return `
+      <div class="wk-label">Tahap KONKRET — ini bukan lembar isian, tapi daftar siap pakai untuk kegiatan dengan benda nyata:</div>
+      <div class="wk-checklist">
+        <div class="wk-check-line">☐ Siapkan alat/bahan sesuai daftar "Yang diperlukan" di atas</div>
+        <div class="wk-check-line">☐ Lakukan kegiatan bersama anak sesuai contoh di atas</div>
+        <div class="wk-check-line">☐ Biarkan anak memegang & menghitung benda nyatanya sendiri</div>
+        <div class="wk-check-line">☐ Ulangi 1–2 kali lagi dengan jumlah benda berbeda</div>
+      </div>
+      <div class="wk-label" style="margin-top:16px;">Catatan orang tua/guru:</div>
+      <div class="wk-lines"><div class="wk-line"></div><div class="wk-line"></div><div class="wk-line"></div></div>
+    `;
+  }
+  if(tahap === "Abstrak"){
+    let boxes = "";
+    for(let i=1;i<=20;i++){
+      boxes += `<div class="wk-box wk-box-trace">${i}</div>`;
+    }
+    return `<div class="wk-label">Tahap ABSTRAK — tebalkan tiap angka, lalu tulis ulang sendiri di kotak sebelahnya tanpa melihat gambar/benda:</div><div class="wk-grid wk-grid-20">${boxes}</div>`;
+  }
+  // default: Piktorial
+  let boxes = "";
+  for(let i=1;i<=20;i++){
+    boxes += `<div class="wk-box">${i}</div>`;
+  }
+  return `<div class="wk-label">Tahap PIKTORIAL — gambar sejumlah titik/benda sesuai angka di setiap kotak:</div><div class="wk-grid wk-grid-20">${boxes}</div>`;
+}
+
+function workAreaSpasial(){
+  const shapes = [
+    `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/></svg>`,
+    `<svg viewBox="0 0 100 100"><polygon points="50,10 90,85 10,85" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/></svg>`,
+    `<svg viewBox="0 0 100 100"><rect x="15" y="15" width="70" height="70" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/></svg>`,
+    `<svg viewBox="0 0 100 100"><rect x="10" y="30" width="80" height="40" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/></svg>`
+  ];
+  const shapeBoxes = shapes.map(s => `<div class="wk-shape">${s}</div>`).join("");
+  return `<div class="wk-label">Jiplak/tebalkan garis putus-putus, lalu warnai bentuknya:</div><div class="wk-grid wk-grid-4">${shapeBoxes}</div>`;
+}
+
+function workAreaLogika(){
+  return `
+    <div class="wk-label">Gambar atau tempel benda ke kelompok yang sesuai:</div>
+    <div class="wk-sort">
+      <div class="wk-sort-col"><div class="wk-sort-title">Kelompok A</div><div class="wk-sort-box"></div></div>
+      <div class="wk-sort-col"><div class="wk-sort-title">Kelompok B</div><div class="wk-sort-box"></div></div>
+      <div class="wk-sort-col"><div class="wk-sort-title">Kelompok C</div><div class="wk-sort-box"></div></div>
+    </div>
+  `;
+}
+
+function workAreaMemori(){
+  let cards = "";
+  for(let i=1;i<=8;i++){
+    cards += `<div class="wk-card">?</div>`;
+  }
+  return `<div class="wk-label">Gunting kotak di bawah ini, lalu gambar sepasang gambar yang sama di dua kartu untuk dijadikan permainan kartu memori:</div><div class="wk-grid wk-grid-8">${cards}</div>`;
+}
+
+function workAreaKeimanan(){
+  return `
+    <div class="wk-label">Tebalkan tulisan di bawah ini, lalu tuliskan ulang sendiri di baris kosongnya:</div>
+    <div class="wk-trace">بسم الله الرحمن الرحيم</div>
+    <div class="wk-lines">
+      <div class="wk-line"></div>
+      <div class="wk-line"></div>
+      <div class="wk-line"></div>
+    </div>
+  `;
+}
+
+const WORK_AREA_FN = {
+  numerik: workAreaNumerik,
+  spasial: workAreaSpasial,
+  logika: workAreaLogika,
+  memori: workAreaMemori,
+  keimanan: workAreaKeimanan
+};
+
+function printWorksheet(subject, topikIdx, kegiatanIdx){
+  const topik = DATA[subject].months[topikIdx];
+  const keg = topik.kegiatan[kegiatanIdx];
+  const hariKe = topikIdx * 4 + kegiatanIdx + 1;
+  const workArea = subject === "numerik" ? workAreaNumerik(keg.tahap) : (WORK_AREA_FN[subject] ? WORK_AREA_FN[subject]() : "");
+  const tahapTag = keg.tahap ? ` · Tahap ${keg.tahap}` : "";
+
+  const html = `
+    <div class="wk-header">
+      <div class="wk-header-title">${SUBJECT_LABEL[subject]} — Hari ke-${hariKe}${tahapTag}</div>
+      <div class="wk-header-sub">${topik.judul}</div>
+    </div>
+    <div class="wk-meta">
+      <span>Nama: ______________________</span>
+      <span>Tanggal: __________</span>
+    </div>
+    <h2 class="wk-title">${keg.nama}</h2>
+    <p class="wk-instruksi"><b>Yang diajarkan:</b> ${keg.diajarkan}</p>
+    <p class="wk-instruksi"><b>Contoh kegiatan:</b> ${keg.contoh}</p>
+    <div class="wk-area">${workArea}</div>
+    <div class="wk-footer">Buku Ajar Si Kecil — dicetak untuk kebutuhan belajar di rumah</div>
+  `;
+
+  const area = document.getElementById('print-area');
+  area.innerHTML = html;
+  document.body.classList.add('printing');
+  window.print();
+  setTimeout(() => { document.body.classList.remove('printing'); }, 500);
+}
+
 render();
 setupTabs();
-// buka bulan pertama tiap tab secara default
+setupInfoToggle();
 document.querySelectorAll('.panel .month-card:first-of-type').forEach(el => el.classList.add('open'));
+
+
 </script>
 </body>
 </html>

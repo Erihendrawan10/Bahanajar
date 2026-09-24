@@ -1252,7 +1252,48 @@ function doGet(e) {
       return ContentService.createTextOutput(JSON.stringify(result))
         .setMimeType(ContentService.MimeType.JSON);
     }
+    if (action === 'setDone') {
+      const subjectKey = e.parameter.subject;
+      const topikIdx = parseInt(e.parameter.topik, 10);
+      const kegIdx = parseInt(e.parameter.keg, 10);
+      const isDone = e.parameter.done === '1';
+      if (SHEET_KEY[subjectKey] && !isNaN(topikIdx) && !isNaN(kegIdx)) {
+        const lock = LockService.getScriptLock();
+        lock.waitLock(10000);
+        try {
+          const sh = getDoneSheet_(ss);
+          const key = subjectKey + ':' + topikIdx + ':' + kegIdx;
+          const last = sh.getLastRow();
+          let foundRow = -1;
+          if (last >= 2) {
+            const keys = sh.getRange(2, 1, last - 1, 1).getValues();
+            for (let i = 0; i < keys.length; i++) {
+              if (keys[i][0] === key) { foundRow = i + 2; break; }
+            }
+          }
+          if (isDone && foundRow === -1) {
+            sh.appendRow([key, SHEET_KEY[subjectKey], topikIdx + 1, topikIdx * 4 + kegIdx + 1, 'Sudah dipelajari ✅']);
+          } else if (!isDone && foundRow !== -1) {
+            sh.deleteRow(foundRow);
+          }
+        } finally {
+          lock.releaseLock();
+        }
+      }
+      return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
 
+    if (action === 'getDone') {
+      const sh = ss.getSheetByName('Centang');
+      let done = [];
+      if (sh && sh.getLastRow() >= 2) {
+        done = sh.getRange(2, 1, sh.getLastRow() - 1, 1).getValues()
+          .map(r => r[0]).filter(String);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ done: done }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
     return ContentService.createTextOutput(JSON.stringify({ error: 'unknown action' }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {

@@ -4691,7 +4691,7 @@ function setupSheetModal(){
     setSheetUrl(url);
     status.textContent = "🔄 Menyambungkan & memuat data dari Google Sheets...";
     status.className = "sheet-status warn";
-    loadFromSheet()
+    loadFromSheet(true)
       .then(() => {
         status.textContent = "✅ Tersambung! Data dari Google Sheets sudah dimuat.";
         status.className = "sheet-status ok";

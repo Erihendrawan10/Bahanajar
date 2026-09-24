@@ -1202,6 +1202,16 @@ const SHEET_KEY = {
   memori: "Memori",
   keimanan: "Keimanan ala NU"
 };
+    function getDoneSheet_(ss) {
+  let sh = ss.getSheetByName('Centang');
+  if (!sh) {
+    sh = ss.insertSheet('Centang');
+    sh.getRange(1, 1, 1, 5).setValues([['Kunci', 'Aspek', 'Topik ke-', 'Minggu ke-', 'Status']]);
+    sh.getRange(1, 1, 1, 5).setFontWeight('bold').setBackground('#E4F6EE');
+    sh.setFrozenRows(1);
+  }
+  return sh;
+}
 
 function doGet(e) {
   try {

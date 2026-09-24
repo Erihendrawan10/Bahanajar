@@ -4322,11 +4322,15 @@ function refreshRingkasan(){
 }
 function render(){
   const main = document.getElementById('main');
-  main.innerHTML = Object.keys(DATA).map(key => `
+   main.innerHTML = Object.keys(DATA).map(key => `
     <section class="panel${key==='numerik' ? ' active' : ''}" data-c="${key}">
       ${buildPanel(key)}
     </section>
-  `).join("");
+  `).join("") + `
+    <section class="panel" data-c="ringkasan" id="panel-ringkasan">
+      ${buildRingkasan()}
+    </section>
+  `;
   attachRubrikHandlers();
 }
 

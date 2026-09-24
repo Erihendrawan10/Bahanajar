@@ -4255,7 +4255,71 @@ function buildPanel(key){
     ${topikBlocks}
   `;
 }
+function buildRingkasan(){
+  let totalTopik = 0, totalTercapai = 0, totalMinggu = 0, totalDone = 0;
 
+  const cards = Object.keys(DATA).map(key => {
+    const d = DATA[key], acc = ACCENT[key];
+    let tercapai = 0, doneCount = 0, mingguTotal = 0;
+
+    const rows = d.months.map((m, i) => {
+      const avg = getMonthAverage(key, i, m.indikator.length);
+      const badgeClass = avg === null ? "" : (avg >= 3 ? "badge-ok" : (avg >= 2 ? "badge-mid" : "badge-low"));
+      const badgeText  = avg === null ? "Belum dinilai" : (avg >= 3 ? "Tercapai" : (avg >= 2 ? "Berkembang" : "Perlu latihan"));
+      if(avg !== null && avg >= 3) tercapai++;
+
+      let dn = 0;
+      m.kegiatan.forEach((k, ki) => { if(DONE[scoreKey(key, i, ki) + ":done"]) dn++; });
+      doneCount += dn;
+      mingguTotal += m.kegiatan.length;
+
+      return `
+        <div class="rk-row">
+          <span class="rk-row-no">${i+1}</span>
+          <span class="rk-row-judul">${m.judul}</span>
+          <span class="rk-row-minggu">✅ ${dn}/${m.kegiatan.length} minggu</span>
+          <span class="status-badge ${badgeClass}">${badgeText}</span>
+        </div>`;
+    }).join("");
+
+    totalTopik += d.months.length;
+    totalTercapai += tercapai;
+    totalMinggu += mingguTotal;
+    totalDone += doneCount;
+    const pct = mingguTotal ? Math.round(doneCount / mingguTotal * 100) : 0;
+
+    return `
+      <div class="rk-card" style="--c-accent:${acc.c};">
+        <div class="rk-head">
+          <h3>${d.emoji} ${d.title}</h3>
+          <span class="rk-stat">${tercapai}/${d.months.length} topik tercapai</span>
+        </div>
+        <div class="rk-bar"><div class="rk-bar-fill" style="width:${pct}%"></div></div>
+        <div class="rk-bar-label">${doneCount}/${mingguTotal} minggu sudah dipelajari (${pct}%)</div>
+        ${rows}
+      </div>`;
+  }).join("");
+
+  return `
+    <div class="panel-intro">
+      <div class="big-emo">📊</div>
+      <div class="panel-intro-text">
+        <h2>Ringkasan Evaluasi</h2>
+        <p>Gambaran seluruh aspek sekaligus: topik yang sudah tercapai (dari penilaian BB/MB/BSH/BSB) dan minggu yang sudah dicentang. ${totalDone}/${totalMinggu} minggu sudah dipelajari.</p>
+      </div>
+      <div class="panel-progress">
+        <div class="panel-progress-num">${totalTercapai}/${totalTopik}</div>
+        <div class="panel-progress-label">topik tercapai</div>
+      </div>
+    </div>
+    ${cards}
+  `;
+}
+
+function refreshRingkasan(){
+  const p = document.getElementById('panel-ringkasan');
+  if(p) p.innerHTML = buildRingkasan();
+}
 function render(){
   const main = document.getElementById('main');
   main.innerHTML = Object.keys(DATA).map(key => `

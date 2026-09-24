@@ -4124,6 +4124,8 @@ function toggleDone(checkbox){
   saveDone(DONE);
   const item = checkbox.closest('.kegiatan-item');
   if(item) item.classList.toggle('done', checkbox.checked);
+  syncDoneToSheet(key, checkbox.checked);
+  refreshRingkasan();
 }
 
 function scoreKey(subject, monthIdx, indIdx){
@@ -4596,7 +4598,44 @@ function syncToSheet(subject, topikIdx, indIdx, score){
 
 // Ambil semua nilai yang sudah tersimpan di Google Sheets, lalu
 // gabungkan ke PROGRESS lokal (localStorage tetap dipakai sebagai cadangan).
-function loadFromSheet(){
+// Kirim status centang (fire-and-forget) ke sheet "Centang"
+function syncDoneToSheet(doneKey, isDone){
+  const url = getSheetUrl();
+  if(!url) return;
+  const p = doneKey.split(':'); // subject:topik:kegiatan:done
+  const params = new URLSearchParams({
+    action: 'setDone',
+    subject: p[0],
+    topik: p[1],
+    keg: p[2],
+    done: isDone ? '1' : '0'
+  });
+  fetch(`${url}?${params.toString()}`, { mode: 'no-cors' }).catch(() => {});
+}
+
+// Muat centang dari Sheets. pushLocal=true (saat pertama kali menyambung):
+// centang lokal yang belum ada di sheet ikut dikirim. Selain itu sheet jadi acuan.
+function loadDoneFromSheet(url, pushLocal){
+  return fetch(`${url}?action=getDone`)
+    .then(r => r.json())
+    .then(data => {
+      if(data.error) throw new Error(data.error);
+      const remote = {};
+      (data.done || []).forEach(k => { remote[k] = true; });
+      if(pushLocal){
+        Object.keys(DONE).forEach(dk => {
+          const k = dk.replace(/:done$/, '');
+          if(!remote[k]){ syncDoneToSheet(dk, true); remote[k] = true; }
+        });
+      }
+      const merged = {};
+      Object.keys(remote).forEach(k => { merged[k + ':done'] = true; });
+      DONE = merged;
+      saveDone(DONE);
+    })
+    .catch(() => {}); // kalau Apps Script belum di-update, nilai rubrik tetap termuat
+}
+    function loadFromSheet(pushLocal){
   const url = getSheetUrl();
   if(!url) return Promise.reject(new Error("URL belum diisi"));
 
@@ -4615,9 +4654,11 @@ function loadFromSheet(){
           });
         });
       });
-      saveProgress(PROGRESS);
-      render();
-      return true;
+           saveProgress(PROGRESS);
+      return loadDoneFromSheet(url, pushLocal).then(() => {
+        render();
+        return true;
+      });
     });
 }
 

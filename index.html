@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buku Ajar Si Kecil — Kakak 5,8 th &amp; Adik 4,4 th</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#FFFBF3;--ink:#3A3226;--soft:#6B6255;--line:#EDE6D6}
@@ -54,6 +55,51 @@ footer button{font:700 12px Nunito;border:1px solid var(--line);background:#fff;
 .mb button{font:800 13px Nunito;background:#1E9A6B;color:#fff;border:0;border-radius:9px;padding:9px 16px;cursor:pointer}
 .mb .x{background:#eee;color:#333;margin-left:6px}
 #st{font-weight:700;min-height:20px;margin-top:8px}
+
+.wkh{cursor:pointer}.wkh .more{color:var(--c);font-size:12px;font-weight:800;white-space:nowrap}
+.wkd{display:none;margin-top:8px;padding:10px;background:#fff;border:1px dashed var(--line);border-radius:10px;font-size:13.5px}.wkd.open{display:block}
+.wkd ol{margin:6px 0 8px 18px;padding:0}.pbtn{font:800 13px Nunito;background:var(--c);color:#fff;border:0;border-radius:9px;padding:8px 14px;cursor:pointer;margin:2px 6px 2px 0}
+#pv{display:none;position:fixed;inset:0;background:#777;z-index:100;overflow:auto}#pv.open{display:block}
+#pv .tb{position:sticky;top:0;background:#222;color:#fff;padding:10px 14px;display:flex;gap:10px;align-items:center;z-index:3}#pv .tb b{flex:1}
+#pv .tb button{font:800 13px Nunito;border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+.sheet{background:#fff;color:#222;width:190mm;max-width:100%;margin:14px auto;padding:9mm;font-size:14px;line-height:1.4;font-family:'Nunito',sans-serif}
+.sheet h2{font-size:21px;margin:6px 0 2px}.sh-h{display:flex;justify-content:space-between;border-bottom:2px solid #333;padding-bottom:5px;font-size:13px}
+.sh-m{display:flex;gap:30px;margin:10px 0 4px;font-size:13px}.sh-s{font-size:12.5px;color:#666;margin-bottom:8px}
+.sh-f{display:flex;justify-content:space-between;margin-top:14px;font-size:12.5px;border-top:1px solid #ccc;padding-top:6px}
+.key{font-size:10px;color:#777;margin-top:6px}.q{display:flex;gap:8px;margin:12px 0 6px;font-weight:700}.q b{background:#333;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;flex:0 0 auto}
+.rw{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0}.nm{font-size:19px;font-weight:700}.nm.hl{font-size:24px}.big{font-size:30px;font-weight:800}.big2{font-size:28px}.big3{font-size:17px}
+.ar{font-size:22px;font-weight:800}.em{font-size:24px;letter-spacing:2px;line-height:1.3}.em2{font-size:34px;margin:0 4px}
+.bx{display:inline-block;border:2px solid #555;border-radius:7px;height:36px;vertical-align:middle;margin:0 4px}.bx.sq{width:50px;min-width:50px!important;height:50px}.bx.rd{border-radius:50%;width:36px;min-width:36px!important}
+.ch{display:inline-block;border:1.5px dashed #888;border-radius:18px;padding:2px 12px;margin:2px;font-weight:700;font-size:17px}
+.gh{color:#c4c4c4;font-size:34px;font-weight:800;margin-right:14px;font-family:'Nunito',sans-serif;letter-spacing:2px}.gh2{color:#999;font-size:22px;margin-top:8px;font-weight:700}
+.wl{border-bottom:1.5px solid #666;height:34px;margin:4px 0}.wl2{display:inline-block;border-bottom:1.5px solid #666;width:200px;height:30px}
+.wr{height:56px;border-top:1px solid #888;border-bottom:1px solid #888;background:linear-gradient(#bbb,#bbb) 0 50%/100% 1px no-repeat;margin:6px 0;display:flex;align-items:center;overflow:hidden}
+.dbx{border:2px solid #666;border-radius:10px;height:130px;margin:6px 0}.dbx.lg{height:230px}.dbx.sm{height:80px}.dbx.wd{width:300px}span.dbx.sm{display:inline-block;width:120px;height:56px;margin:0 6px}
+.dt{display:inline-block;width:13px;height:13px;border:2px solid #444;border-radius:50%;margin:1px}.fr{display:inline-flex;flex-direction:column;gap:2px;border:1px solid #ddd;padding:3px;border-radius:6px}.ten{display:flex}
+.tr{display:flex;flex-wrap:wrap;gap:6px}.tc{display:inline-flex;align-items:center}.nl{display:flex;gap:0}.nl span{border:1px solid #666;width:26px;height:26px;text-align:center;font-size:12px;font-weight:700;padding-top:3px}
+.nm,.pb{white-space:nowrap}.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}.cb{border:2px dashed #888;border-radius:10px;height:170px;padding:6px;text-align:center}
+.cut{border:1.5px dashed #999;padding:8px;display:flex;flex-wrap:wrap;gap:6px}.gr{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}.gc{border:1.5px solid #666;text-align:center;font-size:18px;font-weight:700;padding:6px 0}
+.eo{display:inline-block;margin:4px 14px 4px 0;font-size:20px}.st{margin:8px 0;font-size:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.bar{display:inline-block;height:20px;border-radius:5px}.bar.grid{background:repeating-linear-gradient(90deg,#3c7cd9 0 24px,#fff 24px 26px);border:1px solid #3c7cd9}.gridbg{height:130px;background:repeating-linear-gradient(90deg,#999 0 1px,transparent 1px 26px),repeating-linear-gradient(0deg,#999 0 1px,transparent 1px 26px);border:1px solid #999}
+.gl{display:inline-block;width:40px;height:70px;border:2.5px solid #444;border-top:none;border-radius:0 0 8px 8px;position:relative;vertical-align:middle}.gl i{position:absolute;bottom:0;left:0;right:0;background:#6bb7ee}
+.nt{display:inline-block;border:2px solid #555;border-radius:8px;padding:5px 10px;font-weight:800;text-align:center;background:#f6f6ef}.clks{display:flex;flex-wrap:wrap;gap:16px}.cc{text-align:center}.ck{width:110px;height:110px}
+.chip{display:inline-block;background:#f0ebe0;border:1.5px solid #bbb;border-radius:10px;padding:3px 12px;font-size:20px;font-weight:700;margin:2px}
+.syt{border-collapse:collapse;width:100%}.syt th,.syt td{border:1.5px solid #777;text-align:center;padding:5px;font-size:21px;font-weight:700}.syt th{background:#eee}
+.mt{display:flex;justify-content:space-between;padding:0 30px}.mt>div{display:flex;flex-direction:column;gap:12px}.mi{display:flex;align-items:center;gap:10px;min-height:42px}.dd{display:inline-block;width:14px;height:14px;border:2px solid #333;border-radius:50%}
+.sn{display:flex;justify-content:space-between;font-size:20px;padding:6px 0;border-bottom:1px dotted #aaa;font-weight:700}.cks{letter-spacing:6px;font-size:20px}.rd{font-size:21px;line-height:1.8;border:1.5px solid #bbb;border-radius:10px;padding:10px}
+.pn{background:#fff6e0;border:1px solid #f0dba0;border-radius:8px;padding:8px 10px;font-size:13px;margin:8px 0}.rw4{display:flex;gap:8px}.rw4>div{flex:1;font-size:11px}.rw4 .dbx{height:100px}
+.ot{width:100%;border-collapse:collapse;margin:6px 0}.ot th,.ot td{border:1.5px solid #666;padding:6px;font-size:13px;text-align:left;vertical-align:top;height:38px}.ot th{background:#eee}.ot.cal td{height:56px}
+.grd{border-collapse:collapse}.grd td{width:40px;height:40px;border:1.5px solid #666;text-align:center;font-size:22px}.kt{display:inline-block;width:80px;height:50px;border:2.5px solid #444;text-align:center;font-size:30px}
+.mz{width:300px;height:300px}.ctr{text-align:center}.pt{width:100%;height:46px}.shg{display:flex;flex-wrap:wrap;gap:14px}.shc{text-align:center;width:125px}.shp{width:110px;height:110px}.house{width:230px;height:150px}.fl{width:240px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.card{border:2px dashed #666;height:110px;display:flex;align-items:center;justify-content:center;font-size:52px;border-radius:10px}
+.kimbox{border:2px solid #666;padding:10px;border-radius:10px;text-align:center}.trk{display:flex;gap:10px;margin:6px 0}.trk span{text-align:center;font-size:30px;line-height:1}.trk small{display:block;font-size:11px}
+.poem{font-size:22px;line-height:1.9;border:1.5px solid #bbb;border-radius:10px;padding:10px 16px}.bl{display:inline-block;border-bottom:2px solid #333;width:90px}.cl{display:inline-flex;flex-direction:column;align-items:center;margin:4px 8px;font-size:12px}
+.doa{border:1.5px solid #ccc;border-radius:10px;padding:8px 12px;margin:8px 0;position:relative}.doa .no{position:absolute;left:8px;top:8px;font-weight:800;font-size:12px;background:#eee;border-radius:50%;width:22px;height:22px;text-align:center}
+.ab{font-family:'Amiri','Traditional Arabic',serif;direction:rtl;text-align:right;font-size:34px;line-height:2}.ab.ghost{color:#c4c4c4}.ab2{font-family:'Amiri','Traditional Arabic',serif;font-size:38px;margin:0 8px;direction:rtl}
+.ab:empty{border-bottom:1.5px solid #666;height:60px}.lt{font-size:14px;font-style:italic;color:#444}.ar2{font-size:13px;color:#333;margin-top:4px}
+.al{display:flex;align-items:center;gap:14px;border-bottom:1px solid #ddd;padding:3px 0}.gb{font-size:30px;font-weight:800;min-width:70px}.hk{display:inline-flex;flex-direction:column;align-items:center;margin:6px 12px;font-size:12px}.hk small{display:inline}
+.ev{border:2px solid #333;border-radius:10px;padding:8px;margin-top:14px}
+@media print{body.pvopen>*:not(#pv){display:none!important}body.pvopen #pv{position:static;background:#fff;overflow:visible;display:block}#pv .tb{display:none}.sheet{margin:0;padding:0;width:auto;page-break-after:always;break-after:page}@page{size:A4;margin:11mm}}
 </style>
 </head>
 <body>
@@ -68,8 +114,9 @@ footer button{font:700 12px Nunito;border:1px solid var(--line);background:#fff;
 <main id="main"></main>
 <footer>
   Dibuat dengan ♥ untuk tumbuh kembang si kecil
-  <div><button id="bs">🔗 Sambungkan Google Sheets</button><span id="vr">Versi 2.0</span></div>
+  <div><button id="bs">🔗 Sambungkan Google Sheets</button><span id="vr">Versi 2.1 · lembar kerja siap cetak</span></div>
 </footer>
+<div id="pv"><div class="tb"><b id="pvt"></b><button id="pvp" style="background:#1E9A6B;color:#fff">🖨️ Cetak</button><button id="pvx">✕ Tutup</button></div><div id="pvc"></div></div>
 <div class="modal" id="md"><div class="mb">
   <b>🔗 Sambungkan Google Sheets</b>
   <ol><li>Buat Google Sheets baru → Extensions → Apps Script, tempel isi <code>Code.gs</code>.</li>
@@ -254,8 +301,8 @@ function panel(a){
     const x=parse(s),av=avg(a,t,x.i.length),[bc,bt]=badge(av),id=`${lv}${a}${t}`;
     const lab=["Pengenalan (konkret)","Permainan","Latihan / karya","Ulang & evaluasi bulanan"];
     const ws=x.k.concat(["ulangi kegiatan favorit, lalu nilai 3 indikator di bawah"]).map((txt,w)=>{
-      const d=!!S[kD(a,t,w)];
-      return `<div class="wk${d?" done":""}"><input type="checkbox" data-d="${a}|${t}|${w}" ${d?"checked":""}><div class="t"><b>${A.day} · Minggu ${t*4+w+1}</b> — ${lab[w]}: ${txt}</div></div>`}).join("");
+      const d=!!S[kD(a,t,w)],wid=`${lv}${a}${t}w${w}`;
+      return `<div class="wk${d?" done":""}" style="--c:${A.c}"><input type="checkbox" data-d="${a}|${t}|${w}" ${d?"checked":""}><div class="t" style="flex:1"><div class="wkh" data-wk="${wid}"><b>${A.day} · Minggu ${t*4+w+1}</b> — ${lab[w]}: ${txt} <span class="more">▾ detail &amp; lembar kerja</span></div><div class="wkd${open.has(wid)?" open":""}" id="${wid}">${guide(lv,a,t,w,x,txt)}</div></div></div>`}).join("");
     const is=x.i.map((txt,i)=>{const cur=S[kN(a,t,i)]||0;
       return `<div class="ind"><span class="t">${txt}</span><span class="pl">${REN.map((r,ri)=>`<button class="${cur===ri+1?"on":""}" title="${RN[r]}" data-n="${a}|${t}|${i}|${ri+1}">${r}</button>`).join("")}</span></div>`}).join("");
     h+=`<div class="card${open.has(id)?" open":""}" id="${id}" style="--c:${A.c}"><div class="head" data-o="${id}"><div class="num">${t+1}</div><div class="tt"><small>Topik ${t+1} · Minggu ${t*4+1}–${t*4+4} (≈ bulan ${t+1})</small><h3>${x.j}</h3></div><span class="bd ${bc}">${bt}</span></div><div class="body"><div class="lbl">📅 Rencana Mingguan <small>(tiap ${A.day} · centang bila sudah)</small></div>${ws}<div class="lbl">🗓️ Evaluasi Bulanan <small>(BB = Belum Berkembang, MB = Mulai Berkembang, BSH = Sesuai Harapan, BSB = Sangat Baik; Tercapai bila rata-rata ≥ BSH)</small></div>${is}</div></div>`;
@@ -272,9 +319,377 @@ function ringkasan(){
 }
 function render(){chrome();document.getElementById("main").innerHTML=tab==="ringkasan"?ringkasan():panel(tab)}
 
+/* ===== LEMBAR KERJA SIAP CETAK ===== */
+let qc=0,KEYS={};
+const Q=t=>`<div class="q"><b>${++qc}</b><span>${t}</span></div>`;
+const K=v=>{(KEYS[qc]=KEYS[qc]||[]).push(v)};
+function rng(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}h>>>=0;if(!h)h=1;return()=>{h^=h<<13;h>>>=0;h^=h>>>17;h^=h<<5;h>>>=0;return h/4294967296}}
+const ri=(r,a,b)=>a+Math.floor(r()*(b-a+1));
+const pick=(r,a)=>a[Math.floor(r()*a.length)];
+const shuf=(r,a)=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const bx=w=>`<span class="bx" style="min-width:${w||34}px"></span>`;
+const wl=n=>`<div class="wl"></div>`.repeat(n||1);
+const gh=(t,n)=>`<span class="gh">${t}</span>`.repeat(n||1);
+const row=h=>`<div class="rw">${h}</div>`;
+const dbox=c=>`<div class="dbx ${c||""}"></div>`;
+const chs=a=>a.map(x=>`<span class="ch">${x}</span>`).join("");
+const trk=()=>`<div class="trk">${["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map(d=>`<span><small>${d}</small>☆</span>`).join("")}</div>`;
+const EMO=["🍎","⭐","🐟","🌸","⚽","🍪","🚗","🐥"];
+const EM={bola:"⚽",buku:"📖",baju:"👕",batu:"🪨",mata:"👀",kaki:"🦶",topi:"🧢",sapi:"🐄",kuda:"🐴",sapu:"🧹",susu:"🥛",roti:"🍞",nasi:"🍚",sepatu:"👟",bunga:"🌸",apel:"🍎",kancing:"🔘",lampu:"💡",jeruk:"🍊",bebek:"🦆",nanas:"🍍",mobil:"🚗",bulan:"🌙",pisang:"🍌",singa:"🦁",gunung:"⛰️",nyamuk:"🦟",kucing:"🐱",ayam:"🐔",ikan:"🐟"};
+const AL={a:["🍎","apel"],b:["⚽","bola"],c:["🦎","cicak"],d:["🐑","domba"],e:["🍦","es krim"],f:["📷","foto"],g:["🐘","gajah"],h:["🐯","harimau"],i:["🐟","ikan"],j:["🍊","jeruk"],k:["🐱","kucing"],l:["🐝","lebah"],m:["🚗","mobil"],n:["🍍","nanas"],o:["🌊","ombak"],p:["🍌","pisang"],r:["🍞","roti"],s:["🐄","sapi"],t:["🧢","topi"],u:["🐛","ulat"],w:["🥕","wortel"],y:["🪀","yoyo"],z:["🦓","zebra"]};
+const DAYS=["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
+const MONTHS=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+
+/* ---------- NUMERASI ---------- */
+const dot=`<i class="dt"></i>`;
+function frame(n){let h='<span class="fr">';for(let i=0;i<Math.floor(n/10);i++)h+=`<span class="ten">${dot.repeat(10)}</span>`;if(n%10)h+=`<span class="ten">${dot.repeat(n%10)}</span>`;return h+'</span>'}
+const pic=(n,e)=>n<=10?`<span class="em">${e.repeat(n)}</span>`:frame(n);
+const trace=(a,b)=>{let h='<div class="tr">';for(let i=a;i<=b;i++)h+=`<span class="tc">${gh(i,2)}${bx(40)}</span>`;return h+'</div>'};
+const nline=n=>{let h='<div class="nl">';for(let i=0;i<=n;i++)h+=`<span>${i}</span>`;return h+'</div>'};
+function k_cnt(a,w,r){const lo=+a[0],hi=+a[1];let h="";const np=hi>50?3:4;
+ if(w==0){h+=Q("Hitung titik-titiknya. Tulis angkanya di kotak.");for(let i=0;i<np;i++){const n=ri(r,lo,hi);h+=row(pic(n,pick(r,EMO))+`<span class="ar">=</span>`+bx(50));K(n)}
+  h+=Q("Jiplak angkanya, lalu tulis sendiri.");h+=trace(lo,Math.min(hi,lo+5))}
+ else if(w==1){h+=Q("Gambar titik sesuai angkanya. Hitung pelan-pelan.");for(let i=0;i<3;i++){const n=ri(r,lo,Math.min(hi,lo+19));h+=row(`<span class="big">${n}</span><span class="dbx sm"></span>`)}
+  h+=Q("Lingkari angka yang sama dengan jumlah titik.");for(let i=0;i<3;i++){const n=ri(r,lo+1,hi-1);const o=shuf(r,[n,n+1,n-1]);h+=row(pic(n,pick(r,EMO))+chs(o));K(n)}}
+ else{h+=Q("Lengkapi angka yang hilang.");for(let i=0;i<3;i++){const s=ri(r,lo,Math.max(lo,hi-7));const m=ri(r,2,5);let t="";for(let j=0;j<8;j++){const v=s+j;if(j>0&&j%3==m%3){t+=bx(40);K(v)}else t+=`<span class="nm">${v}</span>`}h+=row(t)}
+  h+=Q("Tulis angka sebelum dan sesudahnya.");for(let i=0;i<4;i++){const n=ri(r,lo+1,hi-1);h+=row(bx(40)+`<span class="nm hl">${n}</span>`+bx(40));K(`${n-1} dan ${n+1}`)}}
+ return h}
+function k_seq(a,w,r){const st=+a[0],mx=+(a[1]||20);let h=Q(st<0?"Hitung mundur. Isi kotak yang kosong.":"Lengkapi urutan angka. Isi kotak yang kosong.");const nb=[2,3,4][Math.min(w,2)];
+ for(let i=0;i<(w==0?3:4);i++){let s;if(st<0)s=ri(r,12,mx);else{s=ri(r,0,Math.max(0,Math.floor((mx-st*7)/st)))*st;if(s==0&&st==1)s=ri(r,1,3)}
+  const bl=new Set();while(bl.size<nb)bl.add(ri(r,1,7));let t="";for(let j=0;j<8;j++){const v=s+j*st;if(v<0)break;if(bl.has(j)){t+=bx(44);K(v)}else t+=`<span class="nm">${v}</span>`}h+=row(t)}
+ return h}
+function k_tens(a,w,r){const lo=+a[0],hi=+a[1];let h="";
+ if(w==0){h+=Q("Hitung. Berapa puluhan dan berapa satuan?");for(let i=0;i<3;i++){const n=ri(r,lo,hi);h+=row(frame(n)+bx(36)+`<span class="nm">puluhan</span>`+bx(36)+`<span class="nm">satuan</span>`);K(`${Math.floor(n/10)} puluhan ${n%10} satuan`)}}
+ else if(w==1){h+=Q("Tulis angkanya.");for(let i=0;i<5;i++){const n=ri(r,lo,hi);h+=row(`<span class="nm">${Math.floor(n/10)} puluhan ${n%10} satuan =</span>`+bx(50));K(n)}}
+ else{h+=Q("Uraikan angkanya. Contoh: 23 = 20 + 3");for(let i=0;i<6;i++){const n=ri(r,lo,hi);h+=row(`<span class="nm">${n} =</span>`+bx(40)+`<span class="nm">+</span>`+bx(40));K(`${Math.floor(n/10)*10} + ${n%10}`)}}
+ return h}
+function k_eo(a,w,r){const mx=+a[0]||20;let h="";
+ if(w==0){h+=Q("Lingkari 2-2 (berpasangan). Kalau semua punya pasangan = GENAP (G). Kalau ada sisa 1 = GANJIL (J). Tulis G atau J.");for(let i=0;i<5;i++){const n=ri(r,2,9);h+=row(`<span class="em">${pick(r,EMO).repeat(n)}</span>`+bx(40));K(n%2?"J":"G")}}
+ else if(w==1){h+=Q("Warnai kotak angka GENAP dengan warna biru.");let g='<div class="gr">';for(let i=1;i<=Math.min(mx,30);i++)g+=`<span class="gc">${i}</span>`;h+=g+'</div>';K("genap: 2, 4, 6, 8, ...")}
+ else{h+=Q("Genap atau ganjil? Lingkari jawabanmu.");for(let i=0;i<8;i++){const n=ri(r,1,mx);h+=`<span class="eo"><b>${n}</b>${chs(["genap","ganjil"])}</span>`;K(`${n}=${n%2?"ganjil":"genap"}`)}}
+ return h}
+function k_add(a,w,r){const mx=+a[0]||10;let h="";
+ if(w==0){h+=Q("Gabungkan gambar. Hitung semuanya. Tulis jumlahnya.");for(let i=0;i<4;i++){const s=ri(r,2,Math.min(mx,10)),x=ri(r,1,s-1),e=pick(r,EMO);h+=row(pic(x,e)+`<span class="ar">+</span>`+pic(s-x,e)+`<span class="ar">=</span>`+bx(46));K(s)}}
+ else if(w==1){h+=Q("Gambar titik dulu, lalu jumlahkan.");for(let i=0;i<3;i++){const s=ri(r,3,mx),x=ri(r,1,s-1);h+=row(`<span class="nm">${x} + ${s-x} =</span><span class="dbx sm"></span>${bx(46)}`);K(s)}
+  h+=Q("Pakai garis bilangan. Lompat ke kanan, tulis hasilnya.");h+=nline(Math.min(mx,20));for(let i=0;i<3;i++){const s=ri(r,3,Math.min(mx,20)),x=ri(r,1,s-1);h+=row(`<span class="nm">${x} + ${s-x} =</span>${bx(46)}`);K(s)}}
+ else{h+=Q("Kerjakan sendiri. Tulis hasilnya.");let g='<div class="cols">';for(let i=0;i<8;i++){const s=ri(r,2,mx),x=ri(r,0,s);g+=`<span class="pb"><span class="nm">${x} + ${s-x} =</span>${bx(46)}</span>`;K(s)}h+=g+'</div>';
+  if(mx>=10){h+=Q("Pasangan 10: isi kotak supaya hasilnya 10.");let g2='<div class="cols">';for(let i=0;i<4;i++){const x=ri(r,1,9);g2+=`<span class="pb"><span class="nm">${x} +</span>${bx(46)}<span class="nm">= 10</span></span>`;K(10-x)}h+=g2+'</div>'}}
+ return h}
+function k_sub(a,w,r){const mx=+a[0]||10;let h="";
+ if(w==0){h+=Q("Ada gambar. Coret sebagian, lalu hitung sisanya.");for(let i=0;i<4;i++){const s=ri(r,3,Math.min(mx,10)),y=ri(r,1,s-1);h+=row(pic(s,pick(r,EMO))+`<span class="nm">coret ${y} →</span>`+bx(46));K(s-y)}}
+ else if(w==1){h+=Q("Gambar titik, coret, lalu tulis sisanya.");for(let i=0;i<3;i++){const s=ri(r,3,mx),y=ri(r,1,s-1);h+=row(`<span class="nm">${s} − ${y} =</span><span class="dbx sm"></span>${bx(46)}`);K(s-y)}
+  h+=Q("Pakai garis bilangan. Lompat ke kiri, tulis hasilnya.");h+=nline(Math.min(mx,20));for(let i=0;i<3;i++){const s=ri(r,3,Math.min(mx,20)),y=ri(r,1,s-1);h+=row(`<span class="nm">${s} − ${y} =</span>${bx(46)}`);K(s-y)}}
+ else{h+=Q("Kerjakan sendiri. Tulis hasilnya.");let g='<div class="cols">';for(let i=0;i<8;i++){const s=ri(r,2,mx),y=ri(r,0,s);g+=`<span class="pb"><span class="nm">${s} − ${y} =</span>${bx(46)}</span>`;K(s-y)}h+=g+'</div>';
+  h+=Q("Berapa yang hilang? Isi kotak.");let g2='<div class="cols">';for(let i=0;i<4;i++){const s=ri(r,5,Math.min(mx,10)),y=ri(r,1,s-1);g2+=`<span class="pb"><span class="nm">${s} −</span>${bx(46)}<span class="nm">= ${s-y}</span></span>`;K(y)}h+=g2+'</div>'}
+ return h}
+function k_story(a,w,r){const mx=+a[0]||10;const N=["Ani","Budi","Citra","Doni","Eka"],O=[["apel","🍎"],["bola","⚽"],["kelereng","🔵"],["permen","🍬"],["buku","📖"],["ikan","🐟"]];let h=Q("Baca soal ceritanya. Tulis jawabannya di kotak.");
+ for(let i=0;i<5;i++){const n=pick(r,N),[o,e]=pick(r,O);const s=ri(r,4,mx),x=ri(r,1,s-1);const add=i%2==0;
+  const t=add?`${n} punya ${x} ${o}. Ibu memberi ${s-x} lagi. Berapa ${o} ${n} sekarang?`:`${n} punya ${s} ${o}. ${x} ${o} diberikan kepada teman. Berapa sisa ${o} ${n}?`;
+  h+=`<div class="st"><span>${i+1}. ${t}</span>${w==0&&s<=10?`<span class="em">${e.repeat(add?x:s)}</span>`:""}<span class="nm">Jawab:</span>${bx(46)}</div>`;K(add?s:s-x)}
+ return h}
+function k_cmp(a,w,r){const mx=+a[0]||10;let h="";
+ if(mx<=10){
+  if(w<2){const more=w==0;h+=Q(`Lingkari kelompok yang LEBIH ${more?"BANYAK":"SEDIKIT"}.`);for(let i=0;i<4;i++){let x=ri(r,1,mx),y=ri(r,1,mx);if(x==y)y=x==mx?x-1:x+1;const e=pick(r,EMO);h+=row(`<span class="ch">${pic(x,e)}</span><span class="ar">?</span><span class="ch">${pic(y,e)}</span>`);K(more?Math.max(x,y):Math.min(x,y))}}
+  else{h+=Q("Urutkan dari paling SEDIKIT ke paling BANYAK. Tulis nomor 1, 2, 3, 4 di bawah gambar.");const ns=shuf(r,[1,2,3,4,5,6,7,8,9,10]).slice(0,4);const e=pick(r,EMO);h+=row(ns.map(n=>`<span class="cl">${pic(n,e)}${bx(30)}</span>`).join(""));K("urutan: "+ns.slice().sort((p,q)=>p-q).join(", "))}}
+ else{
+  if(w<2){h+=Q("Isi dengan  >  <  atau  =  (mulut buaya makan angka yang besar).");let g='<div class="cols">';for(let i=0;i<(w==0?6:8);i++){const x=ri(r,Math.max(1,(mx/4)|0),mx),y=i==3?x:ri(r,1,mx);g+=`<span class="pb"><span class="nm">${x}</span><span class="bx rd"></span><span class="nm">${y}</span></span>`;K(x>y?">":x<y?"<":"=")}h+=g+'</div>'}
+  else{h+=Q("Urutkan dari yang paling kecil ke paling besar.");for(let i=0;i<3;i++){const ns=[...new Set(Array.from({length:5},()=>ri(r,1,mx)))];h+=row(ns.map(n=>`<span class="nm">${n}</span>`).join('<span class="ar">,</span>')+'<span class="ar">→</span>'+ns.map(()=>bx(38)).join(""));K(ns.slice().sort((p,q)=>p-q).join(", "))}
+   h+=Q("Tulis bilangan sebelum dan sesudahnya.");for(let i=0;i<4;i++){const n=ri(r,2,mx-1);h+=row(bx(40)+`<span class="nm hl">${n}</span>`+bx(40));K(`${n-1} dan ${n+1}`)}}}
+ return h}
+function k_meas(a,w,r){let h="";
+ if(w==0){h+=Q("Lingkari benda yang PALING PANJANG. Beri kotak ✓ pada yang PALING PENDEK.");for(let i=0;i<3;i++){const L=shuf(r,[60,130,200]);h+=L.map((l,j)=>`<div class="rw"><span class="bar" style="width:${l}px;background:${["#e08a1e","#3c7cd9","#d9497b"][j]}"></span>${chs(["○"])}${bx(26)}</div>`).join("")+"<hr>"}}
+ else if(w==1){h+=Q("Ukur panjang garis dengan menghitung kotak. Tulis jumlahnya.");for(let i=0;i<4;i++){const n=ri(r,2,9);h+=row(`<span class="bar grid" style="width:${n*26}px"></span>${bx(40)}<span class="nm">kotak</span>`);K(n)}
+  h+=Q("Gambar garis yang panjangnya 5 kotak, lalu 8 kotak.");h+=`<div class="gridbg"></div>`}
+ else{h+=Q("Mana yang lebih BERAT? Lingkari.");const P=[["🐘","🐭"],["🍉","🍎"],["🚗","🚲"],["📖","🪶"]];P.forEach(p=>{const s=shuf(r,p);h+=row(`<span class="ch big2">${s[0]}</span><span class="ar">atau</span><span class="ch big2">${s[1]}</span>`);K(p[0])});
+  h+=Q("Gelas mana yang isinya LEBIH BANYAK? Lingkari.");for(let i=0;i<2;i++){let x=ri(r,20,45),y=ri(r,55,90);if(r()<.5)[x,y]=[y,x];h+=row(`<span class="ch"><span class="gl"><i style="height:${x}%"></i></span></span><span class="ar">atau</span><span class="ch"><span class="gl"><i style="height:${y}%"></i></span></span>`);K(x>y?"kiri":"kanan")}}
+ return h}
+const rp=n=>"Rp"+n.toLocaleString("id-ID");
+function k_money(a,w,r){const adv=+a[0];let h="";
+ if(adv){const V=[1000,2000,5000,10000,20000];
+  if(w==0){h+=Q("Hitung jumlah uangnya. Tulis hasilnya.");for(let i=0;i<4;i++){const n=ri(r,2,3);const v=Array.from({length:n},()=>pick(r,V.slice(0,4)));h+=row(v.map(x=>`<span class="nt">${rp(x)}</span>`).join('<span class="ar">+</span>')+'<span class="ar">=</span>'+bx(90));K(rp(v.reduce((p,q)=>p+q,0)))}}
+  else if(w==1){const I=[["🍬 Permen",1000],["🍪 Biskuit",2000],["🥛 Susu",5000],["🍞 Roti",3000],["🍌 Pisang",4000]];h+=Q("Toko-tokoan! Hitung total belanjaan.");h+=row(I.map(i=>`<span class="nt">${i[0]}<br>${rp(i[1])}</span>`).join(""));for(let i=0;i<4;i++){const p=shuf(r,I).slice(0,2);h+=row(`<span class="nm">${p[0][0].split(" ")[1]} + ${p[1][0].split(" ")[1]} =</span>`+bx(90));K(rp(p[0][1]+p[1][1]))}}
+  else{h+=Q("Hitung kembaliannya.");for(let i=0;i<4;i++){const pay=pick(r,[5000,10000]),c=ri(r,1,4)*1000;h+=row(`<span class="nm">Bayar ${rp(pay)}, harga ${rp(c)}. Kembalian:</span>`+bx(90));K(rp(pay-c))}
+   h+=Q("Mana yang lebih MAHAL? Lingkari.");for(let i=0;i<3;i++){const x=ri(r,1,5)*1000;let y=ri(r,1,5)*1000;if(y==x)y=x+1000;h+=row(chs([rp(x),rp(y)]));K(rp(Math.max(x,y)))}}}
+ else{
+  if(w==0){h+=Q("Hitung koin Rp1.000. Tulis berapa koinnya.");for(let i=0;i<4;i++){const n=ri(r,1,6);h+=row(`<span class="em">${"🪙".repeat(n)}</span>`+bx(40)+`<span class="nm">koin</span>`);K(n)}}
+  else if(w==1){h+=Q("Toko-tokoan. Gambar koin untuk membayar (1 koin = Rp1.000).");[["🍬 Permen",1],["🍪 Biskuit",2],["🥛 Susu",4],["🍞 Roti",3]].forEach(i=>{h+=row(`<span class="nt">${i[0]}<br>${i[1]} koin</span><span class="dbx sm wd"></span>`)})}
+  else{h+=Q("Mana yang lebih MAHAL? Lingkari.");for(let i=0;i<4;i++){const x=ri(r,1,5),y=x==5?4:x+ri(r,1,2);h+=row(chs(["🪙".repeat(x),"🪙".repeat(y)]));K("lebih banyak koin")}
+   h+=Q("Aku membeli ... dengan uang ... (gambar).");h+=dbox()}}
+ return h}
+function clk(h,m,show){const pt=(a,l)=>[50+l*Math.sin(a*Math.PI/180),50-l*Math.cos(a*Math.PI/180)];let s='<svg class="ck" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#fff" stroke="#333" stroke-width="2.5"/>';for(let i=1;i<=12;i++){const p=pt(i*30,36);s+=`<text x="${p[0]}" y="${p[1]+4}" font-size="11" text-anchor="middle" font-weight="700">${i}</text>`}
+ if(show){const p1=pt((h%12)*30+m*.5,24),p2=pt(m*6,36);s+=`<line x1="50" y1="50" x2="${p1[0]}" y2="${p1[1]}" stroke="#d33" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="50" x2="${p2[0]}" y2="${p2[1]}" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>`}
+ return s+'<circle cx="50" cy="50" r="2.5"/></svg>'}
+function k_time(a,w,r){const half=+a[0];let h="";const T=()=>[ri(r,1,12),half&&r()<.5?30:0];
+ if(w==0){h+=Q("Pukul berapa? Lihat jarum pendek (merah). Tulis jamnya.");let g='<div class="clks">';for(let i=0;i<4;i++){const [hh,mm]=T();g+=`<span class="cc">${clk(hh,mm,true)}<br><span class="nm">pukul</span>${bx(50)}</span>`;K(`${hh}.${mm?"30":"00"}`)}h+=g+'</div>'}
+ else if(w==1){h+=Q("Gambar jarum jam: jarum pendek (merah), jarum panjang (hitam).");let g='<div class="clks">';for(let i=0;i<4;i++){const [hh,mm]=T();g+=`<span class="cc">${clk(hh,mm,false)}<br><b>pukul ${hh}.${mm?"30":"00"}</b></span>`}h+=g+'</div>'}
+ else{h+=Q("Isi nama hari yang hilang.");for(let i=0;i<2;i++){const s=ri(r,0,3),bl=ri(r,1,3);h+=row(DAYS.slice(s,s+4).map((d,j)=>j==bl?bx(80):`<span class="nm">${d}</span>`).join(""));K(DAYS[s+bl])}
+  h+=Q("Pagi, siang, atau malam? Lingkari.");const AC=[["🌅 matahari terbit","pagi"],["🍚 makan siang","siang"],["😴 tidur","malam"],["🌙 melihat bulan","malam"],["🎒 berangkat sekolah","pagi"],["🌞 matahari terik","siang"]];shuf(r,AC).slice(0,4).forEach(x=>{h+=row(`<span class="nm">${x[0]}</span>`+chs(["pagi","siang","malam"]));K(x[1])});
+  if(half){h+=Q("Isi nama bulan yang hilang.");for(let i=0;i<2;i++){const s=ri(r,0,6),bl=ri(r,1,3);h+=row(MONTHS.slice(s,s+4).map((d,j)=>j==bl?bx(90):`<span class="nm">${d}</span>`).join(""));K(MONTHS[s+bl])}}}
+ return h}
+function k_mix(a,w,r){const mx=+a[0]||20,easy=a[1]=="e";
+ return easy?k_cnt([1,20],0,r)+k_add([5],0,r)+k_sub([5],0,r)+k_cmp([10],0,r):k_cnt([mx>20?21:1,Math.min(mx,50)],0,r)+k_add([10],1,r)+k_sub([10],1,r)+(mx>20?k_cmp([mx],0,r):k_cmp([10],0,r))}
+
+/* ---------- LITERASI ---------- */
+const syl=w=>w.match(/(?:ng|ny|sy|kh|[^aiueo])?[aiueo](?:ng(?![aiueo])|ny(?![aiueo])|(?!n[gy])[^aiueo](?![aiueo]))?/g)||[w];
+const VOW=["a","i","u","e","o"];
+function k_syl(a,w,r){const C=a[0].split(",");let h="";
+ if(w==0){h+=Q("Baca bersama orang tua. Lingkari suku kata yang sudah kamu bisa.");h+=`<table class="syt"><tr><th></th>${VOW.map(v=>`<th>${v}</th>`).join("")}</tr>${C.map(c=>`<tr><th>${c}</th>${VOW.map(v=>`<td>${c+v}</td>`).join("")}</tr>`).join("")}</table>`}
+ else if(w==1){h+=Q("Gabungkan huruf. Tulis suku katanya.");let g='<div class="cols">';for(let i=0;i<10;i++){const c=pick(r,C),v=pick(r,VOW);g+=`<span class="pb"><span class="nm">${c} + ${v} =</span>${bx(52)}</span>`;K(c+v)}h+=g+'</div>';
+  h+=Q("Lingkari suku kata yang SAMA dengan yang pertama.");for(let i=0;i<3;i++){const c=pick(r,C),t=c+pick(r,VOW);const o=[t,...Array.from({length:7},()=>c+pick(r,VOW))];h+=row(`<span class="gh big">${t}</span><span class="ar">:</span>`+o.map(x=>`<span class="ch">${x}</span>`).join(""))}}
+ else{h+=Q("Jiplak, lalu tulis sendiri suku katanya.");for(let i=0;i<6;i++){const t=pick(r,C)+pick(r,VOW);h+=`<div class="wr">${gh(t,3)}</div>`}
+  h+=Q("Dikte: tulis suku kata yang orang tua ucapkan.");h+=wl(4)}
+ return h}
+function k_word(a,w,r){const W=a[0].split(",");const em=x=>EM[x]||"▢";let h="";
+ if(w==0){h+=Q("Gabungkan suku kata menjadi kata. Jiplak katanya.");W.slice(0,6).forEach(x=>{h+=row(`<span class="em">${em(x)}</span>`+syl(x).map(s=>`<span class="chip">${s}</span>`).join('<span class="ar">+</span>')+'<span class="ar">=</span>'+gh(x,1)+bx(70))})}
+ else if(w==1){h+=Q("Tarik garis dari gambar ke kata yang cocok.");const R=shuf(r,W.slice(0,6));h+=`<div class="mt"><div>${W.slice(0,6).map(x=>`<div class="mi"><span class="em">${em(x)}</span><i class="dd"></i></div>`).join("")}</div><div>${R.map(x=>`<div class="mi"><i class="dd"></i><span class="nm">${x}</span></div>`).join("")}</div></div>`}
+ else{h+=Q("Tulis nama gambar.");W.slice(0,6).forEach(x=>{h+=row(`<span class="em">${em(x)}</span><span class="gh">${x[0]}</span><span class="wl2"></span>`);K(x)});
+  h+=Q("Dikte: tulis 4 kata yang orang tua ucapkan.");h+=wl(4)}
+ return h}
+function k_sent(a,w,r){const S=a[0].split("/").map(s=>s.trim()).filter(Boolean);let h="";
+ if(w==0){h+=Q("Baca kalimat ini 3 kali. Beri ✓ setiap kali selesai.");S.slice(0,5).forEach(s=>{h+=`<div class="sn"><span>${s}</span><span class="cks">☐ ☐ ☐</span></div>`})}
+ else if(w==1){h+=Q("Susun kata-kata menjadi kalimat. Tulis di garis.");S.slice(0,4).forEach(s=>{const ws=s.replace(/[.!?]$/,"").split(" ");h+=row(shuf(r,ws).map(x=>`<span class="chip">${x.toLowerCase()}</span>`).join(""))+wl(1);K(s)})}
+ else{h+=Q("Salin kalimat dengan tulisan rapi.");S.slice(0,3).forEach(s=>{h+=`<div class="gh2">${s}</div>`+wl(1)});h+=Q("Gambar kalimat favoritmu.");h+=dbox()}
+ return h}
+const PTN={v:()=>{let d="";for(let x=20;x<=580;x+=30)d+=`M${x} 8V42`;return d},h:()=>"M10 12H590M10 27H590M10 42H590",z:()=>{let d="M10 40";for(let x=10;x<570;x+=40)d+=`L${x+20} 8L${x+40} 40`;return d},w:()=>{let d="M10 25";for(let x=10;x<580;x+=60)d+="q15 -30 30 0t30 0";return d},l:()=>{let d="M10 40";for(let x=10;x<570;x+=34)d+="q10 -34 20 0q4 0 14 0";return d},c:()=>{let d="";for(let i=0;i<10;i++){const cx=35+i*55;d+=`M${cx-18} 25a18 18 0 1 0 36 0a18 18 0 1 0 -36 0`}return d}};
+const ptn=t=>`<svg viewBox="0 0 600 50" class="pt"><path d="${PTN[t]()}" fill="none" stroke="#999" stroke-width="2.5" stroke-dasharray="7 6" stroke-linecap="round"/></svg>`;
+function k_pre(a,w,r){const S=[[["v","Garis tegak"],["h","Garis datar"]],[["z","Garis zigzag"],["w","Garis gelombang"]],[["l","Garis lengkung"],["c","Lingkaran"]]][Math.min(w,2)];let h=Q("Jiplak garis putus-putus dari kiri ke kanan. Pelan-pelan dan rapi. Pegang pensil dengan tiga jari.");S.forEach(([t,n])=>{h+=`<div class="nm">${n}</div>${ptn(t)}${ptn(t)}`});h+=Q("Warnai gambar sesukamu di dalam garis.");return h+dbox()}
+function k_abc(a,w,r){const up=a[0]=="upper";const G=["abcdefghi","jklmnopqr","stuvwxyz"][Math.min(w,2)];let h=Q("Jiplak huruf, lalu tulis sendiri di kotak kosong.");[...G].forEach(l=>{h+=`<div class="wr">${gh(up?l.toUpperCase():l.toUpperCase()+" "+l,3)}</div>`});if(w==2){h+=Q("Tulis namamu.");h+=`<div class="wr"></div>`}return h}
+function k_name(a,w,r){let h="";
+ if(w==0){h+=Q("Orang tua menulis nama anak di garis pertama. Anak menjiplak di garis berikutnya.");h+=`<div class="wr"></div><div class="wr"></div><div class="wr"></div>`;h+=Q("Tulis namamu sendiri.");h+=`<div class="wr"></div>`}
+ else if(w==1){h+=Q("Tulis nama anggota keluarga.");["Ayah","Ibu","Kakak / Adik","Aku"].forEach(x=>{h+=`<div class="nm">${x}</div><div class="wr"></div>`})}
+ else{h+=Q("Tulis namamu pada barang-barangmu.");[["📖","buku"],["🎒","tas"],["👟","sepatu"]].forEach(x=>{h+=row(`<span class="em">${x[0]}</span><span class="nm">nama di ${x[1]}:</span><span class="wl2"></span>`)})}
+ return h}
+const PS=[["Ani punya kucing. Kucing Ani lucu. Ani beri kucing susu. Kucing minum susu.",["Siapa yang punya kucing?","Kucing minum apa?"]],["Ayah pergi ke pasar. Ayah beli apel dan roti. Ibu senang. Kami makan bersama.",["Ayah pergi ke mana?","Ayah beli apa?"]],["Budi main bola di halaman. Bola Budi jatuh ke kolam. Budi minta tolong Ayah. Ayah ambil bola itu.",["Di mana Budi main bola?","Siapa yang mengambil bola?"]]];
+function k_read(a,w,r){const [t,qs]=PS[w%3];let h="";
+ if(a[0]=="listen"){h+=`<div class="pn"><b>Untuk orang tua — bacakan pelan-pelan:</b><br>${t}<br><i>Tanyakan: ${qs.join(" / ")}</i></div>`;h+=Q("Dengarkan cerita. Gambar tokoh dan tempat dalam cerita.");h+=dbox("lg");h+=Q("Tunjukkan gambarmu dan ceritakan kembali kepada orang tua.")}
+ else{h+=Q("Baca ceritanya 3 kali. Beri ✓ setiap selesai.");h+=`<div class="rd">${t}</div><div class="cks">☐ ☐ ☐</div>`;h+=Q("Jawab pertanyaan.");qs.forEach(x=>{h+=`<div class="nm">${x}</div>${wl(1)}`});h+=Q("Gambar bagian cerita yang kamu suka.");h+=dbox()}
+ return h}
+const SQ=[[["🛏️","bangun tidur"],["🪥","gosok gigi"],["🍳","sarapan"],["🎒","berangkat sekolah"]],[["🌱","menanam biji"],["💧","menyiram"],["🌿","tumbuh tunas"],["🌻","berbunga"]],[["🥣","siapkan bahan"],["🥄","aduk"],["🔥","masak"],["🍽️","makan bersama"]]];
+function k_retell(a,w,r){let h="";
+ if(w==0){h+=`<div class="pn"><b>Untuk orang tua — bacakan cerita:</b><br>${PS[1][0]}</div>`;h+=Q("Gambar 4 bagian cerita secara berurutan.");h+=`<div class="rw4">${[1,2,3,4].map(i=>`<div><b>${i}</b>${dbox("sm")}</div>`).join("")}</div>`}
+ else if(w==1){h+=Q("Beri nomor 1 sampai 4 sesuai urutan kejadian.");SQ.slice(0,2).forEach(s=>{h+=row(shuf(r,s.map((x,i)=>[x,i+1])).map(([x,i])=>`<span class="cl"><span class="em">${x[0]}</span><small>${x[1]}</small>${bx(30)}</span>`).join(""));K(s.map(x=>x[1]).join(" → "))})}
+ else{h+=Q("Ceritakan ulang kegiatan favoritmu. Gambar 3 bagiannya, lalu ceritakan kepada orang tua.");h+=`<div class="rw4">${[1,2,3].map(i=>`<div><b>${i}</b>${dbox("sm")}</div>`).join("")}</div>`;h+=Q("Tulis satu kalimat tentang ceritamu.");h+=wl(2)}
+ return h}
+function k_diary(a,w,r){let h=Q("Gambar kegiatanmu hari ini.");h+=dbox("lg");
+ if(w==0){h+=Q("Salin dan lengkapi kalimat.");h+=`<div class="wr">${gh("Hari ini aku",1)}</div>`}
+ else if(w==1){h+=Q("Lengkapi kalimat.");h+=`<div class="wr">${gh("Aku suka",1)}</div><div class="wr">${gh("karena",1)}</div>`}
+ else{h+=Q("Dikte: tulis 3 kalimat yang orang tua ucapkan.");h+=wl(3)}
+ return h}
+function k_book(a,w,r){let h="";
+ if(w==0){h+=Q("Rencanakan bukumu. Judul bukuku:");h+=wl(1);h+=Q("Tokoh dalam ceritaku (gambar):");h+=dbox();h+=Q("Tempat ceritanya (gambar):");h+=dbox()}
+ else if(w==1){h+=Q("Halaman 1: gambar dan tulis.");h+=dbox("sm")+wl(2);h+=Q("Halaman 2: gambar dan tulis.");h+=dbox("sm")+wl(2)}
+ else{h+=Q("Halaman 3: gambar dan tulis.");h+=dbox("sm")+wl(2);h+=Q("Halaman 4 (akhir cerita): gambar dan tulis.");h+=dbox("sm")+wl(2);h+=`<div class="pn">Gunting halaman, susun, lalu lipat atau staples jadi buku. Minta anak membacakannya di depan keluarga.</div>`}
+ return h}
+function k_alpha(a,w,r){const G=["abcdefgh","ijklmnop","rstuwyz"][Math.min(w,2)];let h=Q("Sebut nama gambar. Dengarkan bunyi huruf pertamanya. Jiplak hurufnya.");[...G].forEach(l=>{const [e,wd]=AL[l];h+=`<div class="al"><span class="gb">${l.toUpperCase()} ${l}</span><span class="em">${e}</span><span class="nm">${wd}</span>${gh(l.toUpperCase()+" "+l,2)}${bx(44)}</div>`});return h}
+
+/* ---------- STEAM ---------- */
+function k_pat(a,w,r){const ty=a[0]||["AB","ABC","ABB"][w%3];const S=[["🍎","🍌","🍇"],["🔴","🔵","🟡"],["⭐","🌙","🌞"],["🐶","🐱","🐭"]];let h=Q(`Lanjutkan pola ${ty}. Gambar atau tulis yang hilang di kotak.`);
+ for(let i=0;i<4;i++){const s=shuf(r,S[i]),m={A:s[0],B:s[1],C:s[2]};const it=Array.from({length:8},(_,j)=>m[ty[j%ty.length]]);h+=row(it.slice(0,5).map(e=>`<span class="em2">${e}</span>`).join("")+`<span class="bx sq"></span>`.repeat(3));K(it.slice(5).join(" "))}
+ h+=Q("Buat polamu sendiri. Beri warna.");return h+row(`<span class="bx sq"></span>`.repeat(8))}
+const cats=a=>a.map(s=>{const [n,e]=s.split("=");return{n,e:Array.from(e||"")}});
+function k_cls(a,w,r){const C=cats(a);let h="";
+ if(w==0){h+=Q("Gunting gambar di bawah. Tempel ke kotak yang cocok.");h+=`<div class="cut">${shuf(r,C.flatMap(c=>c.e)).map(e=>`<span class="em2">${e}</span>`).join("")}</div><div class="cols3">${C.map(c=>`<div class="cb"><b>${c.n}</b></div>`).join("")}</div>`}
+ else if(w==1){h+=Q("Lingkari gambar yang BEDA kelompoknya.");for(let i=0;i<5;i++){const c=pick(r,C),oth=C.filter(x=>x!==c),o=pick(r,oth.length?oth:C);const odd=pick(r,o.e);const it=shuf(r,shuf(r,c.e).slice(0,3).concat([odd]));h+=row(it.map(e=>`<span class="ch big2">${e}</span>`).join(""));K(odd)}}
+ else{h+=Q("Tulis huruf kelompok di bawah tiap gambar: "+C.map((c,i)=>`${"ABC"[i]} = ${c.n}`).join(", ")+".");const all=shuf(r,C.flatMap((c,i)=>c.e.map(e=>[e,"ABC"[i]])));h+=row(all.map(x=>`<span class="cl"><span class="em2">${x[0]}</span>${bx(30)}</span>`).join(""));K(all.map(x=>x[0]+x[1]).join(" "));
+  h+=Q("Gambar benda lain untuk tiap kelompok.");h+=`<div class="cols3">${C.map(c=>`<div class="cb"><b>${c.n}</b></div>`).join("")}</div>`}
+ return h}
+const SHP={"lingkaran":'<circle cx="50" cy="50" r="40"/>',"segitiga":'<polygon points="50,10 92,85 8,85"/>',"persegi":'<rect x="15" y="15" width="70" height="70"/>',"persegi panjang":'<rect x="8" y="28" width="84" height="44"/>',"oval":'<ellipse cx="50" cy="50" rx="44" ry="28"/>',"bintang":'<polygon points="50,8 61,38 93,38 67,57 77,89 50,70 23,89 33,57 7,38 39,38"/>',"hati":'<path d="M50 88C10 58 8 25 30 18c12-4 20 3 20 12 0-9 8-16 20-12 22 7 20 40-20 70z"/>'};
+const shp=n=>`<svg viewBox="0 0 100 100" class="shp" fill="none" stroke="#888" stroke-width="2.5" stroke-dasharray="6 5">${SHP[n]}</svg>`;
+function k_shape(a,w,r){const set=a[0]=="lanjut"?["persegi panjang","oval","bintang","hati"]:["lingkaran","segitiga","persegi","persegi panjang"];let h="";
+ if(w==0){h+=Q("Jiplak garis putus-putus, lalu warnai. Sebutkan nama bentuknya.");h+=`<div class="shg">${set.map(n=>`<div class="shc">${shp(n)}<br><b>${n}</b></div>`).join("")}</div>`}
+ else if(w==1){h+=Q("Hitung bentuk pada gambar rumah. Tulis di kotak.");h+=`<svg viewBox="0 0 220 150" class="house" stroke="#444" stroke-width="2.5" fill="none"><rect x="60" y="60" width="80" height="80"/><polygon points="50,60 100,18 150,60"/><rect x="88" y="95" width="24" height="45"/><circle cx="76" cy="80" r="9"/><circle cx="124" cy="80" r="9"/><circle cx="190" cy="25" r="14"/></svg>`;
+  [["lingkaran",3],["segitiga",1],["persegi",1],["persegi panjang",1]].forEach(([n,c])=>{h+=row(`<span class="nm">${n}:</span>`+bx(40));K(`${n} = ${c}`)});
+  h+=Q("Warnai: segitiga merah, persegi biru, lingkaran kuning.")}
+ else{h+=Q("Buat gambarmu dari bentuk-bentuk (robot, mobil, atau kapal).");h+=dbox("lg");h+=Q("Hitung bentuk pada gambarmu.");h+=row(`<span class="nm">lingkaran</span>${bx(36)}<span class="nm">persegi</span>${bx(36)}<span class="nm">segitiga</span>${bx(36)}`)}
+ return h}
+function k_dir(a,w,r){let h="";const AR={u:"↑",d:"↓",l:"←",r:"→"};
+ if(w==0){h+=Q("Mulai dari 🐭. Ikuti panah-panahnya dengan pensil. Berhenti di mana tikusnya?");for(let g=0;g<2;g++){let y=ri(r,0,4),x=ri(r,0,4);const sy=y,sx=x,cmds=[];for(let i=0;i<4;i++){const o=[["u",y-1,x],["d",y+1,x],["l",y,x-1],["r",y,x+1]].filter(m=>m[1]>=0&&m[1]<5&&m[2]>=0&&m[2]<5);const m=pick(r,o);cmds.push(m[0]);y=m[1];x=m[2]}
+   let t='<table class="grd">';for(let i=0;i<5;i++){t+="<tr>";for(let j=0;j<5;j++)t+=`<td>${i==sy&&j==sx?"🐭":""}</td>`;t+="</tr>"}h+=`<div class="rw">${t}</table><span class="big">${cmds.map(c=>AR[c]).join(" ")}</span></div>`;K(`berhenti di baris ${y+1}, kolom ${x+1}`)}}
+ else if(w==1){[["KANAN"],["KIRI"]].forEach(([n])=>{h+=Q(`Lingkari panah yang menunjuk ke ${n}.`);for(let i=0;i<3;i++){const ar=Array.from({length:7},()=>pick(r,"←→↑↓".split("")));h+=row(ar.map(x=>`<span class="ch big2">${x}</span>`).join(""))}})}
+ else{h+=Q("Di mana bolanya? Lingkari: DALAM atau LUAR kotak.");for(let i=0;i<4;i++){const inn=r()<.5;h+=row(`<span class="kt">${inn?"⚽":""}</span>${inn?"":"⚽"}${chs(["dalam","luar"])}`);K(inn?"dalam":"luar")}
+  h+=Q("Gambar bola di atas meja, di bawah meja, dan di samping meja.");h+=dbox()}
+ return h}
+function k_obs(a,w,r){const t=a[0],c=a[1]||"Catatan";let h=Q(`${t}: amati dan catat setiap hari. Gambar yang kamu lihat.`);h+=`<table class="ot"><tr><th>Hari</th><th>Gambar</th><th>${c}</th><th>Catatan</th></tr>${Array.from({length:7},(_,i)=>`<tr><td>${w*7+i+1}</td><td></td><td></td><td></td></tr>`).join("")}</table>`;return h}
+function k_exp(a,w,r){const t=a[0],I=a[1].split(","),O=a[2].split(",");let h=Q(`${t} Tebak dulu, lakukan percobaan, lalu tulis hasilnya.`);h+=`<table class="ot"><tr><th>Benda / kegiatan</th><th>Tebakanku</th><th>Hasilnya</th></tr>${I.map(x=>`<tr><td>${x}</td><td>${O.map(o=>"○ "+o).join("<br>")}</td><td>${O.map(o=>"○ "+o).join("<br>")}</td></tr>`).join("")}</table>`;h+=Q("Kesimpulanku:");h+=wl(2);h+=Q("Gambar percobaanmu.");return h+dbox()}
+function k_match(a,w,r){const P=a[0].split(",").map(s=>s.split("="));let h="";const R=shuf(r,P.map(p=>p[1]));
+ const tbl=(L)=>`<div class="mt"><div>${L.map(p=>`<div class="mi"><span class="em">${p[0]}</span><i class="dd"></i></div>`).join("")}</div><div>${R.map(x=>`<div class="mi"><i class="dd"></i><span class="nm">${x}</span></div>`).join("")}</div></div>`;
+ if(w==0){h+=Q("Tarik garis untuk memasangkan.");h+=tbl(P);P.forEach(p=>K(`${p[0]}=${p[1]}`))}
+ else if(w==1){h+=Q("Jiplak nama di samping tiap gambar.");P.forEach(p=>{h+=row(`<span class="em">${p[0]}</span>${gh(p[1],1)}<span class="wl2"></span>`)})}
+ else{h+=Q("Tarik garis lagi, lalu gambar pasangan favoritmu.");h+=tbl(shuf(r,P));h+=dbox("sm")}
+ return h}
+function k_plan(a,w,r){const t=a[0];let h="";
+ if(w==0){h+=Q(`Rancang ${t}. Gambar rencanamu.`);h+=dbox("lg");h+=Q("Bahan yang kupakai (beri ✓):");h+=row(["kertas","balok","selotip","gunting","lem","lainnya"].map(x=>`<span class="nm">☐ ${x}</span>`).join(""))}
+ else if(w==1){h+=Q("Buat lalu uji. Tulis hasilnya.");h+=`<table class="ot"><tr><th>Uji ke-</th><th>Berhasil?</th><th>Yang perlu diperbaiki</th></tr>${[1,2,3].map(i=>`<tr><td>${i}</td><td>☐ ya ☐ belum</td><td></td></tr>`).join("")}</table>`}
+ else{h+=Q("Perbaiki rancangan. Gambar versi barunya.");h+=dbox("lg");h+=Q("Ceritakan hasilnya.");h+=wl(2)}
+ return h}
+function maze(n,r){const vis=Array.from({length:n},()=>Array(n).fill(false)),hw=Array.from({length:n+1},()=>Array(n).fill(true)),vw=Array.from({length:n},()=>Array(n+1).fill(true));const st=[[0,0]];vis[0][0]=true;
+ while(st.length){const [y,x]=st[st.length-1];const nb=[[y-1,x,"u"],[y+1,x,"d"],[y,x-1,"l"],[y,x+1,"r"]].filter(m=>m[0]>=0&&m[1]>=0&&m[0]<n&&m[1]<n&&!vis[m[0]][m[1]]);if(!nb.length){st.pop();continue}const m=pick(r,nb);if(m[2]=="u")hw[y][x]=false;if(m[2]=="d")hw[y+1][x]=false;if(m[2]=="l")vw[y][x]=false;if(m[2]=="r")vw[y][x+1]=false;vis[m[0]][m[1]]=true;st.push([m[0],m[1]])}
+ hw[0][0]=false;hw[n][n-1]=false;const c=40,o=10;let s=`<svg class="mz" viewBox="0 0 ${n*c+2*o} ${n*c+2*o}"><g stroke="#333" stroke-width="3" stroke-linecap="round">`;
+ for(let i=0;i<=n;i++)for(let j=0;j<n;j++)if(hw[i][j])s+=`<line x1="${o+j*c}" y1="${o+i*c}" x2="${o+(j+1)*c}" y2="${o+i*c}"/>`;
+ for(let i=0;i<n;i++)for(let j=0;j<=n;j++)if(vw[i][j])s+=`<line x1="${o+j*c}" y1="${o+i*c}" x2="${o+j*c}" y2="${o+(i+1)*c}"/>`;
+ return s+`</g><text x="${o+c/2}" y="${o+c/2+7}" font-size="22" text-anchor="middle">🐭</text><text x="${o+(n-1)*c+c/2}" y="${o+n*c-c/2+7}" font-size="22" text-anchor="middle">🧀</text></svg>`}
+function k_maze(a,w,r){return Q("Bantu tikus menemukan keju. Gambar jalannya dengan pensil, jangan menabrak dinding.")+`<div class="ctr">${maze([5,7,9][Math.min(w,2)],r)}</div>`}
+function k_proj(a,w,r){let h="";
+ if(w==0){h+=Q("Pilih proyekmu (beri ✓):");h+=row(["kebun mini","mobil-mobilan","rumah dari kardus","kapal-kapalan","robot kardus"].map(x=>`<span class="nm">☐ ${x}</span>`).join(""));h+=Q("Gambar rancanganmu.");h+=dbox("lg")}
+ else if(w==1){h+=Q("Bahan yang kubutuhkan:");h+=wl(2);h+=Q("Langkah membuatnya (1, 2, 3):");h+=wl(3)}
+ else{h+=Q("Gambar hasil proyekku.");h+=dbox("lg");h+=Q("Ceritakan prosesnya kepada keluarga. Bagian yang paling seru:");h+=wl(2)}
+ return h}
+function k_draw(a,w,r){return Q(a[0]||"Gambar dan ceritakan kegiatan minggu ini.")+dbox("lg")+Q("Ceritakan gambarmu kepada orang tua. Tulis satu kalimat.")+wl(2)}
+
+/* ---------- MEMORI & JATI DIRI ---------- */
+function k_cards(a,w,r){const n=+a[0]||6,E=["🍎","🐱","🚗","⭐","🌸","🐟","⚽","🍌","🏠","🎈"].slice(0,n);let h="";
+ if(w==0){h+=Q("Cetak lembar ini 2 kali. Gunting semua kotak, jadi kartu memori. Tiap gambar punya satu pasangan.");h+=`<div class="cards">${E.map(e=>`<span class="card">${e}</span>`).join("")}</div>`}
+ else if(w==1){h+=Q("Catat permainan memorimu.");h+=`<table class="ot"><tr><th>Permainan ke-</th><th>Waktu</th><th>Jumlah percobaan</th><th>Perasaanku</th></tr>${[1,2,3,4,5].map(i=>`<tr><td>${i}</td><td></td><td></td><td>☹ 😐 ☺</td></tr>`).join("")}</table>`}
+ else{h+=Q("Aku mengingat letak kartu dengan cara (lingkari):");h+=row(chs(["menghafal gambar","mengingat baris & kolom","menyebut nama gambar"]));h+=Q("Buat 3 pasang kartu memori sendiri. Gambar sepasang-sepasang.");for(let i=0;i<3;i++)h+=row(`<span class="bx sq"></span><span class="bx sq"></span>`)}
+ return h}
+const ACT=[["🙌","angkat tangan"],["🦘","melompat"],["🪑","duduk"],["👏","bertepuk"],["🚪","ke pintu"],["🧸","ambil boneka"],["🧺","taruh di keranjang"]];
+function k_inst(a,w,r){const n=+a[0]||3;let h="";
+ if(w==0){h+=Q("Lihat perintahnya, lakukan berurutan. Orang tua beri ✓ bila berhasil.");for(let i=0;i<4;i++){const s=shuf(r,ACT).slice(0,n);h+=row(s.map(x=>`<span class="cl"><span class="em">${x[0]}</span><small>${x[1]}</small></span>`).join('<span class="ar">→</span>')+'<span class="nm">☐</span>')}}
+ else if(w==1){h+=Q("Orang tua membacakan urutan di kunci. Anak memberi nomor 1, 2, ... sesuai urutan yang didengar.");for(let i=0;i<3;i++){const s=shuf(r,ACT).slice(0,n);h+=row(shuf(r,s).map(x=>`<span class="cl"><span class="em">${x[0]}</span><small>${x[1]}</small>${bx(28)}</span>`).join(""));K(s.map(x=>x[1]).join(" → "))}}
+ else{h+=Q(`Buat perintahmu sendiri: gambar ${n} langkah.`);h+=row(Array.from({length:n},()=>`<span class="bx sq"></span>`).join('<span class="ar">→</span>'));h+=Q("Minta orang tua melakukan perintahmu. Berhasil? ☐");h+=dbox("sm")}
+ return h}
+function k_self(a,w,r){const full=a[0]=="full";let h="";
+ if(w==0){h+=Q("Lengkapi data dirimu. Orang tua membantu menulis, anak menjiplak.");[["Nama lengkapku",1],["Tanggal lahirku",1],...(full?[["Alamat rumahku",2],["Nama ayahku",1],["Nama ibuku",1],["Nomor HP orang tuaku",1]]:[["Nama ayah & ibuku",1],["Alamat rumahku",1]])].forEach(([f,n])=>{h+=`<div class="nm">${f}</div>${wl(n)}`})}
+ else if(w==1){h+=Q("Kalau aku tersesat, apa yang harus kulakukan? Beri ✓ pada jawaban yang benar.");[["Diam di tempat dan tidak ikut orang asing",1],["Minta tolong ke petugas, penjaga toko, atau ibu yang bersama anaknya",1],["Menyebut nama dan nomor HP orang tua",1],["Berjalan sendiri mencari jalan pulang",0]].forEach(x=>{h+=`<div class="nm">☐ ${x[0]}</div>`;if(x[1])K(x[0])})}
+ else{h+=Q("Latihan menyebut data diri setiap hari. Warnai bintang kalau berhasil.");h+=trk();h+=Q("Bermain peran: orang tua jadi petugas. Anak menyebut nama, alamat, dan nomor HP orang tua. Berhasil? ☐")}
+ return h}
+function k_memo(a,w,r){const t=a[0],L=a[1]?a[1].split("/"):null;let h="";
+ if(w==0){h+=Q(`Hafalan: ${t}`);h+=L?`<div class="poem">${L.join("<br>")}</div>`:dbox("lg");h+=Q(L?"Baca bersama 3 kali dengan irama dan gerakan.":"Orang tua menulis atau menempel teks di kotak, lalu baca bersama 3 kali.");h+=`<div class="cks">☐ ☐ ☐</div>`}
+ else if(w==1){h+=Q("Lengkapi kata yang hilang, lalu baca lagi.");if(L){h+=`<div class="poem">${L.map(l=>l.split(" ").map((x,i)=>i%3==2?`<span class="bl"></span>`:x).join(" ")).join("<br>")}</div>`;K(L.join(" / "))}else h+=wl(4)}
+ else{h+=Q("Buat gerakan untuk tiap bagian hafalan. Gambar gerakannya.");h+=`<div class="rw4">${[1,2,3,4].map(i=>`<div><b>${i}</b>${dbox("sm")}</div>`).join("")}</div>`;h+=Q("Latihan setiap hari. Warnai bintang kalau berhasil.");h+=trk()}
+ return h}
+function k_cal(a,w,r){const mo=+a[0];let h="";
+ if(w==0){h+=Q("Isi nama hari yang hilang.");for(let i=0;i<3;i++){const s=ri(r,0,3),bl=ri(r,1,3);h+=row(DAYS.slice(s,s+4).map((d,j)=>j==bl?bx(80):`<span class="nm">${d}</span>`).join(""));K(DAYS[s+bl])}
+  h+=Q("Hari ini hari ________, kemarin hari ________, besok hari ________.")}
+ else if(w==1){if(mo){h+=Q("Lengkapi nama bulan.");let g='<div class="cols">';MONTHS.forEach((m,i)=>{g+=`<span class="pb"><b>${i+1}.</b> ${i%3==1?bx(100):m}</span>`;if(i%3==1)K(m)});h+=g+'</div>'}else{h+=Q("Hari kesukaanku:");h+=wl(1);h+=Q("Kegiatan di hari itu (gambar):");h+=dbox()}}
+ else{h+=Q("Isi kalender bulan ini. Tulis tanggalnya, lingkari hari ulang tahun keluarga.");h+=`<table class="ot cal"><tr>${DAYS.map(d=>`<th>${d.slice(0,3)}</th>`).join("")}</tr>${Array.from({length:5},()=>`<tr>${DAYS.map(()=>"<td></td>").join("")}</tr>`).join("")}</table>`}
+ return h}
+function k_pancasila(a,w,r){const P=[["Ketuhanan","⭐"],["Kemanusiaan","⛓️"],["Persatuan","🌳"],["Kerakyatan","🐂"],["Keadilan","🌾"]];let h="";
+ if(w==0){h+=Q("Baca sila-sila Pancasila bersama. Jiplak nama silanya.");P.forEach((p,i)=>{h+=row(`<span class="big">${i+1}</span><span class="em">${p[1]}</span>${gh(p[0],1)}<span class="wl2"></span>`)})}
+ else if(w==1){h+=Q("Tulis nomor sila di bawah lambangnya.");h+=row(shuf(r,P.map((p,i)=>[p,i+1])).map(([p,i])=>`<span class="cl"><span class="em">${p[1]}</span><small>${p[0]}</small>${bx(30)}</span>`).join(""));K("Ketuhanan 1, Kemanusiaan 2, Persatuan 3, Kerakyatan 4, Keadilan 5")}
+ else{h+=Q("Gambar contoh sikap untuk sila ke-1 (berdoa), ke-2 (menolong), ke-3 (bermain bersama).");h+=`<div class="rw4">${[1,2,3].map(i=>`<div><b>${i}</b>${dbox("sm")}</div>`).join("")}</div>`}
+ return h}
+const KP=Array.from("🍎🐱🚗⭐🌸🐟⚽🍌🏠🎈🧸🎒📖🥕🐶🦆🍞🚲🔑🧢");
+function k_kim(a,w,r){const n=+a[0]||5;let h="";
+ if(w==0){const s=shuf(r,KP).slice(0,n);h+=Q("Lihat gambar ini selama 30 detik. Lalu tutup dengan kertas. Gambar atau tulis yang kamu ingat di bawah.");h+=`<div class="kimbox">${s.map(e=>`<span class="em2">${e}</span>`).join("")}</div>`;h+=dbox("lg");K(s.join(" "))}
+ else if(w==1){h+=Q("Apa yang HILANG? Gambar atau tulis di kotak.");for(let i=0;i<3;i++){const s=shuf(r,KP).slice(0,n),m=ri(r,0,n-1);h+=row(s.map(e=>`<span class="em2">${e}</span>`).join(""))+row(s.map((e,j)=>j==m?`<span class="bx sq"></span>`:`<span class="em2">${e}</span>`).join(""));K(s[m])}}
+ else{h+=Q("Temukan perbedaannya. Lingkari yang berbeda di baris bawah.");for(let i=0;i<3;i++){const s=shuf(r,KP).slice(0,n),t=s.slice(),k=ri(r,1,2);for(let j=0;j<k;j++){const m=ri(r,0,n-1);t[m]=pick(r,KP.filter(e=>!s.includes(e)))}h+=row(s.map(e=>`<span class="em2">${e}</span>`).join(""))+row(t.map(e=>`<span class="ch em2">${e}</span>`).join(""));K(t.map((e,j)=>e!==s[j]?`posisi ${j+1}`:"").filter(Boolean).join(", "))}}
+ return h}
+function k_flag(a,w,r){const fl='<svg viewBox="0 0 150 100" class="fl"><rect x="2" y="2" width="146" height="48" fill="none" stroke="#333" stroke-width="2"/><rect x="2" y="50" width="146" height="48" fill="none" stroke="#333" stroke-width="2"/></svg>';let h="";
+ if(w==0){h+=Q("Warnai bendera Indonesia: atas MERAH, bawah PUTIH.");h+=`<div class="ctr">${fl}</div>`;h+=Q("Jiplak nama bendera kita.");h+=`<div class="wr">${gh("Merah Putih",2)}</div>`}
+ else if(w==1){h+=Q("Cara menghormati bendera. Beri ✓ pada yang benar.");[["Berdiri tegak dan diam saat upacara",1],["Bermain-main saat bendera dikibarkan",0],["Mengucapkan terima kasih kepada para pahlawan",1]].forEach(x=>{h+=`<div class="nm">☐ ${x[0]}</div>`;if(x[1])K(x[0])})}
+ else{h+=Q("Gambar dirimu sedang hormat kepada bendera.");h+=dbox("lg");h+=Q("Bendera Indonesia berwarna:");h+=wl(1)}
+ return h}
+const FACE=[["😀","Senang"],["😢","Sedih"],["😠","Marah"],["😨","Takut"],["😮","Kaget"],["😞","Kecewa"]];
+function k_emo(a,w,r){let h="";
+ if(w==0){h+=Q("Tarik garis dari wajah ke nama perasaannya.");h+=`<div class="mt"><div>${FACE.map(p=>`<div class="mi"><span class="em">${p[0]}</span><i class="dd"></i></div>`).join("")}</div><div>${shuf(r,FACE).map(p=>`<div class="mi"><i class="dd"></i><span class="nm">${p[1]}</span></div>`).join("")}</div></div>`;FACE.forEach(p=>K(p.join("=")))}
+ else if(w==1){h+=Q("Apa yang bisa kulakukan saat perasaan ini muncul? Lingkari.");["Mainanku rusak. Aku merasa kecewa.","Aku kalah bermain. Aku merasa marah.","Aku takut gelap."].forEach(x=>{h+=`<div class="nm">${x}</div>`+row(chs(["tarik napas dalam","minta peluk","bicara pelan","menggambar"]))})}
+ else{h+=Q("Gambar wajahmu hari ini.");h+=dbox();h+=Q("Warnai kotak sesuai perasaanku hari ini (1 = sedih, 5 = senang).");h+=row([1,2,3,4,5].map(i=>`<span class="cl"><span class="bx sq"></span><small>${i}</small></span>`).join(""))}
+ return h}
+function k_rut(a,w,r){const T=[["Bangun & rapikan tempat tidur","Gosok gigi","Pakai baju sendiri","Sarapan"],["Taruh sepatu di rak","Mandi sore","Rapikan mainan","Bantu orang tua"],["Gosok gigi malam","Berdoa sebelum tidur","Siapkan tas besok","Tidur tepat waktu"]][Math.min(w,2)];return Q("Ceklis rutinitas: beri ✓ setiap hari kamu berhasil melakukannya sendiri.")+`<table class="ot"><tr><th>Kegiatan</th>${["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map(d=>`<th>${d}</th>`).join("")}</tr>${T.map(t=>`<tr><td>${t}</td>${"<td></td>".repeat(7)}</tr>`).join("")}</table>`+Q("Gambar kegiatan yang paling kamu sukai.")+dbox("sm")}
+
+/* ---------- KEIMANAN ---------- */
+const DOA={makan:["Doa Sebelum Makan","اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ","Allahumma baarik lanaa fiimaa razaqtanaa wa qinaa 'adzaaban-naar.","Ya Allah, berkahilah rezeki yang Engkau berikan kepada kami dan jagalah kami dari siksa neraka."],
+tidur:["Doa Sebelum Tidur","بِاسْمِكَ اللَّهُمَّ أَحْيَا وَبِاسْمِكَ أَمُوتُ","Bismikallaahumma ahyaa wa bismika amuut.","Dengan nama-Mu ya Allah aku hidup dan aku mati."],
+bangun:["Doa Bangun Tidur","الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ","Alhamdulillaahilladzii ahyaanaa ba'da maa amaatanaa wa ilaihin-nusyuur.","Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali."],
+mandi_masuk:["Doa Masuk Kamar Mandi","اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ","Allahumma innii a'uudzu bika minal khubutsi wal khabaa'its.","Ya Allah, aku berlindung kepada-Mu dari setan laki-laki dan setan perempuan."],
+mandi_keluar:["Doa Keluar Kamar Mandi","غُفْرَانَكَ","Ghufraanaka.","Aku memohon ampunan-Mu, ya Allah."],
+rumah:["Doa Keluar Rumah","بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ","Bismillaahi tawakkaltu 'alallaahi laa haula wa laa quwwata illaa billaah.","Dengan nama Allah, aku berserah diri kepada Allah; tiada daya dan kekuatan kecuali dengan pertolongan Allah."],
+kendaraan:["Doa Naik Kendaraan","سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ","Subhaanalladzii sakhkhara lanaa haadzaa wa maa kunnaa lahu muqriniin, wa innaa ilaa rabbinaa lamunqalibuun.","Maha Suci Allah yang menundukkan kendaraan ini bagi kami, padahal kami tidak mampu menguasainya, dan kepada Tuhan kami pasti kembali."],
+shalawat:["Shalawat Pendek","اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ","Allahumma shalli 'alaa sayyidinaa Muhammad.","Ya Allah, limpahkanlah rahmat kepada junjungan kami, Nabi Muhammad."],
+ortu:["Doa untuk Orang Tua","رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا","Rabbighfir lii wa liwaalidayya warhamhumaa kamaa rabbayaanii shaghiiraa.","Ya Tuhanku, ampunilah aku dan kedua orang tuaku, sayangilah mereka sebagaimana mereka menyayangiku di waktu kecil."]};
+const cloze=t=>t.split(" ").map((x,i)=>i%3==2&&x.length>3?`<span class="bl"></span>`:x).join(" ");
+function k_doa(a,w,r){const ids=a[0].split(",");let h="";
+ if(w==0){h+=Q("Dengarkan dan tirukan bacaan doa. Jiplak tulisan Arabnya pelan-pelan.");ids.forEach(i=>{const d=DOA[i];h+=`<div class="doa"><b>${d[0]}</b><div class="ab ghost">${d[1]}</div><div class="ab"></div><div class="lt">${d[2]}</div><div class="ar2">Artinya: ${d[3]}</div></div>`})}
+ else if(w==1){h+=Q("Lengkapi bacaan doa yang hilang, lalu baca lagi dengan lantang.");ids.forEach(i=>{const d=DOA[i];h+=`<div class="doa"><b>${d[0]}</b><div class="lt big3">${cloze(d[2])}</div><div class="nm">Doa ini dibaca ketika:</div>${wl(1)}</div>`;K(d[2])})}
+ else{h+=Q("Latihan setiap hari. Warnai bintang kalau doa ini dibaca tanpa dibantu.");ids.forEach(i=>{h+=`<div class="nm"><b>${DOA[i][0]}</b></div>${trk()}`});h+=Q("Gambar kapan kamu membaca doa ini.");h+=dbox()}
+ return h}
+const SUR={fatihah:["Al-Fatihah",[["بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ","Bismillaahir rahmaanir rahiim"],["الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ","Alhamdu lillaahi rabbil 'aalamiin"],["الرَّحْمَنِ الرَّحِيمِ","Ar-rahmaanir rahiim"],["مَالِكِ يَوْمِ الدِّينِ","Maaliki yawmid diin"],["إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ","Iyyaaka na'budu wa iyyaaka nasta'iin"],["اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ","Ihdinash shiraathal mustaqiim"],["صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ","Shiraathal ladziina an'amta 'alaihim ghairil maghdluubi 'alaihim wa ladl-dlaalliin"]],"Pujian kepada Allah dan permohonan petunjuk ke jalan yang lurus."],
+nas:["An-Nas",[["قُلْ أَعُوذُ بِرَبِّ النَّاسِ","Qul a'uudzu birabbin naas"],["مَلِكِ النَّاسِ","Malikin naas"],["إِلَٰهِ النَّاسِ","Ilaahin naas"],["مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ","Min syarril waswaasil khannaas"],["الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ","Alladzii yuwaswisu fii shuduurin naas"],["مِنَ الْجِنَّةِ وَالنَّاسِ","Minal jinnati wan naas"]],"Berlindung kepada Allah dari bisikan jahat setan dan manusia."],
+falaq:["Al-Falaq",[["قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ","Qul a'uudzu birabbil falaq"],["مِنْ شَرِّ مَا خَلَقَ","Min syarri maa khalaq"],["وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ","Wa min syarri ghaasiqin idzaa waqab"],["وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ","Wa min syarrin naffaatsaati fil 'uqad"],["وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ","Wa min syarri haasidin idzaa hasad"]],"Berlindung kepada Allah dari kejahatan makhluk, gelapnya malam, dan sifat dengki."],
+ikhlas:["Al-Ikhlas",[["قُلْ هُوَ اللَّهُ أَحَدٌ","Qul huwallaahu ahad"],["اللَّهُ الصَّمَدُ","Allaahush shamad"],["لَمْ يَلِدْ وَلَمْ يُولَدْ","Lam yalid wa lam yuulad"],["وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ","Wa lam yakul lahuu kufuwan ahad"]],"Allah itu Maha Esa dan menjadi tempat bergantung semua makhluk."],
+kautsar:["Al-Kautsar",[["إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ","Innaa a'thainaakal kautsar"],["فَصَلِّ لِرَبِّكَ وَانْحَرْ","Fashalli lirabbika wanhar"],["إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ","Inna syaani-aka huwal abtar"]],"Allah memberi nikmat yang banyak, maka sholat dan berkurbanlah karena-Nya."]};
+function k_surat(a,w,r,wk){const ids=a[0].split(",");const i=ids[wk%ids.length],mode=Math.floor(wk/ids.length);const S=SUR[i];let h="";
+ h+=`<div class="nm"><b>Surat ${S[0]}</b> — ${S[2]}</div>`;
+ if(mode==0){h+=Q("Dengarkan dan tirukan tiap ayat 3 kali. Jiplak tulisan Arabnya pelan-pelan.");S[1].forEach((x,n)=>{h+=`<div class="doa"><span class="no">${n+1}</span><div class="ab ghost">${x[0]}</div><div class="lt">${x[1]}</div></div>`})}
+ else if(mode==1){h+=Q("Lengkapi bacaan yang hilang, lalu baca dengan lantang.");S[1].forEach((x,n)=>{h+=`<div class="doa"><span class="no">${n+1}</span><div class="lt big3">${cloze(x[1])}</div></div>`;K(x[1])})}
+ else{h+=Q("Beri nomor ayat 1, 2, 3, ... sesuai urutan yang benar.");shuf(r,S[1].map((x,n)=>[x,n+1])).forEach(([x,n])=>{h+=row(`<span class="lt">${x[1]}</span>${bx(30)}`);K(n)});h+=Q("Latihan setiap hari. Warnai bintang kalau berhasil setor hafalan.");h+=trk()}
+ return h}
+const HL="ا ب ت ث ج ح خ د ذ ر ز س ش ص ض".split(" "),HN="alif ba ta tsa jim ha kha dal dzal ra zay sin syin shad dhad".split(" ");
+function k_hij(a,w,r){let h="";const st=[0,8,0][Math.min(w,2)],en=[8,15,15][Math.min(w,2)];
+ if(w<2){h+=Q("Sebutkan nama huruf bersama orang tua. Jiplak hurufnya.");for(let i=st;i<en;i++)h+=`<div class="al"><span class="gb ab2">${HL[i]}</span><span class="nm">${HN[i]}</span><span class="gh ab2">${HL[i]}</span><span class="gh ab2">${HL[i]}</span>${bx(44)}</div>`}
+ else{h+=Q("Lingkari huruf yang disebutkan orang tua.");for(let i=0;i<5;i++){const t=ri(r,0,14);h+=row(`<span class="nm">${HN[t]} :</span>`+shuf(r,Array.from({length:7},(_,j)=>HL[j==0?t:ri(r,0,14)])).map(x=>`<span class="ch ab2">${x}</span>`).join(""));K(HL[t])}}
+ return h}
+const IL="ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ع غ ف ق ك ل م ن ه و ي".split(" "),IT="b t ts j h kh d dz r z s sy sh dh th ' gh f q k l m n h w y".split(" ");
+const HK=["\u064E","\u0650","\u064F"],HV=["a","i","u"];
+function k_iqra(a,w,r){const m=a[0];let h="";w=Math.min(w,2);
+ if(m=="1"){const hv=w==0?[0]:w==1?[1,2]:[0,1,2];h+=Q(w<2?"Baca huruf berharakat bersama orang tua. Jiplak lalu tulis harakatnya.":"Baca campuran. Tulis cara bacanya (latin) di kotak.");
+  if(w<2){for(let i=0;i<12;i++){const l=i%IL.length;h+=`<span class="hk">${hv.map(v=>`<span class="ab2">${IL[l]+HK[v]}</span><small>${IT[l]}${HV[v]}</small>`).join("")}</span>`}}
+  else{for(let i=0;i<10;i++){const l=ri(r,0,IL.length-1),v=ri(r,0,2);h+=`<span class="hk"><span class="ab2">${IL[l]+HK[v]}</span>${bx(40)}</span>`;K(IT[l]+HV[v])}}}
+ else{if(w==0){h+=Q("Huruf panjang (mad). Baca: ba-a = baa, bi-i = bii, bu-u = buu.");[["\u064E","ا","aa"],["\u0650","ي","ii"],["\u064F","و","uu"]].forEach(([k,mm,lt])=>{for(let i=0;i<4;i++){const l=ri(r,0,IL.length-1);h+=`<span class="hk"><span class="ab2">${IL[l]+k+mm}</span><small>${IT[l]}${lt}</small></span>`}})}
+  else if(w==1){h+=Q("Tanwin (bunyi -an, -in, -un). Baca dan tirukan.");[["\u064B","an"],["\u064D","in"],["\u064C","un"]].forEach(([k,lt])=>{for(let i=0;i<4;i++){const l=ri(r,0,IL.length-1);h+=`<span class="hk"><span class="ab2">${IL[l]+k}</span><small>${IT[l]}${lt}</small></span>`}})}
+  else{h+=Q("Baca dua huruf bersambung. Tulis cara bacanya.");for(let i=0;i<8;i++){const l1=ri(r,0,IL.length-1),l2=ri(r,0,IL.length-1),v1=ri(r,0,2),v2=ri(r,0,2);h+=`<span class="hk"><span class="ab2">${IL[l1]+HK[v1]+IL[l2]+HK[v2]}</span>${bx(60)}</span>`;K(IT[l1]+HV[v1]+IT[l2]+HV[v2])}}}
+ return h}
+function k_steps(a,w,r){const t=a[0],S=a[1].split(",");let h="";
+ if(w==0){h+=Q(`${t}: baca urutan langkah bersama orang tua, lalu praktikkan. Beri ✓ tiap langkah selesai.`);S.forEach((s,i)=>{h+=`<div class="sn"><span><b>${i+1}.</b> ${s}</span><span class="cks">☐</span></div>`})}
+ else if(w==1){h+=Q("Beri nomor langkah-langkah ini dengan urutan yang benar.");shuf(r,S.map((s,i)=>[s,i+1])).forEach(([s,i])=>{h+=row(`<span class="nm">${s}</span>${bx(34)}`);K(i)})}
+ else{h+=Q("Gambar tiap langkah dengan urutan yang benar.");h+=`<div class="rw4">${S.map((s,i)=>`<div><b>${i+1}</b><small>${s}</small>${dbox("sm")}</div>`).join("")}</div>`}
+ return h}
+const ASMA=[["الرَّحْمَنُ","Ar-Rahman","Maha Pengasih"],["الرَّحِيمُ","Ar-Rahim","Maha Penyayang"],["الْمَلِكُ","Al-Malik","Maha Merajai"],["الْقُدُّوسُ","Al-Quddus","Maha Suci"],["السَّلَامُ","As-Salam","Maha Memberi Kesejahteraan"],["الْمُؤْمِنُ","Al-Mu'min","Maha Memberi Rasa Aman"],["الْمُهَيْمِنُ","Al-Muhaimin","Maha Memelihara"],["الْعَزِيزُ","Al-'Aziz","Maha Perkasa"],["الْجَبَّارُ","Al-Jabbar","Maha Kuasa"],["الْمُتَكَبِّرُ","Al-Mutakabbir","Maha Megah"]];
+function k_asma(a,w,r){let h="";
+ if(w<2){h+=Q("Baca nama-nama Allah ini dengan irama lagu. Jiplak tulisan Arabnya.");ASMA.slice(w*5,w*5+5).forEach(x=>{h+=`<div class="al"><span class="gb ab2">${x[0]}</span><span class="nm"><b>${x[1]}</b><br>${x[2]}</span><span class="gh ab2">${x[0]}</span></div>`})}
+ else{h+=Q("Tarik garis dari nama Allah ke artinya.");const L=ASMA.slice(0,5),R=shuf(r,L.map(x=>x[2]));h+=`<div class="mt"><div>${L.map(x=>`<div class="mi"><span class="nm"><b>${x[1]}</b></span><i class="dd"></i></div>`).join("")}</div><div>${R.map(x=>`<div class="mi"><i class="dd"></i><span class="nm">${x}</span></div>`).join("")}</div></div>`;L.forEach(x=>K(x[1]+"="+x[2]));h+=Q("Sifat baik Allah yang bisa aku tiru (gambar):");h+=dbox("sm")}
+ return h}
+function k_list(a,w,r){const t=a[0],P=a[1].split(",").map(s=>s.split("="));const em=p=>p[1]||"▢";let h="";
+ const tbl=()=>{const R=shuf(r,P.map(p=>p[0]));return `<div class="mt"><div>${P.map(p=>`<div class="mi"><span class="em">${em(p)}</span><i class="dd"></i></div>`).join("")}</div><div>${R.map(x=>`<div class="mi"><i class="dd"></i><span class="nm">${x}</span></div>`).join("")}</div></div>`};
+ if(w==0){h+=Q(`${t}: baca urutannya bersama orang tua, lalu jiplak.`);P.forEach((p,i)=>{h+=row(`<span class="big">${i+1}</span><span class="em">${em(p)}</span>${gh(p[0],1)}<span class="wl2"></span>`)})}
+ else if(w==1){h+=Q("Tarik garis dari gambar ke namanya.");h+=tbl();P.forEach(p=>K(em(p)+"="+p[0]))}
+ else{h+=Q("Tulis dengan urutan yang benar tanpa melihat contoh.");P.forEach((p,i)=>{h+=row(`<span class="big">${i+1}</span><span class="em">${em(p)}</span><span class="wl2"></span>`);K(p[0])})}
+ return h}
+function k_tell(a,w,r){const t=a[0],Qs=a.slice(1);let h="";
+ if(w==0){h+=`<div class="pn"><b>Untuk orang tua:</b> ceritakan materi "${t}" dengan bahasa sederhana dan lembut (3–5 menit). Ajak anak bertanya.</div>`;h+=Q("Gambar bagian cerita yang paling kamu ingat.");h+=dbox("lg")}
+ else if(w==1){h+=Q("Jawab pertanyaan (boleh dengan gambar atau kata-kata).");Qs.forEach(x=>{h+=`<div class="nm">${x}</div>${wl(2)}`})}
+ else{h+=Q("Pelajaran yang kuambil:");h+=wl(2);h+=Q("Aku akan melakukan kebaikan ini minggu ini. Warnai bintang kalau berhasil.");h+=trk()}
+ return h}
+function k_track(a,w,r){return Q(`${a[0]||"Kebiasaan baik"}: tandai setiap hari yang berhasil.`)+trk()+trk()+Q("Perasaanku setelah melakukannya (gambar).")+dbox("sm")}
+
+/* ---------- SPESIFIKASI TIAP TOPIK ---------- */
+const SP={kakak:{
+numerik:["cnt:21|50","cnt:51|100","tens:11|50","eo:20+seq:2|40+eo:20@1","add:10","sub:10","add:20+sub:20+story:20","cmp:100","meas","money:1","time:1","mix:100+story:20+mix:20"],
+literasi:["syl:b,d,k,l,m,s,t,p,n,j,g,h,r,c","word:bola,buku,baju,batu,mata,kaki,topi,sapi","word:kuda,sapu,susu,roti,nasi,sepatu,bunga,apel","word:kancing,lampu,jeruk,bebek,nanas,mobil,bulan,pisang","sent:Ibu masak nasi./Ayah baca buku./Adik minum susu./Kakak main bola./Kuda makan rumput./Bebek berenang di kolam.","abc:both","word:topi,bola,sapi,buku+sent:Ini bola Budi./Ani punya topi./Aku suka apel./Ibu beli ikan.+word:kuda,ikan,bebek,apel@2","word:bunga,singa,gunung,nyamuk,syukur,khusus","read","retell","diary","book"],
+steam:["pat","shape:dasar+shape:lanjut@1+cls:Bentuk 2D=⬜🔺⭕|Bentuk 3D=🧊🥫⚽","dir","obs:Kecambah|Tinggi (cm)+cls:Hewan darat=🐄🐈🐕🐘|Hewan air=🐟🐙🦀🐬|Hewan terbang=🐦🦋🐝🦅+obs:Kecambah|Tinggi (cm)@1","exp:Apung atau tenggelam?|Pensil,Batu,Gabus,Sendok,Daun,Koin|Apung,Tenggelam+exp:Es mencair?|Es di bawah matahari,Es di kulkas,Es di air hangat|Cepat mencair,Lambat mencair+exp:Larut atau tidak?|Gula,Garam,Pasir,Tepung,Kopi,Minyak|Larut,Tidak larut","exp:Magnet menarik apa?|Paku,Koin,Kertas,Klip,Karet,Sendok plastik|Menempel,Tidak+exp:Dorong atau tarik?|Membuka pintu geser,Menutup laci,Menendang bola,Menarik wagon|Dorong,Tarik+exp:Mobil di papan miring|Papan landai,Papan curam,Papan datar|Meluncur jauh,Meluncur dekat","obs:Cuaca harian|Cuaca+draw:Gambar siklus air: awan, hujan, laut, matahari+obs:Cuaca harian|Cuaca@1","match:👀=Melihat,👂=Mendengar,👃=Mencium,👅=Merasakan,✋=Meraba+steps:Cuci tangan 6 langkah|Basahi tangan,Sabun di telapak,Gosok punggung tangan,Gosok sela jari,Bilas dengan air,Keringkan tangan+draw:Gambar tubuhmu dan beri nama bagian-bagiannya","plan:Jembatan kertas","cls:Organik=🍌🍎🥬🍂|Anorganik=🥤🥫🍾🧴+draw:Rancang karya daur ulang dari barang bekas+draw:Tanamanku: gambar dan ceritakan perkembangannya","maze","proj"],
+memori:["cards:10","inst:4","self:full","retell","memo:Lagu Indonesia Raya (bait awal)+flag+memo:Lagu daerah pilihanmu","cal:1","memo:Puisi Pagi Hari|Matahari terbit di timur/Burung berkicau riang/Aku bangun dengan senyum/Siap belajar hari ini","pancasila","kim:10","match:Rumah Gadang=Sumatera Barat,Joglo=Jawa Tengah,Honai=Papua,Tongkonan=Sulawesi Selatan,Betang=Kalimantan+list:Pulau besar Indonesia|Sumatera,Jawa,Kalimantan,Sulawesi,Papua+draw:Gambar tarian daerah yang kamu tirukan","emo+rut+emo@1","cards:10+memo:Hafalan pilihan untuk pentas+kim:10@2"],
+keimanan:["doa:mandi_masuk,mandi_keluar+doa:rumah+doa:kendaraan","surat:fatihah","surat:nas,falaq","surat:ikhlas,kautsar","iqra:1","iqra:2","steps:Urutan wudhu|Niat dan baca Bismillah,Cuci telapak tangan,Berkumur,Basuh muka,Basuh tangan sampai siku,Usap kepala,Basuh kaki sampai mata kaki+steps:Gerakan sholat|Berdiri tegak dan takbir,Baca Al-Fatihah dan surat pendek,Ruku,Iktidal (berdiri lagi),Sujud,Duduk di antara dua sujud,Sujud kedua,Duduk dan salam+steps:Urutan wudhu|Niat dan baca Bismillah,Cuci telapak tangan,Berkumur,Basuh muka,Basuh tangan sampai siku,Usap kepala,Basuh kaki sampai mata kaki@2","asma","tell:Kisah Nabi (Adam, Nuh, Ibrahim, Yusuf)|Siapa nabi dalam cerita?|Apa yang dilakukan nabi?|Pelajaran apa yang kamu ambil?","doa:shalawat+tell:Akhlak dan tradisi Aswaja NU|Sikap apa yang menunjukkan sopan?|Bagaimana menghargai teman yang berbeda?|Apa yang kamu lakukan untuk guru dan orang tua?+tell:Tawasuth, tasamuh, tawazun|Apa artinya adil?|Bagaimana bersikap tenang dan seimbang?|Apa contoh toleran?","tell:Puasa dan zakat|Apa itu puasa?|Kenapa kita berbagi zakat?|Apa yang akan kamu bagi?+track:Puasa setengah hari+tell:Berbagi takjil|Siapa yang akan kamu bagi?|Apa yang kamu bagikan?|Bagaimana perasaanmu?","surat:fatihah,nas,ikhlas+doa:makan,tidur,mandi_masuk+track:Kebiasaan baik setahun"]},
+adik:{
+numerik:["cnt:1|20+seq:1|20+seq:-1|20","cnt:21|30","cnt:31|50","cmp:10","add:5","sub:5","add:10+sub:10","meas","seq:1|20+eo:10+seq:2|20","money:0","time:0","mix:20|e"],
+literasi:["alpha","syl:b,c,d,f,g","syl:j,k,l,m,n","word:bola,buku,baju,batu,mata,kaki","word:sapi,kuda,topi,sapu,susu,nasi","pre","abc:upper","name","word:kucing,ayam,bebek,ikan,sapi,kuda","read:listen","retell","alpha+word:bola,buku,ikan,apel+name"],
+steam:["cls:Merah=🍎🍓🍒|Kuning=🍌🍋🌻|Hijau=🥒🐸🥬","pat:AB","pat:ABC","shape:dasar+shape:lanjut@1+shape:lanjut@2","dir","obs:Kecambah|Tinggi (cm)","exp:Apung atau tenggelam?|Pensil,Batu,Gabus,Sendok,Daun,Koin|Apung,Tenggelam","match:👀=Melihat,👂=Mendengar,👃=Mencium,👅=Merasakan,✋=Meraba","plan:Menara balok","obs:Cuaca harian|Cuaca+match:🐟=Air,🐄=Kandang,🐦=Sarang,🐝=Sarang lebah+draw:Hewan favoritku dan rumahnya","steps:Cuci tangan 6 langkah|Basahi tangan,Sabun di telapak,Gosok punggung tangan,Gosok sela jari,Bilas dengan air,Keringkan tangan+steps:Gosok gigi|Ambil sikat gigi,Beri pasta gigi,Gosok semua gigi,Kumur,Bersihkan sikat+draw:Gambar kebiasaan sehat yang kamu lakukan","proj"],
+memori:["cards:6","inst:3","self","retell","memo:Lagu anak pilihan","cal:0","memo:Puisi Cuci Tangan|Aku cuci tangan/Biar bersih dan sehat/Kuman pergi jauh","kim:5","flag","emo","rut","cards:6+memo:Pentas hafalan+kim:5@1"],
+keimanan:["list:Kalimat Thayyibah|Bismillah=🍚,Alhamdulillah=😊,Masyaallah=🌈,InsyaAllah=📅+doa:makan+doa:tidur,bangun","doa:mandi_masuk,mandi_keluar+doa:rumah+doa:kendaraan","list:Rukun Islam|Syahadat=📿,Sholat=🕌,Zakat=💰,Puasa=🌙,Haji=🕋","list:Rukun Iman|Allah=🌍,Malaikat=✨,Kitab=📖,Rasul=🧑,Hari Akhir=⏳,Qada dan Qadar=🌟","steps:Urutan wudhu sederhana|Niat dan baca Bismillah,Cuci tangan,Berkumur,Basuh muka,Basuh tangan,Usap kepala,Basuh kaki+steps:Gerakan sholat|Berdiri tegak,Ruku,Sujud,Duduk,Salam+draw:Latihan wudhu bersama orang tua","doa:shalawat+tell:Kisah Nabi Muhammad penyayang|Siapa yang disayang Nabi?|Apa yang Nabi lakukan?|Apa yang bisa kamu tiru?+doa:shalawat@1","surat:fatihah","surat:nas","surat:ikhlas","hij","tell:Salam dan adab makan|Apa yang diucapkan saat bertemu?|Tangan mana untuk makan?|Apa yang dilakukan sebelum makan?+tell:Berbagi itu indah|Apa yang bisa kamu bagi?|Dengan siapa?|Bagaimana rasanya?+track:Berbagi","tell:Idul Fitri dan silaturahmi|Apa yang dilakukan saat lebaran?|Apa yang diucapkan?|Siapa yang kamu kunjungi?+doa:ortu+track:Hafalan dan doa"]}};
+const KD={cnt:k_cnt,seq:k_seq,tens:k_tens,eo:k_eo,add:k_add,sub:k_sub,story:k_story,cmp:k_cmp,meas:k_meas,money:k_money,time:k_time,mix:k_mix,syl:k_syl,word:k_word,sent:k_sent,pre:k_pre,abc:k_abc,name:k_name,read:k_read,retell:k_retell,diary:k_diary,book:k_book,alpha:k_alpha,pat:k_pat,cls:k_cls,shape:k_shape,dir:k_dir,obs:k_obs,exp:k_exp,match:k_match,plan:k_plan,maze:k_maze,proj:k_proj,draw:k_draw,cards:k_cards,inst:k_inst,self:k_self,memo:k_memo,cal:k_cal,pancasila:k_pancasila,kim:k_kim,flag:k_flag,emo:k_emo,rut:k_rut,doa:k_doa,surat:k_surat,hij:k_hij,iqra:k_iqra,steps:k_steps,asma:k_asma,list:k_list,tell:k_tell,track:k_track};
+
+/* ---------- RAKIT LEMBAR ---------- */
+function specFor(lv,a,t,w){const s=(SP[lv][a][t]||"draw").split("+");const ww=Math.min(w,2);let sp=s[ww%s.length],ph=Math.floor(ww/s.length);const m=sp.match(/@(\d)$/);if(m){ph=+m[1];sp=sp.slice(0,-2)}const i=sp.indexOf(":");return[i<0?sp:sp.slice(0,i),i<0?[]:sp.slice(i+1).split("|"),ph]}
+const WLAB=["Pengenalan (konkret)","Permainan","Latihan / karya","Ulang & evaluasi bulanan"];
+function sheet(lv,a,t,w){qc=0;KEYS={};const A=ASP[a],x=parse(D[lv][a][t]);const [kd,ar,ph]=specFor(lv,a,t,w);const r=rng(`${lv}${a}${t}${w}`);
+ let body;try{body=(KD[kd]||k_draw)(ar,ph,r,Math.min(w,2))}catch(e){qc=0;KEYS={};body=Q("Gambar dan ceritakan kegiatan minggu ini.")+dbox("lg")}
+ if(w==3)body+=`<div class="ev"><b>🌟 Lembar Penilaian Bulanan (diisi orang tua/guru)</b><table class="ot"><tr><th>Indikator</th><th>BB</th><th>MB</th><th>BSH</th><th>BSB</th></tr>${x.i.map(i=>`<tr><td>${i}</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>`).join("")}</table><small>BB = Belum Berkembang · MB = Mulai Berkembang · BSH = Berkembang Sesuai Harapan · BSB = Berkembang Sangat Baik</small></div>`;
+ const keys=Object.keys(KEYS).map(k=>`${k}) ${KEYS[k].join(", ")}`).join(" · ");
+ const no=t*4+w+1,txt=w<3?x.k[w]:"ulangi kegiatan favorit lalu nilai indikator";
+ return `<div class="sheet"><div class="sh-h"><span>${A.e} <b>${A.t}</b> · ${A.day}, Minggu ke-${no}</span><span>${lv=="kakak"?"Kakak":"Adik"} · Topik ${t+1}</span></div><div class="sh-m"><span>Nama: ______________________</span><span>Tanggal: ______________</span></div><h2>${x.j}</h2><div class="sh-s">${WLAB[w]} — ${txt}</div>${body}<div class="sh-f"><span>Nilai usahaku: ☹ &nbsp; 😐 &nbsp; 🙂 &nbsp; 😄</span><span>Paraf orang tua: ______</span></div>${keys?`<div class="key"><b>Kunci (orang tua):</b> ${keys}</div>`:""}</div>`}
+function guide(lv,a,t,w,x,txt){const mins=lv=="kakak"?"25–30":"15–20";
+ const st=w<3?["Siapkan pensil, krayon, lembar kerja yang sudah dicetak, dan alat sederhana sesuai kegiatan.",`Contohkan dulu: ${txt}. Lakukan 5–10 menit bersama anak, beri kesempatan mencoba sendiri.`,"Beri lembar kerja. Bacakan perintah tiap nomor, biarkan anak mengerjakan sendiri; bantu hanya bila macet.","Periksa bersama (kunci jawaban ada di bagian bawah lembar), beri pujian atas usahanya, lalu centang minggu ini."]:["Ulangi kegiatan favorit minggu 1–3 sebagai pemanasan.","Kerjakan lembar evaluasi tanpa banyak bantuan; amati dan catat, jangan terlalu banyak mengoreksi.","Isi kotak penilaian di bagian bawah lembar, lalu klik nilai yang sama pada tiap indikator di halaman ini.","Bila banyak BB/MB, ulangi topik ini 1–2 minggu sebelum lanjut."];
+ return `<div class="gd"><div>⏱️ <b>${mins} menit</b> · 🎯 <b>Target:</b> ${w<3?x.i[w]:x.i.join("; ")}</div><ol>${st.map(s=>`<li>${s}</li>`).join("")}</ol><button type="button" class="pbtn" data-pr="${a}|${t}|${w}">🖨️ Lihat &amp; Cetak Lembar Kerja Minggu ${t*4+w+1}</button>${w==3?`<button type="button" class="pbtn" data-pa="${a}|${t}">🖨️ Cetak 4 lembar topik ini</button>`:""}</div>`}
+function openSheets(ws,a,t){const pv=document.getElementById("pv");document.getElementById("pvc").innerHTML=ws.map(w=>sheet(lv,a,t,w)).join("");document.getElementById("pvt").textContent=`${ASP[a].t} · Topik ${t+1} · ${lv=="kakak"?"Kakak":"Adik"}`;pv.classList.add("open");document.body.classList.add("pvopen");pv.scrollTop=0}
+
+document.getElementById("pvx").onclick=()=>{document.getElementById("pv").classList.remove("open");document.body.classList.remove("pvopen")};
+document.getElementById("pvp").onclick=()=>window.print();
 // ===== EVENTS =====
 document.addEventListener("click",e=>{
-  const b=e.target.closest("[data-lv],[data-tab],[data-o],[data-n]");if(!b)return;
+  const b=e.target.closest("[data-lv],[data-tab],[data-o],[data-n],[data-wk],[data-pr],[data-pa]");if(!b)return;
+  if(b.dataset.wk){const id=b.dataset.wk;open.has(id)?open.delete(id):open.add(id);document.getElementById(id).classList.toggle("open");return}
+  if(b.dataset.pr){const [a,t,w]=b.dataset.pr.split("|");openSheets([+w],a,+t);return}
+  if(b.dataset.pa){const [a,t]=b.dataset.pa.split("|");openSheets([0,1,2,3],a,+t);return}
   if(b.dataset.lv){lv=b.dataset.lv;open.clear();render();return}
   if(b.dataset.tab){tab=b.dataset.tab;render();scrollTo({top:0,behavior:"smooth"});return}
   if(b.dataset.o){const id=b.dataset.o;open.has(id)?open.delete(id):open.add(id);document.getElementById(id).classList.toggle("open");return}
